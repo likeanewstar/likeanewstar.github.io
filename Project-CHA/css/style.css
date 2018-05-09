@@ -433,6 +433,7 @@ body {
 	border-left: none;
 	background-color: rgba(118,135,82,0);
 	font-weight: 300;
+	cursor: pointer;
 }
 
 #container .notice ul.noticeTit li h2 a.active {

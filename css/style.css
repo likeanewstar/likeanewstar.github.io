@@ -14,7 +14,7 @@ li {
 
 a {
 	text-decoration: none;
-}	
+}
 
 img {
 	vertical-align: bottom;
@@ -24,7 +24,7 @@ img {
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
-	color: #666;
+	color: #444;
 }
 
 .wrapper {
@@ -39,61 +39,60 @@ body {
 	clear: both;
 }
 
+
 /***** page01 *****/
 
-.section01 {
-	background-image: url('../images/visual.jpg');	
+#section0 {
+	background-image: url('../images/visual3.jpg');
 	background-position: center;
 	background-size: cover;
 	position: relative;
 }
 
-.section01 .bg {
+#section0 .bg {
 	height: 100%;
 }
 
-.section01 h1.logo {
+#section0 h1.logo {
 	position: absolute;
 	top: 50px;
 	left: 8%;
 }
 
-
-.section01 ul.menu {
-	position: absolute;
-	top: 50px;
-	right: 8%;
-}
-
-.section01 ul.menu li {
-	display:inline-block;
-	margin-left: 36px;
-}
-
-.section01 h2.copy {
+#section0 div.copy {
+	text-align: center;
+	font-family: 'Noto Sans KR', sans-serif;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	margin-left: -345px;
 	margin-top: -80px;
-	font-family: 'Noto Sans KR', sans-serif;
-	font-size: 80px;
-	color: rgba(255,255,255,0.95);
-	font-weight: 100;
-	line-height: 1.2em;
-	letter-spacing: -3.5px;
+	/* 초기값 */
+	top: 60%;
+	opacity: 0;
 }
 
-.section01 p.scroll {
+#section0 div.copy h2.main_copy {
+	padding-bottom: 40px;
+}
+
+#section0 div.copy p.sub_copy {
+	color: #222;
+	font-size: 14px;
+	font-size: 0.875rem;
+	letter-spacing: -0.5px;
+}
+
+#section0 p.scroll {
+	width: 100%;
 	text-align: center;
-}
-
-.section01 p.scroll a img {
 	position: absolute;
 	bottom: 50px;
+	/* 초기값 */
+	display: none;
 }
 
-/***** page02 & 03 *****/
+/***** page02 & 03 & 04 *****/
 
 .section .left {
 	float: left;
@@ -120,9 +119,16 @@ body {
 	color: #222;
 }
 
-.section .right p.date {
+.section .right .date {
  	font-size: 15px;
  	margin: 30px 0 50px;
+ 	letter-spacing: -1px;
+}
+
+.section .right .date strong {
+	display: inline-block;
+	width: 35%;
+	line-height: 30px;
 }
 
 .section .right p.desc {
@@ -135,23 +141,24 @@ body {
 
 .section .right p.color {
 	margin: 40px 0;
-}	
+}
 
 .section .right p.color span.co {
 	display: inline-block;
 	width: 18px;
 	height: 18px;
 	border-radius: 50%;
-	background-color: #34556c;
+	background-color: #fff;
 	margin-right: 8px;
+	border: solid 1px #666;
 }
 
 .section .right p.color span.co2 {
-	background-color: #417375;
+	background-color: #888;
 }
 
 .section .right p.color span.co3 {
-	background-color: #6d291b;
+	background-color: #881919;
 }
 
 .section .right p.view a {
@@ -176,28 +183,44 @@ body {
 
 /***** page03 *****/
 
-.section03 .right p.color span.co {
-	background-color: #d4061f;
+#section2 .right p.color span.co {
+	background-color: #34556c;
+	border: none;
 }
 
-.section03 .right p.color span.co2 {
+#section2 .right p.color span.co2 {
+	background-color: #417375;
+}
+
+#section2 .right p.color span.co3 {
+	background-color: #6d291b;
+}
+
+/***** page04 *****/
+
+#section3 .right p.color span.co {
+	background-color: #d4061f;
+	border:none;
+}
+
+#section3 .right p.color span.co2 {
 	background-color: #fff;
 	width: 17px;
 	height: 17px;
 	border: solid 1px #666;
 }
 
-.section03 .right p.color span.co3 {
+#section3 .right p.color span.co3 {
 	display: none;
 }
 
-/***** page04 *****/
+/***** page05 *****/
 
-.section04 {
+#section3 {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-.section04 p.greeting {
+#section4 p.greeting {
 	color: #222;
 	font-size: 70px;
 	letter-spacing: -3.5px;
@@ -207,74 +230,19 @@ body {
 	margin-bottom: 37px;
 }
 
-.section04 ul.info li {
+#section4 ul.info li {
 	float: left;
 	width: 50%;
 	font-size: 14px;
 }
 
-.section04 ul.info li strong {
+#section4 ul.info li strong {
 	font-weight: 400;
 	color: #222;
 }
 
-.section04 ul.info li strong, .section04 ul.info li span {
+#section4 ul.info li strong, #section3 ul.info li span {
 	display: inline-block;
 	width: 50%;
 	margin-bottom: 19px;
 }
-
-/* #header ul.gnb {
-	text-align: center;
-}
-
-#header ul.gnb li {
-	display: inline-block;
-}
-
-#header h1.logo {
-	float: left;
-	padding-top: 50px;
-}
-
-#header p.mail {
-	padding-top: 50px;
-	float: right;
-	color: rgba(255,255,255,0.8)
-}
-
-#visual {
-	background-image: url('../images/visual.jpg');	
-	background-position: center;
-	background-size: cover;
-	height: 655px;
-	background-attachment: fixed;
-}
-
-#visual .bg {
-	background-color: rgba(0,0,0,0.4);
-	height: 655px;
-}
-
-#visual .wrapper {
-	height: 655px;
-}
-
-#visual p.copy {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: -227px;
-	margin-top: -85px;
-}
-
-#visual p.scroll {
-	text-align: center;
-}
-
-#visual p.scroll a img {
-	position: absolute;
-	bottom: 35px;
-}
-
-*/

@@ -2,37 +2,62 @@
 <html lang="ko">
 <head>
 	<meta charset="utf-8" />
-	<title>새 별처럼. Like a new star.</title>
+	<title>새 별처럼</title>
 	<link href="js/fullPage/jquery.fullPage.css" rel="stylesheet" type="text/css" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/fullPage/jquery.fullPage.min.js"></script>
-	<script src="js/front.js"></script>
 
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script src="js/fullPage/jquery.fullPage.js"></script>
+
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<script src="js/front.js"></script>
 </head>
 <body>
 
 <div id="fullpage">
-
-	<div class="section section01">
+	<div class="section" id="section0">
 		<div class="bg">
 			<h1 class="logo">
 				<a href="#"><img src="images/logo.png" alt="" /></a>
 			</h1>
-      <nav>
-  			<ul class="menu">
-  				<li><a href="#" class="portfolio"><img src="images/menu1.png"></a></li>
-  				<li><a href="#" class=s"about"><img src="images/menu2.png"></a></li>
-  				<li><audio></audio></li>
-  			</ul>
-      </nav>
-			<h2 class="copy"><img src="images/main_copy.png" alt="" /></h2>
-			<p class="scroll"><a href="#"><img src="images/arrow.png" alt="화살표" /></a></p>
+			<div class="copy">
+				<h2 class="main_copy"><img src="images/main_copy.png" alt="" /></h2>
+				<p class="sub_copy">안녕하세요. 대중에게 통하는, 대중을 위한 웹 공간을 구현하는 퍼블리셔 <b>강새별</b>의 개인 포트폴리오 사이트입니다.</p>
+			</div>
+			<p class="scroll"><img src="images/arrow_b.png" alt="화살표" /></p>
 		</div>
 	</div>
 
-	<div class="section section02 wrapper">
+	<div class="section wrapper" id="section1">
+		<div class="left">
+			<p class="preview">
+				<img src="images/p_jnlib.png" alt="미리보기" />
+			</p>
+		</div>
+		<div class="right">
+			<h2 class="tit">Jongno Library<br />Official Website<br />Renewal</h2>
+			<div class="date">
+				<p><strong>작업 기간</strong><span>12일</span></p>
+				<p><strong>참여도</strong><span>100%</span></p>
+				<p><strong>구성</strong><span>Main Page</span></p>
+			</div>
+			<p class="desc">사용자의 디스플레이의 크기와 관계없이 높은 품질의 사용자 경험을 제공하기 위하여 반응형 사이트로 제작하였습니다.<br/><br/>사용자 편의를 위해 자주 사용하는 메뉴부터 메인 첫화면에 노출될 수 있도록 메뉴 및 페이지를 구성하였습니다. </p>
+			<p class="color">
+				<span class="co co1"></span>
+				<span class="co co2"></span>
+				<span class="co co3"></span>
+			</p>
+			<p class="view"><a href="Project-JN/index.html" target="_blank">View Website</a></p>
+		</div>
+	</div>
+	<div class="section wrapper" id="section2">
 		<div class="left">
 			<p class="preview">
 				<img src="images/p_cha.png" alt="미리보기" />
@@ -40,8 +65,12 @@
 		</div>
 		<div class="right">
 			<h2 class="tit">Cultural Heritage<br />Administration Site<br />Renewal</h2>
-			<p class="date">2016.01.11. ~ 01.22.</p>
-			<p class="desc">정부에서 운영하는 사이트는 고리타분하다는 편견을 버릴 수 있도록 트렌드에 맞추어 디자인하였습니다. Flat한 컨셉을 살려 조금 더 젊고 다가가기 쉬운 느낌을 살리고자 하였으며, 메인과 서브페이지 모두 전체적으로 여백을 넓게 주어 답답한 느낌을 없애고 시원함을 느낄 수 있도록 하였습니다. 사이트를 방문하는 이용자들의 목적을 파악하고 사용자의 편의를 생각하여 메뉴를 상단부터 차례로 재배치하였습니다.</p>
+			<div class="date">
+				<p><strong>작업 기간</strong><span>21일</span></p>
+				<p><strong>참여도</strong><span>100%</span></p>
+				<p><strong>구성</strong><span>Main Page, Sub Page 1, Sub Page 2</span></p>
+			</div>
+			<p class="desc">정부에서 운영하는 사이트는 고리타분하다는 편견을 버릴 수 있도록 트렌드에 맞추어 디자인하였습니다. Flat한 컨셉을 살려 조금 더 젊고 다가가기 쉬운 느낌을 살리고자 하였으며, 메인과 서브페이지 모두 전체적으로 여백을 넓게 주어 답답한 느낌을 없애고 시원함을 느낄 수 있도록 하였습니다.<br/><br/>사이트를 방문하는 이용자들의 목적을 파악하고 사용자의 편의를 생각하여 메뉴를 상단부터 차례로 재배치하였습니다.</p>
 			<p class="color">
 				<span class="co co1"></span>
 				<span class="co co2"></span>
@@ -50,7 +79,7 @@
 			<p class="view"><a href="Project-CHA/index.html" target="_blank">View Website</a></p>
 		</div>
 	</div>
-	<div class="section section03">
+	<div class="section wrapper" id="section3">
 		<div class="left">
 			<p class="preview">
 				<img src="images/p_kk.png" alt="미리보기" />
@@ -58,8 +87,12 @@
 		</div>
 		<div class="right">
 			<h2 class="tit">Nestle Kitkat<br />Official Website<br />Renewal</h2>
-			<p class="date">2016.01.23. ~ 02.03.</p>
-			<p class="desc">컨텐츠가 다양하지 않아 원페이지 세로스크롤 형태로 제작하였습니다. 유쾌하고 톡톡 튀는 브랜드 이미지에 맞추어 특색있는 디자인을 하고자 하였으며, 다양한 소비자층을 만족시키기 위해 사이트 곳곳에 시각적 재미를 느낄 수 있는 요소를 배치하였습니다. 메인 컬러는 브랜드 컬러인 red 하나만을 강조하여 사용함으로써 소비자들에게 인식되는 브랜드 아이덴티티를 강화하고자 하였습니다.</p>
+			<div class="date">
+				<p><strong>작업 기간</strong><span>14일</span></p>
+				<p><strong>참여도</strong><span>100%</span></p>
+				<p><strong>구성</strong><span>Main Page</span></p>
+			</div>
+			<p class="desc">컨텐츠가 다양하지 않아 원페이지 세로스크롤 형태로 제작하였습니다. 유쾌하고 톡톡 튀는 브랜드 이미지에 맞추어 특색있는 디자인을 하고자 하였으며, 다양한 소비자층을 만족시키기 위해 사이트 곳곳에 시각적 재미를 느낄 수 있는 요소를 배치하였습니다. <br/><br/>메인 컬러는 브랜드 컬러인 red 하나만을 강조하여 사용함으로써 소비자들에게 인식되는 브랜드 아이덴티티를 강화하고자 하였습니다.</p>
 			<p class="color">
 				<span class="co co1"></span>
 				<span class="co co2"></span>
@@ -68,16 +101,16 @@
 			<p class="view"><a href="Project-KK/index.html" target="_blank">View Website</a></p>
 		</div>
 	</div>
-	<div class="section section04">
+	<div class="section" id="section4">
 		<div class="wrapper">
 			<p class="greeting">감사합니다.</p>
 			<ul class="info">
 				<li><strong>Name</strong><span>강새별</span></li>
-				<li><strong>Mobile</strong><span>010-4134-5233</span></li>
-				<li><strong>Birth</strong><span>1990년 8월 12일</span></li>
+				<li><strong>Mobile</strong><span>+82 10-4134-5233</span></li>
+				<li><strong>Birth</strong><span>1990년 8월 12일(만 27세)</span></li>
 				<li><strong>Email</strong><span>kangsaebyeol@gmail.com</span></li>
-				<li><strong>Objective</strong><span>웹디자이너/웹퍼블리셔</span></li>
-				<li><strong>Address</strong><span>서울시 서대문구 홍은중앙로9가길 52</span></li>
+				<li><strong>Objective</strong><span>웹퍼블리셔</span></li>
+				<li><strong>Address</strong><span>서울시 서대문구 홍은중앙로9가길 52(홍은동)</span></li>
 			</ul>
 		</div>
 	</div>
