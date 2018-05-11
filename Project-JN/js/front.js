@@ -7,7 +7,18 @@ $(document).ready(function(){
 			event.preventDefault()
 		});
 
-		//intro
+		//intro - rs
+
+		$("#slider4").responsiveSlides({
+	        auto: true,
+	        pager: false,
+	        nav: true,
+	        speed: 500,
+	        namespace: "callbacks"
+  	    });
+
+
+		/*intro
 
 		$('.owl-carousel').owlCarousel({
 				animateOut: 'fadeOut',
@@ -28,7 +39,7 @@ $(document).ready(function(){
 		            items:1
 		        }
 		    }
-		});//intro
+		});intro*/
 
 
 		//notice board
