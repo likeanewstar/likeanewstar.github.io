@@ -18,7 +18,7 @@ body {
 	color: #444;
 }
 
-.mShow {
+.mShow1, .mShow2 {
   display: none;
 }
 
@@ -129,6 +129,7 @@ body {
 	color: #f6f6f6;
 	margin-bottom: 25px;
 	letter-spacing: 0.5px;
+  line-height: 1.1em;
 }
 
 #visual div.copy p.sub_copy {
@@ -263,6 +264,7 @@ div.alert ul.con ul li {
 #container div.notice{
 	padding: 50px 0;
 	position: relative;
+  height: 255px;
 }
 
 #container div.notice div.board {
@@ -443,7 +445,6 @@ div.alert ul.con ul li {
 /* service */
 
 #container div.service {
-  height: 210px;
   background-color: #881919; /*#222*/
   color: #f0f0f0;
   margin: 50px 0;
@@ -541,7 +542,7 @@ div.alert ul.con ul li {
 
 #container div.book {
   text-align: center;
-  margin-bottom: 115px;
+  margin-bottom: 50px;
 }
 
 #container div.book ul.book_tit li h2.title {
@@ -581,7 +582,6 @@ div.alert ul.con ul li {
   top: 0;
   right: 0;
   width: 79%;
-  height: 100%;
 }
 
 #container div.book ul.book_tit li ul li {

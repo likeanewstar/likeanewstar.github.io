@@ -15,7 +15,9 @@
 
 	#container div.alert ul.con { padding: 12px 3% 0 3%; }
 
-	#container div.notice div.board { width: 100%; }
+	#container div.notice { padding: 20px 0; }
+
+	#container div.notice div.board { width: 100%; /*height: 307px;*/}
 
 	#container div.notice div.intro { width: 100%; }
 
@@ -29,15 +31,13 @@
 
 	#container div.service div.mylib::before { display: none; }
 
-	#container div.book { margin-top: 140px; }
-
 	#container div.book ul.book_tit li { float: left; width: 25%;}
 
 	#container div.book ul.book_tit li h2.title { width: 100%; }
 
 	#container div.book ul.book_tit li h2.title span.active { top: 43px; right: 47%; }
 
-	#container div.book ul.book_tit li ul { width: 100%; top: 75px; }
+	#container div.book ul.book_tit li ul { width: 100%; top: 104%; }
 
 	#container div.book ul.book_tit li ul li { text-align: center; }
 
@@ -57,10 +57,16 @@
 
 @media screen and (max-width: 830px) {
 	
-	.mHide { display: none; }
+	.mHide2 { display: none; }
 }
 
 @media screen and (max-width: 768px) {
+
+	#header div.lnb_wrap { display: none; }
+
+	#header div.gnb_wrap h1.logo { width: 100%; padding: 10px 0; }
+
+	#header div.gnb_wrap nav.gnb { display: none; }
 
 	#visual div#search_bar fieldset { width: 301.188px; }
 
@@ -76,17 +82,17 @@
 
 	#container div.notice { padding: 20px 0; }
 
+	#container div.service div.svc { padding: 30px; padding-bottom: 0;}
+
 	#container div.service div.svc ul.lst li { width: 25%; margin-bottom: 10px;}
 
-	#container div.service div.mylib { padding: 20px 0 15px 33px; margin-bottom: 20px;}
+	#container div.service div.mylib { padding: 20px 0 15px 33px; }
 
 	#container div.service div.mylib ul.myLibList li { width: 50%; }
 
-	#container div.book { margin-top: 240px; }
-
 	#container div.banner ul.banner_lst li { width: 50%; }
 
-	.mShow { display: block; }
+	.mShow1 { display: block; }
 
 	#container div.book ul.book_tit li h2.title { line-height: 24px; font-size: 0.8125rem; }
 
@@ -95,12 +101,20 @@
 
 @media screen and (max-width: 480px) { 
 
+	.mShow2 { display: block; }
+
+	#container div.service div.svc ul.lst li { width: 33.33333333%; }
+
+	#container div.service div.mylib ul.myLibList li { width: 100%; }
+
 	#container div.banner ul.banner_lst li { width: 50%; }
 
 }
 
 
-@media screen and (max-width: 320px) {  }
+@media screen and (max-width: 320px) { 
+	#container div.banner ul.banner_lst li { width: 100%; }
+ }
 
 
 @media screen and (min-width: 1000px) {  }
