@@ -64,7 +64,7 @@ body {
 	background-image: url(../images/bg.jpg);
 	background-size: cover;
 	background-position: center bottom;
-	height: 900px;
+	height: 980px;
 	text-align: center;
 }
 
@@ -73,12 +73,12 @@ body {
 	top: 0;
 	left: 0;
 	background-color: rgba(0,0,0,0.6);
-	height: 900px;
+	height: 980px;
 	width: 100%;
 }
 
 #header div.bb div.wrapper {
-	padding-top: 240px;
+	padding-top: 340px;
 	box-sizing: border-box;
 }
 
@@ -118,7 +118,7 @@ body {
 }
 
 #header p.btn {
-	margin-top: 190px;
+	margin-top: 230px;
 }
 
 /* menu */
