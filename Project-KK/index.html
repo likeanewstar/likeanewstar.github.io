@@ -185,8 +185,31 @@
 			</p>
 		<section>
 		<section class="enjoy">
-			<iframe src="https://player.vimeo.com/video/87452228?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0" width="1920" height="1079" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<video autoplay muted loop id="myVideo">
+			  <source src="videos/kitkat.mp4" type="video/mp4">
+			  Your browser does not support HTML5 video.
+			</video>
+
+			<div class="content">
+			  <h1>We want to help shape a better<br/>and healthier world.</h1>
+			  <button id="myBtn" onclick="myFunction()">Pause</button>
+			</div>
+			<!--<iframe src="https://player.vimeo.com/video/87452228?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0" width="1920" height="1079" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 		</section>
+		<script>
+			var video = document.getElementById("myVideo");
+			var btn = document.getElementById("myBtn");
+
+			function myFunction() {
+			  if (video.paused) {
+			    video.play();
+			    btn.innerHTML = "Pause";
+			  } else {
+			    video.pause();
+			    btn.innerHTML = "Play";
+			  }
+			}
+		</script>
 		<p class="top"><a href="#">TOP</a></p>
 	</div>
 
@@ -227,5 +250,6 @@
 			</li>
 		</ul>
 	</footer>
+	<!--이부분에 js 삽입-->
 </body>
 </html>

@@ -107,6 +107,8 @@ $(document).ready(function(){
 			var pos = $('#header').position().top
 			$('html, body').animate({scrollTop:pos})
 	})
+
+	
 	
 	
 	
