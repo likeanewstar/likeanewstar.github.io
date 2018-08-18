@@ -64,7 +64,7 @@ body {
 	background-image: url(../images/bg.jpg);
 	background-size: cover;
 	background-position: center bottom;
-	height: 980px;
+	height: 900px;
 	text-align: center;
 }
 
@@ -73,12 +73,12 @@ body {
 	top: 0;
 	left: 0;
 	background-color: rgba(0,0,0,0.6);
-	height: 980px;
+	height: 900px;
 	width: 100%;
 }
 
 #header div.bb div.wrapper {
-	padding-top: 340px;
+	padding-top: 250px;
 	box-sizing: border-box;
 }
 
@@ -385,6 +385,7 @@ body {
 #container .create {
 	background-image: url(../images/create_bg.jpg);
 	background-attachment: fixed;
+	background-size: cover;
 	height: 460px;
 	position: relative;
 	color: #fff;
@@ -642,7 +643,7 @@ body {
 	position: relative;
 }
 
-#container .enjoy #myVideo {
+#container .enjoy .makingVideo {
     right: 0;
     bottom: 0;
     min-width: 100%; 
@@ -667,7 +668,7 @@ body {
 	padding-top: 170px;
 }
 
-#container .enjoy #myBtn {
+#container .enjoy .playBtn {
     width: 200px;
     font-size: 14px;
     text-transform: uppercase;
@@ -681,7 +682,7 @@ body {
     cursor: pointer;
 }
 
-#container .enjoy #myBtn:hover {
+#container .enjoy .playBtn:hover {
     background-color: #890000;
 	color: #fff;
 	border-color: #890000;

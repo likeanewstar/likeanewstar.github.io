@@ -185,22 +185,23 @@
 			</p>
 		<section>
 		<section class="enjoy">
-			<video autoplay muted loop id="myVideo">
+			<video autoplay muted loop preload="auto" class="makingVideo">
 			  <source src="videos/kitkat.mp4" type="video/mp4">
+			  <source src="videos/kitkat.ogv" type="video/ogg">
 			  Your browser does not support HTML5 video.
 			</video>
 
 			<div class="content">
 			  <h1>We want to help shape a better<br/>and healthier world.</h1>
-			  <button id="myBtn" onclick="myFunction()">Pause</button>
+			  <button class="playBtn" onclick="playVideo()">Pause</button>
 			</div>
 			<!--<iframe src="https://player.vimeo.com/video/87452228?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0" width="1920" height="1079" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 		</section>
 		<script>
-			var video = document.getElementById("myVideo");
-			var btn = document.getElementById("myBtn");
+			var video = document.querySelector(".makingVideo");
+			var btn = document.querySelector(".playBtn");
 
-			function myFunction() {
+			function playVideo() {
 			  if (video.paused) {
 			    video.play();
 			    btn.innerHTML = "Pause";
