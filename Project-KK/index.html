@@ -18,7 +18,6 @@
     <link href="css/style_v180822.css" rel="stylesheet" type="text/css" />
     <!-- JavaScript & jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-ui/jquery-ui.min.js"></script>
 </head>
 <body class="no-scroll">
     <!-- loading spinner -->
@@ -206,25 +205,25 @@
 			</p>
 			<p class="img"><img src="images/cacao.png" alt="chocolate" /></p>
 			<p class="btn">
-				<a href="#" class="ws">visit website</a>
-				<a href="#" class="fb">visit facebook</a>
+				<a href="#" class="btn btn-white">visit website</a>
+				<a href="#" class="btn btn-white">visit facebook</a>
 			</p>
 		</section>
         <!-- background video -->
 		<section class="enjoy">
-			<video autoplay muted loop preload="auto" class="makingVideo">
+			<video autoplay muted loop preload="auto" class="making-video">
 			  <source src="videos/kitkat.mp4" type="video/mp4">
 			  <source src="videos/kitkat.ogv" type="video/ogg">
 			  Your browser does not support HTML5 video.
 			</video>
 			<div class="content">
-			  <h2>We want to help shape a better<br/>and healthier world.</h2>
-			  <button class="play-btn" onclick="playVideo()">Pause</button>
+			  <h2> We want to help shape a better<br/>and healthier world.</h2>
+			  <a class="play-btn btn btn-white" onclick="playVideo()">Pause</a>
 			</div>
 		</section>
 		<script>
-			var video = document.querySelector(".makingVideo");
-			var btn = document.querySelector(".playBtn");
+			var video = document.querySelector(".making-video");
+			var btn = document.querySelector(".play-btn");
 
 			function playVideo() {
 			  if (video.paused) {
@@ -239,132 +238,109 @@
         <!-- top button -->
 		<a class="top-btn" href="#">TOP</a>
 	</main>
+	<!-- footer
+		<footer id="footer">
+			<a class="top-btn-ft" href="#"><img src="images/top-btn-ft.png" alt="top button" /></a>
+			<p class="desc">For early access and updates by email, please subscribe below</p>
+			<form>
+				<label for="user_mail"></label>
+				<input id="user_mail" class="email" type="email" placeholder="Email Adress" />
+				<input class="send" type="submit" value="SEND" />
+			</form>
+			<p class="small_desc">We respect your privacy and will only use your email for news and updates</p>
+			<ul class="sub_menu">
+				<li><a href="#">ABOUT</a></li>
+				<li><a href="#">GUIDELINES</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">TERMS</a></li>
+				<li><a href="#">PRIVACY</a></li>
+			</ul>
+			<p class="copyright">© 2018 Nestle Kitkat Inc. All rights reserved.</p>
+		</footer> -->
     <!-- footer -->
 	<footer id="footer">
-		<a class="top-btn-ft" href="#"><img src="images/f_scrl.png" alt="top button" /></a>
+		<a class="top-btn-ft" href="#"><img src="images/top-btn-ft.png" alt="top button" /></a>
 		<ul class="footer_lst">
 			<li>
-				<h1 class="title">Nestle KitKat</h1>
+				<h3 class="title">Nestle KitKat</h3>
 				<p class="add">800 North Brand Blvd. <br />Glendale, CA, 91203 <br />United States</p>
 				<p class="tel">+1-818-549 60 00</p>
 			</li>
 			<li>
-				<h1 class="title">Contact Nestle</h1>
+				<h3 class="title">Contact Nestle</h3>
 				<p>hello@nestle.com</p>
-				<p>bussinessenquiries@nestle.com<br />jobs@nestle.com</p>
+				<p>bussiness@nestle.com<br />jobs@nestle.com</p>
 				<p>Nestle/USA<br />nestle.com</p>
 			</li>
 			<li>
-				<h1 class="title">Follow Us</h1>
+				<h3 class="title">Follow Us</h3>
 				<ul class="sns">
 					<li>
 						<span>Pinterest</span>
-						<a href="#"><i class="fa fa-pinterest-p"></i></a>
+						<a href="#"><i class="fab fa-pinterest-p"></i></i></a>
 					</li>
 					<li>
 						<span>Youtube</span>
-						<a href="#"><i class="fa fa-youtube-play"></i></a>
+						<a href="#"><i class="fab fa-youtube"></i></a>
 					</li>
 					<li>
-						<span>Facebook</span>
-						<a href="#"><i class="fa fa-facebook"></i></a>
+						<span>Dribble</span>
+						<a href="#"><i class="fab fa-dribbble"></i></a>
 					</li>
 					<li>
 						<span>Twitter</span>
-						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fab fa-twitter"></i></i></a>
 					</li>
 				</ul>
 			</li>
 		</ul>
 	</footer>
-	<script src="js/front_v180822.js"></script>
+	<script src="js/front_v180823.js"></script>
 	<script>
-    'use strict';
-    
-    $(document).on('click', 'a[href="#"]', function(e) {
-        e.preventDefault();
-    });
-    
-    // disappear spinner
-    setTimeout(function() {$('body').removeClass();}, 1100);
-    setTimeout(function() {
-        $('.spinner').animate({'opacity': 0}, function() {
-            $(this).css({'display': 'none'})
-        });
-    }, 1200);
-    
-    // background image move effect
-	setMoveReverse();
-	function setMoveReverse() {
-        var startX = 0;
-        var startY = 0;
-    	var delX = 0;
-        var delY = 0;
-        var offsetX = 0;
-        var offsetY = 0;
-        
-        $('#header').on('mouseenter', function(e) {
-            $(this).find('.main-bg').css({'transition': 'none'});
-            startX = e.clientX;
-            startY = e.clientY;
-            offsetX = $(this).find('.main-bg').position().left;
-            offsetY = $(this).find('.main-bg').position().top;
-        }) // end of mouseenter
-        
-    	$('#header').on('mousemove', function(e) {
-        	e.preventDefault();
-            delX = e.clientX - startX;
-            delY = e.clientY - startY;
-            $(this).find('.main-bg').css({'left': (offsetX - delX / 30) + 'px', 'top': (offsetY - delY / 50) + 'px'});
-            //$(this).find('.main-bg').css({'transform': 'translate(' + (offsetX - delX / 20) + 'px, ' + (offsetY - delY / 60) + 'px)'});
-        }); // end of mousemove
-        
-        $('#header').on('mouseleave', function(e) {
-            offsetX = -50;
-            offsetY = -50;
-            $(this).find('.main-bg').css({'transition': 'all 0.5s'});
-            $(this).find('.main-bg').css({'left': offsetX + 'px', 'top': offsetY + 'px'});
-        }); // end of mouseleave
-    } // end of setMoveReverse
-        
-    // break rate count
-    $.fn.startRateCount = function(options) {
-        var settings = $.extend({
-            countGap: 729,
-            timerSpeed: 1000,
-            useComma: true
-        }, options)
+	'use strict';
+	$.fn.setCheckShow = function(options) {
+	    var settings = $.extend({
+	        classPrefix: 'scroll'
+	    }, options);
+	    
+	    this.each(function() {
+	        var $selector = $(this);
+	        var scrollTop = 0;
+	        var offsetTop = 0;
+	        var windowHeight = 0;
+	        var elementHeight = 0;
+	        var startShow = 0;
+	        var endShow = 0;
+	        var classPrefix = settings.classPrefix;
 
-        var $selector = $(this);
-        var numberNow = 0;
-        var countGap = settings.countGap;
-        var timerSpeed = settings.timerSpeed;
-        var useComma = settings.useComma;
-        var numberNowComma = '';
-        var today = new Date();
-        var yyyy = today.getFullYear();
-        var mm = '0' + (today.getMonth() + 1); // January is 0.
-        var dd = today.getDate();
+	        checkShow();
+	        $(window).on('scroll resize', function() {
+	            checkShow();
+	        }); // end of scroll
+	        
+	        function checkShow() {
+	            scrollTop = $(document).scrollTop();
+	            offsetTop = $selector.offset().top;
+	            windowHeight = $(window).height();
+	            elementHeight = $selector.outerHeight();
+	            startShow = offsetTop - windowHeight + 200; // offset().top - 브라우저창의 height = 나타나는 순간의 스크롤 값
+	            endShow = offsetTop + elementHeight;
 
-        // 초기값
-        numberNow = (yyyy + mm + dd) * countGap;
-        updateRate();
-
-        setInterval(function() {updateRate();}, timerSpeed);
-
-        function updateRate() {
-            if (useComma === true) {
-                numberNowComma = numberNow.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                $selector.text(numberNowComma);
-            } else {
-                $selector.text(numberNow);
-            }
-            numberNow += countGap;
-        } // end of updateBreakRate
-
-    } // end of jquery function - startRateCount
-
-    $('p.counter').startRateCount();
+	            if (scrollTop < startShow) { // down
+	                $selector.removeClass(classPrefix + '-up' + ' ' + classPrefix + '-show');
+	                $selector.addClass(classPrefix + '-down');
+	            } else if (scrollTop > endShow) { // up
+	                $selector.removeClass(classPrefix + '-down' + ' ' + classPrefix + '-show');
+	                $selector.addClass(classPrefix + '-up');
+	            } else { // show
+	                $selector.removeClass(classPrefix + '-up' + ' ' + classPrefix + '-down');
+	                $selector.addClass(classPrefix + '-show');
+	            }
+	       } // end of checkShow
+	       
+	    }); // end of each
+	}  // end of jquery function - setCheckShow
+	$('section h2.tit, section p.desc').setCheckShow();
     </script>
 </body>
 </html>

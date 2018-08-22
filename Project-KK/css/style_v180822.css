@@ -68,6 +68,9 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
 
 /* container */
 #container {display: block;/* main 태그 브라우저 호환을 위해 사용 */}
+#container section h2.tit {transform: translate(0, 25px); opacity: 0; transition: all .5s;}
+#container section p.desc {transform: translate(0, 10px); opacity: 0; transition: all .5s;}
+#container section h2.scroll-show, #container section p.scroll-show {transform: translate(0, 0); opacity: 1;}
 
 /* kitkat studio */
 #container .studio {background: url(../images/studio_bg.png) left 180px no-repeat; box-sizing: border-box; margin-bottom:114px; padding: 160px 10% 0;}
@@ -424,7 +427,6 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
 }
 
 #container .cocoa-plan p.btn a:hover {
-	background-color: #890000;
 	color: #fff;
 }
 
@@ -438,7 +440,7 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
 	text-align: center;
 }
 
-#container .enjoy .makingVideo {
+#container .enjoy .making-video {
     right: 0;
     bottom: 0;
     min-width: 100%; 
@@ -462,7 +464,7 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
 	font-size: 70px;
 	font-style: italic;
 	font-weight: 100;
-	
+	color: #fff;
 }
 
 #container .enjoy .play-btn {
@@ -470,18 +472,13 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 12px;
+    padding: 6px;
     margin-top: 20px;
+    border: 1px solid #fff;
     border-radius: 5px;
-    background: #b12011;
+    background: transparent;
     color: #fff;
     cursor: pointer;
-}
-
-#container .enjoy .play-btn:hover {
-    background-color: #890000;
-	color: #fff;
-	transition: all 0.5s ;
 }
 
 /* top button */
@@ -489,9 +486,100 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
 #container a.top-btn:hover {width: 80px;}
 
 /* footer */
+/*
+#footer {position: relative;
+    color: #fff;
+    text-align: center;
+    background: #343434;
+}
+
+#footer a.top-btn-ft {position: absolute; top: 2px; left: 50%; transform: translate(-50%, -100%);}
+#footer .desc {
+    padding: 50px 0 28px;
+}
+
+#footer form .email {
+    padding-left: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 320px;
+    height: 60px;
+    opacity: 0.7;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #000;
+    transition: 0.5s all;
+}
+
+#footer form .email:hover {
+    opacity: 0.8;
+}
+
+#footer form .email:focus {
+    opacity: 1;
+}
+
+#footer form .send {
+    width: 170px;
+    height: 60px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 19px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    background-color: #b12011;
+    transition: 0.5s all;
+}
+
+#footer form .send:hover {
+    background-color: #890000;
+} 
+
+#footer .small_desc {
+    font-size: 12px;
+    padding-top: 28px;
+}
+
+#footer .sub_menu {
+    padding: 40px 0;
+}
+
+#footer .sub_menu li {
+    display: inline-block;
+    padding: 0 30px;
+}
+
+#footer .sub_menu li a {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 49px;
+    letter-spacing: 1px;
+    transition: 0.3s all;
+}
+
+#footer .sub_menu li a:hover {
+    color: black;
+}
+
+#footer .copyright {
+    padding-bottom: 50px;
+    font-size: 12px;
+}
+*/
+
+
+
+/* footer */
 #footer {
     position: relative;
-	padding-bottom: 60px;
+	padding: 60px 0;
 }
 
 #footer a.top-btn-ft {position: absolute; top: 2px; left: 50%; transform: translate(-50%, -100%);}
@@ -499,7 +587,6 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
 #footer ul.footer_lst {
 	width: 65%;
 	margin: 0 auto;
-	padding-top: 30px;
 }
 
 #footer ul.footer_lst>li {
@@ -520,10 +607,10 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
 	background: none;
 }
 
-#footer ul.footer_lst>li h1.title {
-	font-size: 24px;
-	color: #222;
+#footer ul.footer_lst>li h3.title {
 	margin-bottom: 55px;
+	font-size: 24px;
+	color: #333;
 }
 
 #footer ul.footer_lst>li>p {
@@ -531,18 +618,18 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
 }
 
 #footer ul.footer_lst>li>p,
-#footer ul.footer_lst>li>ul.sns span {
+#footer ul.footer_lst li ul.sns span {
 	font-weight: 300;
 	font-size: 16px;
 	line-height: 1.5em;
 	letter-spacing: 1px;
 }
 
-#footer ul.footer_lst>li>ul.sns li {
+#footer ul.footer_lst li ul.sns li {
 	width:80%
 }	
 
-#footer ul.footer_lst>li>ul.sns li span {
+#footer ul.footer_lst li ul.sns li span {
 	display: inline-block;
 	line-height: 35px;
 	margin-bottom: 20px;
@@ -550,7 +637,7 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
 	width: 70%;
 }
 
-#footer ul.footer_lst>li>ul.sns li a {
+#footer ul.footer_lst li ul.sns li a {
 	display: inline-block;
 	float: left;
 	font-size: 20px;
@@ -561,9 +648,18 @@ a.btn-red:hover, a.btn-red:focus {color: #b12011; background: none;}
 	border-radius: 50%;
 	background-color: #000;
 	color: #fff;
-	transition: all 0.5s;
+	transition: all .3s;
 }
 
-#footer ul.footer_lst>li>ul.sns li a:hover {
+#footer ul.footer_lst li ul.sns li a:hover {
 	background-color: #890000;
 }
+
+/*
+
+color guide
+
+#b12011 - 빨강
+#890000 - 진빨강
+
+*/
