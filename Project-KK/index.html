@@ -1,54 +1,72 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>KITKAT</title>
-	<link href="favicon.ico" rel="shortcut icon" />
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,100,300' rel='stylesheet' type='text/css' />
-	<link href="fonts/stylesheet.css" rel="stylesheet" type="text/css" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
-	<link href="font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/front.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nestle Kitkat">
+    <meta name="apple-mobile-web-app-title" content="KITKAT" />
+    <title>KITKAT</title>
+    <meta name="description" content="You know what to do, just click/tap and... Have a break, have a KITKAT.">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Webfont -->
+    <link href="fonts/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,100,300' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />	
+    <link href="css/style_v180822.css" rel="stylesheet" type="text/css" />
+    <!-- JavaScript & jQuery -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui/jquery-ui.min.js"></script>
 </head>
-<body>
+<body class="no-scroll">
+    <!-- loading spinner -->
+    <div class="spinner">
+        <img src="images/spin.png" aria-label="loading" alt="" />
+    </div>
+    <!-- header -->
 	<header id="header">
-		<div class="bb">
-			<div class="wrapper">
-				<h1 class="logo"><a href="#"><img src="images/logo.png" alt="kitkat logo" /></a></h1>
-				<p class="pull">
-					<a href="#"><img src="images/pull01.png" alt="pull icon" /></a>
-					<span><img src="images/pull03.png" alt="pull" /></span>
-				</p>
-				<p class="main_copy"><img src="images/kitkat.png" alt="main copy" /></p>
-				<p class="sub_copy"><span>Have</span><span>a break, have a KitKat.</span></p>
-				<p class="btn"><a href="#"><img src="images/scrl.png" alt="스크롤" /></a></p>
-			</div>
-		</div>
-	</header>
-
+        <img class="main-bg" src="images/bg.jpg" alt="kitkat chocolate background image">
+        <div class="layer-mask"></div>
+        <h1 class="logo"><a href="#"><img src="images/logo.png" alt="Nestle Kitkat" /></a></h1>
+        <div class="menu-open-wrap">
+        	<a class="menu-open" href="#"><img src="images/open-icon.png" alt="menu open icon" /></a>
+        </div>
+        <div class="copy-area">
+            <h2 class="main-copy"><img class="main-copy" src="images/kitkat.png" alt="main copy" /></h2>
+			<p class="sub-copy"><span>Have</span><span>a break, have a KitKat.</span></p>
+        </div>
+        <a class="scroll-down-btn" href="#"><img src="images/scroll-btn.png" alt="arrow down" /><i class="fas fa-arrow-down"></i></a>
+    </header>
+    <!-- menu -->
 	<nav class="menu">
-		<ul class="gnb">
-			<li><a href="#">KitKat Studio<span></span></a></li>
-			<li><a href="#">Break Emoji</a></li>
-			<li><a href="#">About KitKat</a></li>
-			<li><a href="#">Product</a></li>
-			<li><a href="#">Better Chocolate</a></li>
-			<li><a href="#">Cocoa Plan</a></li>
+		<ul class="gnb" role="menu">
+			<li><a href="#" role="menuitem">KitKat Studio<span></span></a></li>
+			<li><a href="#" role="menuitem">Break Emoji</a></li>
+			<li><a href="#" role="menuitem">About KitKat</a></li>
+			<li><a href="#" role="menuitem">Product</a></li>
+			<li><a href="#" role="menuitem">Better Chocolate</a></li>
+			<li><a href="#" role="menuitem">Cocoa Plan</a></li>
 		</ul>
-		<ul class="sns clearfix">
-			<li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-			<li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-			<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-		</ul>
-		<p class="close"><a href="#">CLOSE</a></p>
+		<div class="sns-wrap" role="menu">
+			<h3 class="sns-tit">Follow us</h3>
+			<ul class="sns">
+				<li><a href="#" role="menuitem">dribbble</a></li>
+				<li><a href="#" role="menuitem">behance</a></li>
+				<li><a href="#" role="menuitem">facebook</a></li>
+				<li><a href="#" role="menuitem">instagram</a></li>
+				<li><a href="#" role="menuitem">twitter</a></li>
+				<li><a href="#" role="menuitem">linkedin</a></li>
+			</ul>
+		</div>
+		<a class="menu-close" href="#">CLOSE</a>
 	</nav>
-
-	<div id="container">
-		<section class="studio wrapper clearfix con1">
-			<h1 class="tit">KitKat studio</h1>
+    <!-- main container -->
+	<main id="container">
+        <!-- kitkat studio -->
+		<section class="studio wrapper clearfix menu01">
+			<h2 class="tit">KitKat studio</h2>
 			<p class="desc">
 				A celebration of food, flavour, and most importantly…creativity!<br />
 				If you love a KitKat, you’re in for a truly unique experience.<br />
@@ -58,17 +76,18 @@
 				or a delectable treat for yourself!
 			</p>
 		</section>
-		<section class="count">
+        <!-- breaks taken this year -->
+		<section class="break-rate">
 			<div class="wrapper">
 				<h2 class="tit">breaks taken this year</h2>
-				<p id="counter" class="count">1,233,613,039</p>
-				<script src="js/kitkat-en.js"></script>
+				<p class="counter">0</p>
 				<p class="icon"><img src="images/rabbit.png" alt="rabbit icon" /></p>
 			</div>
 		</section>
-		<section class="emoji con2">
+        <!-- the break emoji -->
+		<section class="emoji menu02">
 			<div class="wrapper">
-				<h1 class="tit">The break emoji</h1>
+				<h2 class="tit">The break emoji</h2>
 				<p class="desc">
 					For all of you who love to break, we are asking you <br />
 					for a little support to help our campaign. <br />
@@ -77,19 +96,18 @@
 					Please help us by signing our petition, or tweet your support <br />
 					with #thebreakemoji and show the world how you break!
 				</p>
-				<p class="btn">
-					<a href="#" class="view">view video</a>
+				<p class="btn-con">
+					<a href="#" class="btn btn-white">view video</a>
 					<span class="or">or</span>
-					<a href="#" class="sign"><strong>sign the petition</strong></a>
+					<a href="#" class="btn btn-red"><strong>sign the petition</strong></a>
 				</p>
 			</div>
-			<div class="popupVid">
-				<iframe id="kitkat" src="https://player.vimeo.com/video/152392621?title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				<!--<iframe width="800" height="450" src="https://www.youtube.com/embed/O4Ur4k-uhnw" frameborder="0" allowfullscreen></iframe>
-				<iframe width="853" height="480" src="https://www.youtube.com/embed/kUXrJusvLQM" frameborder="0" allowfullscreen></iframe>-->
+			<div class="popup-vid">
+				<iframe id="kitkat" src="https://player.vimeo.com/video/152392621?title=0&byline=0&portrait=0" width="800" height="450"></iframe>
 				<a href="#" class="close">CLOSE</a>
 			</div>
 		</section>
+        <!-- create your break -->
 		<section class="create">
 			<div class="bb">
 				<p class="at">
@@ -97,25 +115,28 @@
 					<strong>At KitKat Studio</strong>
 					<span></span>
 				</p>
-				<h1 class="title">create your break</h1>
+				<h2 class="title">create your break</h2>
 			</div>
 		</section>
-		<section class="history wrapper clearfix con3">
+        <!-- history of kitkat -->
+		<section class="history wrapper clearfix menu03">
 			<div class="float">
-				<p class="hi"><img src="images/hi.png" alt="hi there" /></p>
+				<h2 class="say-hi"><img src="images/hi.png" alt="hi there" /></h2>
 				<p class="desc desc1">This product was <br />developed as a four-</p>
 				<p class="desc desc2">
 					finger wafer crisp, initially launched in London and the South East
 					in September 1935 as  'Rowntree’s Chocolate Crisp' and re-named
 					two years later as KitKat Chocolate Crisp. <br />
-					<!--Within two years of launch, -->KitKat was established as Rowntree’s
+					KitKat was established as Rowntree’s
 					leading product, a position that it has maintained ever since.
 					During the war, KitKat was portrayed as a valuable wartime food
 					and advertising described the brand as “What active people need”.
 				</p>
 			</div>
 		</section>
-		<section class="product wrapper con4">
+        <!-- product list -->
+		<section class="product wrapper menu04">
+			<h2 class="hide">product list</h2>
 			<p class="arrow"><img src="images/arrow.png" alt="arrow" /></p>
 			<ul class="text">
 				<li class="on">
@@ -131,50 +152,55 @@
 					<p class="desc">The break with a bit more bite<br />#BreakFromGravity</p>
 				</li>
 				<li>
-					<h2 class="name">Snap & Share</h2>
+					<h2 class="name">Snap &amp; Share</h2>
 					<p class="desc">A big bar of extra chocolaty KitKat<br />#BreakFromGravity</p>
 				</li>
 			</ul>
 			<div class="slide"></div>
-			<p class="hand"><img src="images/hand.png" alt="hand" /></p>
-			<p class="finger"><img src="images/finger.png" alt="finger" /></p>
+			<div class="hand-wrap clearfix">
+				<img class="hand" src="images/hand.png" alt="hand" />
+				<img class="finger" src="images/finger.png" alt="finger" />
+			</div>
+			
 			<p class="button">
 				<a href="#" class="prev"><img src="images/left.png" alt="left button" /></a>
 				<a href="#" class="next"><img src="images/right.png" alt="right button" /></a>
 			</p>
 		</section>
-		<section class="better con5">
+        <!-- better chocolate -->
+		<section class="better-chocolate menu05">
 			<div class="bb">
 				<div class="wrapper">
-					<h1 class="tit">Better Chocolate</h1>
+					<h2 class="tit">Better Chocolate</h2>
 					<p class="desc">We are here where we believe we will meet people like you, who sincerely love <br /> chocolate and whose values resonate well with ours.</p>
 					<ul class="better">
 						<li>
 							<p class="icon"><img src="images/better01.png" alt="icon" /></p>
-							<h2 class="better_tit">Better Plants</h2>
+							<h2 class="better-tit">Better Plants</h2>
 							<p class="txt">Min. 1.4 million higher-yielding <br />trees provided <br />to cocoa farmers in 2015.</p>
 						</li>
 						<li>
 							<p class="icon"><img src="images/better02.png" alt="icon" /></p>
-							<h2 class="better_tit">Better Cocoa</h2>
+							<h2 class="better-tit">Better Cocoa</h2>
 							<p class="txt">100,000 tons of cocoa  <br />will be sourced through  <br />the Nestle Cocoa Plan in 2015. </p>
 						</li>
 						<li>
 							<p class="icon"><img src="images/better03.png" alt="icon" /></p>
-							<h2 class="better_tit">Better Schools</h2>
+							<h2 class="better-tit">Better Schools</h2>
 							<p class="txt">40 schools on Cote  <br />d'Ivoire over 2012-2014.</p>
 						</li>
 						<li>
 							<p class="icon"><img src="images/better04.png" alt="icon" /></p>
-							<h2 class="better_tit">Better Farming</h2>
+							<h2 class="better-tit">Better Farming</h2>
 							<p class="txt">Min. 30,000 cocoa farmers  <br />will be trained <br />on good and sustainable <br /> cocoa farming practices in 2015.</p>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</section>
-		<section class="cocoaPlan con6">
-			<h1 class="tit">Nestle cocoa plan</h1>
+        <!-- cocoa plan campaign -->
+		<section class="cocoa-plan menu06">
+			<h2 class="tit">Nestle cocoa plan</h2>
 			<p class="desc">
 				Improving the lives of cocoa farmers and the quality of their products <br />Supporting farmers for better chocolate
 			</p>
@@ -183,19 +209,18 @@
 				<a href="#" class="ws">visit website</a>
 				<a href="#" class="fb">visit facebook</a>
 			</p>
-		<section>
+		</section>
+        <!-- background video -->
 		<section class="enjoy">
 			<video autoplay muted loop preload="auto" class="makingVideo">
 			  <source src="videos/kitkat.mp4" type="video/mp4">
 			  <source src="videos/kitkat.ogv" type="video/ogg">
 			  Your browser does not support HTML5 video.
 			</video>
-
 			<div class="content">
-			  <h1>We want to help shape a better<br/>and healthier world.</h1>
-			  <button class="playBtn" onclick="playVideo()">Pause</button>
+			  <h2>We want to help shape a better<br/>and healthier world.</h2>
+			  <button class="play-btn" onclick="playVideo()">Pause</button>
 			</div>
-			<!--<iframe src="https://player.vimeo.com/video/87452228?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0" width="1920" height="1079" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 		</section>
 		<script>
 			var video = document.querySelector(".makingVideo");
@@ -211,11 +236,12 @@
 			  }
 			}
 		</script>
-		<p class="top"><a href="#">TOP</a></p>
-	</div>
-
+        <!-- top button -->
+		<a class="top-btn" href="#">TOP</a>
+	</main>
+    <!-- footer -->
 	<footer id="footer">
-		<p class="scrl"><a href="#"><img src="images/f_scrl.png" alt="scroll button" /></a></p>
+		<a class="top-btn-ft" href="#"><img src="images/f_scrl.png" alt="top button" /></a>
 		<ul class="footer_lst">
 			<li>
 				<h1 class="title">Nestle KitKat</h1>
@@ -251,6 +277,94 @@
 			</li>
 		</ul>
 	</footer>
-	<!--이부분에 js 삽입-->
+	<script src="js/front_v180822.js"></script>
+	<script>
+    'use strict';
+    
+    $(document).on('click', 'a[href="#"]', function(e) {
+        e.preventDefault();
+    });
+    
+    // disappear spinner
+    setTimeout(function() {$('body').removeClass();}, 1100);
+    setTimeout(function() {
+        $('.spinner').animate({'opacity': 0}, function() {
+            $(this).css({'display': 'none'})
+        });
+    }, 1200);
+    
+    // background image move effect
+	setMoveReverse();
+	function setMoveReverse() {
+        var startX = 0;
+        var startY = 0;
+    	var delX = 0;
+        var delY = 0;
+        var offsetX = 0;
+        var offsetY = 0;
+        
+        $('#header').on('mouseenter', function(e) {
+            $(this).find('.main-bg').css({'transition': 'none'});
+            startX = e.clientX;
+            startY = e.clientY;
+            offsetX = $(this).find('.main-bg').position().left;
+            offsetY = $(this).find('.main-bg').position().top;
+        }) // end of mouseenter
+        
+    	$('#header').on('mousemove', function(e) {
+        	e.preventDefault();
+            delX = e.clientX - startX;
+            delY = e.clientY - startY;
+            $(this).find('.main-bg').css({'left': (offsetX - delX / 30) + 'px', 'top': (offsetY - delY / 50) + 'px'});
+            //$(this).find('.main-bg').css({'transform': 'translate(' + (offsetX - delX / 20) + 'px, ' + (offsetY - delY / 60) + 'px)'});
+        }); // end of mousemove
+        
+        $('#header').on('mouseleave', function(e) {
+            offsetX = -50;
+            offsetY = -50;
+            $(this).find('.main-bg').css({'transition': 'all 0.5s'});
+            $(this).find('.main-bg').css({'left': offsetX + 'px', 'top': offsetY + 'px'});
+        }); // end of mouseleave
+    } // end of setMoveReverse
+        
+    // break rate count
+    $.fn.startRateCount = function(options) {
+        var settings = $.extend({
+            countGap: 729,
+            timerSpeed: 1000,
+            useComma: true
+        }, options)
+
+        var $selector = $(this);
+        var numberNow = 0;
+        var countGap = settings.countGap;
+        var timerSpeed = settings.timerSpeed;
+        var useComma = settings.useComma;
+        var numberNowComma = '';
+        var today = new Date();
+        var yyyy = today.getFullYear();
+        var mm = '0' + (today.getMonth() + 1); // January is 0.
+        var dd = today.getDate();
+
+        // 초기값
+        numberNow = (yyyy + mm + dd) * countGap;
+        updateRate();
+
+        setInterval(function() {updateRate();}, timerSpeed);
+
+        function updateRate() {
+            if (useComma === true) {
+                numberNowComma = numberNow.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                $selector.text(numberNowComma);
+            } else {
+                $selector.text(numberNow);
+            }
+            numberNow += countGap;
+        } // end of updateBreakRate
+
+    } // end of jquery function - startRateCount
+
+    $('p.counter').startRateCount();
+    </script>
 </body>
 </html>
