@@ -11,336 +11,294 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <!-- Webfont -->
     <link href="fonts/stylesheet.css" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,100,300' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/reset.css" />	
-    <link href="css/style_v180822.css" rel="stylesheet" type="text/css" />
+    <link href="css/style_v180824.css" rel="stylesheet" type="text/css" />
     <!-- JavaScript & jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body class="no-scroll">
-    <!-- loading spinner -->
-    <div class="spinner">
-        <img src="images/spin.png" aria-label="loading" alt="" />
-    </div>
-    <!-- header -->
-	<header id="header">
-        <img class="main-bg" src="images/bg.jpg" alt="kitkat chocolate background image">
-        <div class="layer-mask"></div>
-        <h1 class="logo"><a href="#"><img src="images/logo.png" alt="Nestle Kitkat" /></a></h1>
-        <div class="menu-open-wrap">
-        	<a class="menu-open" href="#"><img src="images/open-icon.png" alt="menu open icon" /></a>
+    <div id="wrap">
+        <!-- loading spinner -->
+        <div class="spinner">
+            <img src="images/spin.png" aria-label="loading" alt="" />
         </div>
-        <div class="copy-area">
-            <h2 class="main-copy"><img class="main-copy" src="images/kitkat.png" alt="main copy" /></h2>
-			<p class="sub-copy"><span>Have</span><span>a break, have a KitKat.</span></p>
-        </div>
-        <a class="scroll-down-btn" href="#"><img src="images/scroll-btn.png" alt="arrow down" /><i class="fas fa-arrow-down"></i></a>
-    </header>
-    <!-- menu -->
-	<nav class="menu">
-		<ul class="gnb" role="menu">
-			<li><a href="#" role="menuitem">KitKat Studio<span></span></a></li>
-			<li><a href="#" role="menuitem">Break Emoji</a></li>
-			<li><a href="#" role="menuitem">About KitKat</a></li>
-			<li><a href="#" role="menuitem">Product</a></li>
-			<li><a href="#" role="menuitem">Better Chocolate</a></li>
-			<li><a href="#" role="menuitem">Cocoa Plan</a></li>
-		</ul>
-		<div class="sns-wrap" role="menu">
-			<h3 class="sns-tit">Follow us</h3>
-			<ul class="sns">
-				<li><a href="#" role="menuitem">dribbble</a></li>
-				<li><a href="#" role="menuitem">behance</a></li>
-				<li><a href="#" role="menuitem">facebook</a></li>
-				<li><a href="#" role="menuitem">instagram</a></li>
-				<li><a href="#" role="menuitem">twitter</a></li>
-				<li><a href="#" role="menuitem">linkedin</a></li>
-			</ul>
-		</div>
-		<a class="menu-close" href="#">CLOSE</a>
-	</nav>
-    <!-- main container -->
-	<main id="container">
-        <!-- kitkat studio -->
-		<section class="studio wrapper clearfix menu01">
-			<h2 class="tit">KitKat studio</h2>
-			<p class="desc">
-				A celebration of food, flavour, and most importantly…creativity!<br />
-				If you love a KitKat, you’re in for a truly unique experience.<br />
-				Create your break by selecting your favourite chocolate, <br />
-				add up to three delicious signature ingredients, <br />
-				and top it off with some personalised packaging - perfect for a gift <br />
-				or a delectable treat for yourself!
-			</p>
-		</section>
-        <!-- breaks taken this year -->
-		<section class="break-rate">
-			<div class="wrapper">
-				<h2 class="tit">breaks taken this year</h2>
-				<p class="counter">0</p>
-				<p class="icon"><img src="images/rabbit.png" alt="rabbit icon" /></p>
-			</div>
-		</section>
-        <!-- the break emoji -->
-		<section class="emoji menu02">
-			<div class="wrapper">
-				<h2 class="tit">The break emoji</h2>
-				<p class="desc">
-					For all of you who love to break, we are asking you <br />
-					for a little support to help our campaign. <br />
-					A campaign to get the word ‘break’ recognized <br />
-					as an emoji and added to the emoji lexicon.<br />
-					Please help us by signing our petition, or tweet your support <br />
-					with #thebreakemoji and show the world how you break!
-				</p>
-				<p class="btn-con">
-					<a href="#" class="btn btn-white">view video</a>
-					<span class="or">or</span>
-					<a href="#" class="btn btn-red"><strong>sign the petition</strong></a>
-				</p>
-			</div>
-			<div class="popup-vid">
-				<iframe id="kitkat" src="https://player.vimeo.com/video/152392621?title=0&byline=0&portrait=0" width="800" height="450"></iframe>
-				<a href="#" class="close">CLOSE</a>
-			</div>
-		</section>
-        <!-- create your break -->
-		<section class="create">
-			<div class="bb">
-				<p class="at">
-					<span></span>
-					<strong>At KitKat Studio</strong>
-					<span></span>
-				</p>
-				<h2 class="title">create your break</h2>
-			</div>
-		</section>
-        <!-- history of kitkat -->
-		<section class="history wrapper clearfix menu03">
-			<div class="float">
-				<h2 class="say-hi"><img src="images/hi.png" alt="hi there" /></h2>
-				<p class="desc desc1">This product was <br />developed as a four-</p>
-				<p class="desc desc2">
-					finger wafer crisp, initially launched in London and the South East
-					in September 1935 as  'Rowntree’s Chocolate Crisp' and re-named
-					two years later as KitKat Chocolate Crisp. <br />
-					KitKat was established as Rowntree’s
-					leading product, a position that it has maintained ever since.
-					During the war, KitKat was portrayed as a valuable wartime food
-					and advertising described the brand as “What active people need”.
-				</p>
-			</div>
-		</section>
-        <!-- product list -->
-		<section class="product wrapper menu04">
-			<h2 class="hide">product list</h2>
-			<p class="arrow"><img src="images/arrow.png" alt="arrow" /></p>
-			<ul class="text">
-				<li class="on">
-					<h2 class="name">4 Finger</h2>
-					<p class="desc">So good we sent it into space.<br />#BreakFromGravity</p>
-				</li>
-				<li>
-					<h2 class="name">2 Finger</h2>
-					<p class="desc">The good ol' breaktime classic<br />#BreakFromGravity</p>
-				</li>
-				<li>
-					<h2 class="name">Crunky</h2>
-					<p class="desc">The break with a bit more bite<br />#BreakFromGravity</p>
-				</li>
-				<li>
-					<h2 class="name">Snap &amp; Share</h2>
-					<p class="desc">A big bar of extra chocolaty KitKat<br />#BreakFromGravity</p>
-				</li>
-			</ul>
-			<div class="slide"></div>
-			<div class="hand-wrap clearfix">
-				<img class="hand" src="images/hand.png" alt="hand" />
-				<img class="finger" src="images/finger.png" alt="finger" />
-			</div>
-			
-			<p class="button">
-				<a href="#" class="prev"><img src="images/left.png" alt="left button" /></a>
-				<a href="#" class="next"><img src="images/right.png" alt="right button" /></a>
-			</p>
-		</section>
-        <!-- better chocolate -->
-		<section class="better-chocolate menu05">
-			<div class="bb">
-				<div class="wrapper">
-					<h2 class="tit">Better Chocolate</h2>
-					<p class="desc">We are here where we believe we will meet people like you, who sincerely love <br /> chocolate and whose values resonate well with ours.</p>
-					<ul class="better">
-						<li>
-							<p class="icon"><img src="images/better01.png" alt="icon" /></p>
-							<h2 class="better-tit">Better Plants</h2>
-							<p class="txt">Min. 1.4 million higher-yielding <br />trees provided <br />to cocoa farmers in 2015.</p>
-						</li>
-						<li>
-							<p class="icon"><img src="images/better02.png" alt="icon" /></p>
-							<h2 class="better-tit">Better Cocoa</h2>
-							<p class="txt">100,000 tons of cocoa  <br />will be sourced through  <br />the Nestle Cocoa Plan in 2015. </p>
-						</li>
-						<li>
-							<p class="icon"><img src="images/better03.png" alt="icon" /></p>
-							<h2 class="better-tit">Better Schools</h2>
-							<p class="txt">40 schools on Cote  <br />d'Ivoire over 2012-2014.</p>
-						</li>
-						<li>
-							<p class="icon"><img src="images/better04.png" alt="icon" /></p>
-							<h2 class="better-tit">Better Farming</h2>
-							<p class="txt">Min. 30,000 cocoa farmers  <br />will be trained <br />on good and sustainable <br /> cocoa farming practices in 2015.</p>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-        <!-- cocoa plan campaign -->
-		<section class="cocoa-plan menu06">
-			<h2 class="tit">Nestle cocoa plan</h2>
-			<p class="desc">
-				Improving the lives of cocoa farmers and the quality of their products <br />Supporting farmers for better chocolate
-			</p>
-			<p class="img"><img src="images/cacao.png" alt="chocolate" /></p>
-			<p class="btn">
-				<a href="#" class="btn btn-white">visit website</a>
-				<a href="#" class="btn btn-white">visit facebook</a>
-			</p>
-		</section>
-        <!-- background video -->
-		<section class="enjoy">
-			<video autoplay muted loop preload="auto" class="making-video">
-			  <source src="videos/kitkat.mp4" type="video/mp4">
-			  <source src="videos/kitkat.ogv" type="video/ogg">
-			  Your browser does not support HTML5 video.
-			</video>
-			<div class="content">
-			  <h2> We want to help shape a better<br/>and healthier world.</h2>
-			  <a class="play-btn btn btn-white" onclick="playVideo()">Pause</a>
-			</div>
-		</section>
-		<script>
-			var video = document.querySelector(".making-video");
-			var btn = document.querySelector(".play-btn");
+        <!-- skip navigation -->
+        <a href="#" id="skip-nav">Skip to main content</a>
+        <!-- header -->
+        <header id="header">
+            <img class="main-bg" src="images/bg.jpg" alt="" />
+            <div class="layer-mask"></div>
+            <h1 class="logo"><a href="#"><img src="images/logo.png" alt="Nestle Kitkat" /></a></h1>
+            <div class="menu-open-wrap">
+                <a class="menu-open" href="#"><img src="images/open-icon.png" alt="menu open icon" /></a>
+            </div>
+            <div class="copy-area">
+                <h2 class="main-copy"><img src="images/kitkat.png" alt="kitkat" /></h2>
+                <p class="sub-copy"><span>Have</span><span>a break, have a KitKat.</span></p>
+            </div>
+            <a class="scroll-down-btn" href="#"><img src="images/scroll-btn.png" alt="arrow down" /><i class="fas fa-arrow-down"></i></a>
+        </header>
+        <!-- menu -->
+        <nav id="menu">
+            <ul class="gnb" role="menu">
+                <li><a href="#" role="menuitem">KitKat Studio<span></span></a></li>
+                <li><a href="#" role="menuitem">Break Emoji</a></li>
+                <li><a href="#" role="menuitem">About KitKat</a></li>
+                <li><a href="#" role="menuitem">Product</a></li>
+                <li><a href="#" role="menuitem">Better Chocolate</a></li>
+                <li><a href="#" role="menuitem">Cocoa Plan</a></li>
+            </ul>
+            <div class="sns-wrap" role="menu">
+                <h3 class="sns-tit">Follow us</h3>
+                <ul class="sns">
+                    <li><a href="#" role="menuitem">dribbble</a></li>
+                    <li><a href="#" role="menuitem">behance</a></li>
+                    <li><a href="#" role="menuitem">facebook</a></li>
+                    <li><a href="#" role="menuitem">instagram</a></li>
+                    <li><a href="#" role="menuitem">twitter</a></li>
+                    <li><a href="#" role="menuitem">linkedin</a></li>
+                </ul>
+            </div>
+            <a class="menu-close" href="#">CLOSE</a>
+        </nav>
+        <!-- main container -->
+        <main id="container">
+            <!-- kitkat studio -->
+            <section id="studio" class=" wrapper clearfix menu01">
+                <div class="box">
+                    <h2 class="tit">KitKat studio</h2>
+                    <p class="desc">
+                        A celebration of food, flavour, and most importantly…creativity!<br />
+                        If you love a KitKat, you’re in for a truly unique experience.<br />
+                        Create your break by selecting your favourite chocolate, <br />
+                        add up to three delicious signature ingredients, <br />
+                        and top it off with some personalised packaging - perfect for a gift <br />
+                        or a delectable treat for yourself!
+                    </p>
+                </div>
+            </section>
+            <!-- breaks taken this year -->
+            <section id="break-rate">
+                <div class="box">
+                    <h2 class="tit">breaks taken this year</h2>
+                    <p class="counter">0</p>
+                    <p class="icon"><img src="images/rabbit.png" alt="rabbit icon" /></p>
+                </div>
+            </section>
+            <!-- the break emoji -->
+            <section id="emoji" class="menu02">
+                <div class="wrapper">
+                    <h2 class="tit">The break emoji</h2>
+                    <p class="desc">
+                        For all of you who love to break, we are asking you <br />
+                        for a little support to help our campaign. <br />
+                        A campaign to get the word ‘break’ recognized <br />
+                        as an emoji and added to the emoji lexicon.<br />
+                        Please help us by signing our petition, or tweet your support <br />
+                        with #thebreakemoji and show the world how you break!
+                    </p>
+                    <p class="btn-con">
+                        <a href="#" class="btn">view video</a>
+                        <span class="or">or</span>
+                        <a href="#" class="btn"><strong>sign the petition</strong></a>
+                    </p>
+                </div>
+                <div class="popup-vid">
+                    <iframe id="kitkat" src="https://player.vimeo.com/video/152392621?title=0&byline=0&portrait=0" width="800" height="450"></iframe>
+                    <a href="#" class="close">CLOSE</a>
+                </div>
+            </section>
+            <!-- create your break -->
+            <section id="create">
+                <div class="layer-mask"></div>
+                <div class="box">
+                    <span>At KitKat Studio</span>
+                    <h3 class="title">create your break</h3>
+                </div>
+            </section>
+            <!-- history of kitkat -->
+            <section id="history" class="wrapper clearfix menu03">
+                <div class="box">
+                    <h2 class="say-hi"><img src="images/hi.png" alt="hi there" /></h2>
+                    <p class="desc">
+                        <span class="desc1">Awesome product was <br class="only_w" /> developed as a four-</span>
+                        <span class="desc2">
+                        finger wafer crisp, initially launched in London and the South East
+                        in September 1935 as  'Rowntree’s Chocolate Crisp' and re-named
+                        two years later as KitKat Chocolate Crisp. <br />
+                        KitKat was established as Rowntree’s
+                        leading product, a position that it has maintained ever since.
+                        During the war, KitKat was portrayed as a valuable wartime food
+                        and advertising described the brand as “What active people need”.
+                        </span>
+                    </p>
+                </div>
+            </section>
+            <!-- product list -->
+            <section id="product" class="wrapper menu04">
+                <h2 class="hide">product list</h2>
+                <div class="product-list">
+                    <ul class="slide">
+                        <li><img src="images/p_img_01.png" alt="4 Finger" /></li>
+                        <li><img src="images/p_img_02.png" alt="2 Finger" /></li>
+                        <li><img src="images/p_img_03.png" alt="Crunky" /></li>
+                        <li><img src="images/p_img_04.png" alt="Snap &amp; Share" /></li>
+                    </ul>  
+                    <p class="control">
+                        <a href="#" class="prev"><i class="fas fa-long-arrow-alt-left"></i></a>
+                        <a href="#" class="next"><i class="fas fa-long-arrow-alt-right"></i></a>
+                    </p>
+                </div>
+                <ul class="text">
+                    <li>
+                        <em class="name clearfix" aria-label="4 Finger">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206.84 60.72"><defs><style>.a{fill:#cb1a14;}</style></defs><title>p_name_01</title><path class="a" d="M16.83,47.88A3.72,3.72,0,0,0,18,45.3q-.07-2.28-.1-3.87t0-2.49A61.11,61.11,0,0,1,9.5,40.38a6,6,0,0,0-1.78.9,2.8,2.8,0,0,1-1.58.54h-.2a6.16,6.16,0,0,1-3.56-2.16A5.82,5.82,0,0,1,.59,35.88a1.25,1.25,0,0,1,0-.27,1.29,1.29,0,0,0,0-.27,2.25,2.25,0,0,1,1.39-2A5.86,5.86,0,0,0,4,32.1l13.46-22a3.53,3.53,0,0,0,.33-1.68V8a3.19,3.19,0,0,1,.59-2.16,2.94,2.94,0,0,1,2.31-1q2.57,0,5.68,2.46t3.1,4.74a10.56,10.56,0,0,1-1.58,4,10.52,10.52,0,0,0-1.58,4.74V30.3a43.87,43.87,0,0,1,5.41-1.44h.26a5.87,5.87,0,0,1,3.63,1.32,4.21,4.21,0,0,1,2,3.36v.24a2.91,2.91,0,0,1-.4,1.47,4.06,4.06,0,0,1-1.06,1.2,5.46,5.46,0,0,1-1.48.81,4.88,4.88,0,0,1-1.68.3,6.83,6.83,0,0,1-1.32-.21,7.36,7.36,0,0,0-1.58-.21H30a7.82,7.82,0,0,1-1.42.15l-2.15.09q0,4.32,0,6.63t-.1,2.61a8.2,8.2,0,0,0,.86,3.18A8.58,8.58,0,0,1,28,52.62q0,2.1-3.76,3.72a2.39,2.39,0,0,1-1,.18,8.27,8.27,0,0,1-5.15-2.34Q15.71,52,15.71,50V49.5A4.66,4.66,0,0,1,16.83,47.88Zm1-16.14.4-9.36L12.28,32.82Z" transform="translate(-0.59 -4.86)"/><path class="a" d="M57.29,51.3a1.31,1.31,0,0,1,.4-1q.4-.36.79-.66-.2-13-.2-22.74t.2-15.9a2.51,2.51,0,0,1-.07-.54V9.9q0-3.12,4.16-3.12l.73,0,.86.09a6.67,6.67,0,0,1,2,.48l.3.24a6.25,6.25,0,0,1,.63.6q.66-.24,1.72-.54t2.51-.78q.66-.36,1.42-.81a4.91,4.91,0,0,1,2.41-.45,7.63,7.63,0,0,1,4.16,1.5,4.55,4.55,0,0,1,2.31,3.24v.18A3,3,0,0,1,79,13.68a43.07,43.07,0,0,1-4.95.36,1.2,1.2,0,0,0-.53.06L70,15.57q-1.49.63-2.41.93a55,55,0,0,0-.4,7.08q0,1.62.07,3.42t.2,3.78l1.09-.69,1.55-.93q1.45-1.62,2.51-1.62h.13a7.39,7.39,0,0,1,4.36,2,5,5,0,0,1,2.24,3.78,2.55,2.55,0,0,1-.4,1.44q-.66,1.32-3.63,1.44-3.23.06-4.42,1a4.81,4.81,0,0,0-1.75,1q-.83.75-1.55,1.47-.13,1-.2,2.25t-.07,2.61q0,1.38.07,3t.2,3.42a4.55,4.55,0,0,1,.33,1.5q0,1.86-2.31,3.06a4.62,4.62,0,0,1-2,.42,6.88,6.88,0,0,1-3.89-1.14,4.92,4.92,0,0,1-2.38-3.12Z" transform="translate(-0.59 -4.86)"/><path class="a" d="M89,56.46A4.09,4.09,0,0,1,85.4,54.9Q84,52.92,84,43.38V40.5q0-1.8.07-4.2t.1-4.2q0-1.74,0-2.88a9.72,9.72,0,0,0-.07-1L84,27q-.07-.6-.13-1.11a6.56,6.56,0,0,1-.07-.81,4.47,4.47,0,0,1,1.58-3.42,3.7,3.7,0,0,1,2.44-.6,12.92,12.92,0,0,1,3.56.51,4.21,4.21,0,0,1,2.24,1.17,2.12,2.12,0,0,1,.53,1.32,5.89,5.89,0,0,1-1.06,2.64,6.22,6.22,0,0,0-1,2.88V47.22a13.12,13.12,0,0,0,.73,3.42,13.08,13.08,0,0,1,.73,3,2,2,0,0,1-1.06,1.86A7,7,0,0,1,89,56.46ZM84.28,14.73a4,4,0,0,0,.46-1.23,2.22,2.22,0,0,1,0-.33,3.41,3.41,0,0,0,0-.51c0-.2,0-.43,0-.69s0-.55,0-.87v-.36a1.85,1.85,0,0,1,.66-1.68,7.07,7.07,0,0,1,3.76-.72q3,0,4.16,1.08a.78.78,0,0,1,.2.6,7.69,7.69,0,0,1-.4,1.86,16,16,0,0,0-.59,2.22V14a10.47,10.47,0,0,1,.13,2.7,1.64,1.64,0,0,1-.83,1.65,4.86,4.86,0,0,1-2.08.39,11.55,11.55,0,0,1-3.63-.66q-2.24-.78-2.24-2.22A2.79,2.79,0,0,1,84.28,14.73Z" transform="translate(-0.59 -4.86)"/><path class="a" d="M107.45,53.34a3.78,3.78,0,0,1-1.29,3.12,4.32,4.32,0,0,1-2.61.9A7.84,7.84,0,0,1,98.47,55q-.73-.6-.86-9.18v.9s.07-6.76.07-20.28A11.19,11.19,0,0,0,97.55,25a10.68,10.68,0,0,1-.13-1.35,3,3,0,0,1,.66-2,2.9,2.9,0,0,1,2.51-1.08,7.86,7.86,0,0,1,3.7,1,5.3,5.3,0,0,1,2.38,1.86,2.71,2.71,0,0,1,.26,1.2,4.23,4.23,0,0,1-.53,1.68,4.31,4.31,0,0,0-.53,1.8v8.28a72,72,0,0,1,6.27-10.62q3.56-4.14,8-4.14h.53q2.84.18,4,4.8a45.33,45.33,0,0,1,1,10.32v10.8a5.31,5.31,0,0,0,.92,1.5,2,2,0,0,1,.4,1.2v.3a3,3,0,0,1-1.91,2.25,8.42,8.42,0,0,1-4,.93q-3.24,0-4.42-1.86.07-2.1.1-4t0-3.48q0-11.1-1.32-11.28h-.07q-1.65,0-8,16.56Z" transform="translate(-0.59 -4.86)"/><path class="a" d="M145.86,65.58h-.66A13,13,0,0,1,137.28,63a17.19,17.19,0,0,1-2.51-.84,2.83,2.83,0,0,1-1.45-2,1.65,1.65,0,0,1-.07-.54q0-2.28,5-2.28a9.53,9.53,0,0,1,1.35.09l1.29.21a4.14,4.14,0,0,1,2,1.38A3.46,3.46,0,0,0,145,60.3h.07q1.85,0,1.85-4.92,0-1.14-.1-2.88t-.23-4.2A31.2,31.2,0,0,1,143.15,53a7.1,7.1,0,0,1-5.08,2.1q-4.16,0-6.6-5.22a26.6,26.6,0,0,1-2.31-11.52,25.26,25.26,0,0,1,2.44-11.76q2.77-5.4,7.66-5.52h.4a5.64,5.64,0,0,1,3.5,1,14.9,14.9,0,0,1,1.25,1l1.19,1.08a4,4,0,0,1-.4-1.56,2.09,2.09,0,0,1,.79-1.68,3.15,3.15,0,0,1,2.18-.66,6.4,6.4,0,0,1,2.77.66,3.34,3.34,0,0,1,1.78,1.62q.13,5.22.59,17,.13,4.2.2,7.17t.07,4.77q0,8-1.39,10.86t-5.61,3.18A4.16,4.16,0,0,1,145.86,65.58Zm-9.77-26.82a25.42,25.42,0,0,0,.59,5.7q.86,3.48,2.57,3.48,1.45,0,3.37-3.36a16.45,16.45,0,0,0,2.18-6.72,3.11,3.11,0,0,0,.07-.66v-.66a14.31,14.31,0,0,0-1-5.28q-1.25-3.48-3.43-3.48-1.78,0-3,3.48a19.19,19.19,0,0,0-1.32,6.6Z" transform="translate(-0.59 -4.86)"/><path class="a" d="M174,54.78a17.67,17.67,0,0,1-5.61,1.08h-.66q-4.88-.24-7.79-5.22a21.93,21.93,0,0,1-2.57-11,25.81,25.81,0,0,1,2.9-12.42q3.3-5.88,8.65-6.6l1-.09c.33,0,.67,0,1,0q7.85,0,8.65,8.76a2,2,0,0,0,0,.36,2,2,0,0,1,0,.36q0,3.6-3.56,8a22.15,22.15,0,0,1-10.82,7.32q.33,1.2.63,2a9.87,9.87,0,0,0,.5,1.14,2.73,2.73,0,0,0,2.51,1.5,7.64,7.64,0,0,0,5.21-2.82q.2-.06.53-1.32a2.44,2.44,0,0,1,1.39-1.8,2.21,2.21,0,0,1,.92-.18,4.47,4.47,0,0,1,3,1.44,3.56,3.56,0,0,1,1.25,2.4.92.92,0,0,1,0,.24.89.89,0,0,0,0,.24q-.53,2.28-3.56,4.86Q177.14,53.64,174,54.78ZM164.73,38v.72a3.64,3.64,0,0,0,.07.66,11.67,11.67,0,0,0,5.74-4.2q2.64-3.3,2.64-5.88A2.06,2.06,0,0,0,170.87,27q-2.64,0-4.29,3.42A17.19,17.19,0,0,0,164.73,38Z" transform="translate(-0.59 -4.86)"/><path class="a" d="M187.37,56a5.1,5.1,0,0,1-3.76-1.38,3.38,3.38,0,0,1-.92-2.34,14.35,14.35,0,0,1,.13-1.56,15,15,0,0,0,.13-1.74V26.58a2.52,2.52,0,0,0-.53-1.32,2.48,2.48,0,0,1-.53-1.26,1.57,1.57,0,0,1,.26-.84q.86-1.44,5.35-1.44,3.5,0,4,1.5a3.87,3.87,0,0,1,.2,1,1.16,1.16,0,0,1-.53,1q-.53.36-.53.72l.13,2.16,5.68-5.46q1-1,2.08-2A4.12,4.12,0,0,1,201,19.5h.66a8,8,0,0,1,3.63.9q2.11,1.08,2.11,2.82a2,2,0,0,1-.07.6q-.33,1.32-2.51,1.74a7.54,7.54,0,0,0-3.37,1.38L190.74,38.22v9.12a5.19,5.19,0,0,0,.79,2.7,4.3,4.3,0,0,1,.86,2,3.36,3.36,0,0,1-.46,1.62Q190.8,56,187.37,56Z" transform="translate(-0.59 -4.86)"/></svg>
+                        </em>
+                        <span class="desc">So good we sent it into space.<br />#BreakFromGravity</span>
+                    </li>
+                    <li>
+                        <em class="name clearfix" aria-label="2 Finger">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205.06 60.66"><defs><style>.a{fill:#cb1a14;}</style></defs><title>p_name_02</title><path class="a" d="M.79,51.72q0-1.14,1.58-2A5.29,5.29,0,0,0,4.75,48,31.38,31.38,0,0,0,8,43q2.41-4.17,6.37-11.85,7.33-14,7.33-15.48c0-.12,0-.18-.07-.18a.58.58,0,0,0-.4-.12,5.52,5.52,0,0,0-2.77,1.44,11.09,11.09,0,0,0-2.11,1.92A3.83,3.83,0,0,0,15.11,21a3.24,3.24,0,0,1-2,2.28,3.45,3.45,0,0,1-1.12.18,7.49,7.49,0,0,1-4.09-1.38A5.32,5.32,0,0,1,5.28,18.6v-.18q0-1.92,6.6-5.94,7.79-7.26,12.67-7.56h.53a8.23,8.23,0,0,1,2.74.45,7.75,7.75,0,0,1,4.06,3.21,7.17,7.17,0,0,1,1,2.46v.24q0,2.16-4.75,11.4-4.36,8.46-7.39,14.49T16,46.92q.92-.12,3.6-.6L26.8,45q3-.54,2.9-.54A6,6,0,0,1,34.45,47a4.17,4.17,0,0,1,1.06,2.58,3.54,3.54,0,0,1-1.85,2.88A6.74,6.74,0,0,1,30,53.7a11.1,11.1,0,0,1-2.9-.54,10.57,10.57,0,0,0-1.48-.39,6.2,6.2,0,0,0-1-.09,4.52,4.52,0,0,0-.56,0,3.78,3.78,0,0,1-.5,0,27.53,27.53,0,0,0-8.38,1.86,49.18,49.18,0,0,1-7.26,2.16H7.59A8.67,8.67,0,0,1,3.7,55.38Q.92,53.7.79,51.84Z" transform="translate(-0.79 -4.92)"/><path class="a" d="M55.7,51.3a1.31,1.31,0,0,1,.4-1q.4-.36.79-.66-.2-13-.2-22.74t.2-15.9a2.51,2.51,0,0,1-.07-.54V9.9q0-3.12,4.16-3.12l.73,0,.86.09a6.67,6.67,0,0,1,2,.48l.3.24a6.25,6.25,0,0,1,.63.6q.66-.24,1.72-.54T69.7,6.9q.66-.36,1.42-.81a4.91,4.91,0,0,1,2.41-.45,7.63,7.63,0,0,1,4.16,1.5A4.55,4.55,0,0,1,80,10.38v.18a3,3,0,0,1-2.57,3.12,43.07,43.07,0,0,1-4.95.36,1.2,1.2,0,0,0-.53.06l-3.53,1.47q-1.49.63-2.41.93a55,55,0,0,0-.4,7.08q0,1.62.07,3.42t.2,3.78L67,30.09l1.55-.93Q70,27.54,71,27.54h.13a7.39,7.39,0,0,1,4.36,2,5,5,0,0,1,2.24,3.78,2.55,2.55,0,0,1-.4,1.44q-.66,1.32-3.63,1.44-3.23.06-4.42,1a4.81,4.81,0,0,0-1.75,1q-.83.75-1.55,1.47-.13,1-.2,2.25t-.07,2.61q0,1.38.07,3t.2,3.42a4.55,4.55,0,0,1,.33,1.5q0,1.86-2.31,3.06a4.62,4.62,0,0,1-2,.42,6.88,6.88,0,0,1-3.89-1.14,4.92,4.92,0,0,1-2.38-3.12Z" transform="translate(-0.79 -4.92)"/><path class="a" d="M87.38,56.46a4.09,4.09,0,0,1-3.56-1.56q-1.39-2-1.39-11.52V40.5q0-1.8.07-4.2t.1-4.2q0-1.74,0-2.88a9.72,9.72,0,0,0-.07-1L82.43,27q-.07-.6-.13-1.11a6.56,6.56,0,0,1-.07-.81,4.47,4.47,0,0,1,1.58-3.42,3.7,3.7,0,0,1,2.44-.6,12.92,12.92,0,0,1,3.56.51,4.21,4.21,0,0,1,2.24,1.17,2.12,2.12,0,0,1,.53,1.32,5.89,5.89,0,0,1-1.06,2.64,6.22,6.22,0,0,0-1,2.88V47.22a13.12,13.12,0,0,0,.73,3.42,13.08,13.08,0,0,1,.73,3,2,2,0,0,1-1.06,1.86A7,7,0,0,1,87.38,56.46ZM82.7,14.73a4,4,0,0,0,.46-1.23,2.22,2.22,0,0,1,0-.33,3.41,3.41,0,0,0,0-.51c0-.2,0-.43,0-.69s0-.55,0-.87v-.36a1.85,1.85,0,0,1,.66-1.68,7.07,7.07,0,0,1,3.76-.72q3,0,4.16,1.08a.78.78,0,0,1,.2.6,7.69,7.69,0,0,1-.4,1.86,16,16,0,0,0-.59,2.22V14a10.47,10.47,0,0,1,.13,2.7,1.64,1.64,0,0,1-.83,1.65,4.86,4.86,0,0,1-2.08.39,11.55,11.55,0,0,1-3.63-.66q-2.24-.78-2.24-2.22A2.79,2.79,0,0,1,82.7,14.73Z" transform="translate(-0.79 -4.92)"/><path class="a" d="M105.86,53.34a3.78,3.78,0,0,1-1.29,3.12,4.32,4.32,0,0,1-2.61.9A7.84,7.84,0,0,1,96.89,55q-.73-.6-.86-9.18v.9s.07-6.76.07-20.28A11.19,11.19,0,0,0,96,25a10.68,10.68,0,0,1-.13-1.35,3,3,0,0,1,.66-2A2.9,2.9,0,0,1,99,20.58a7.86,7.86,0,0,1,3.7,1,5.3,5.3,0,0,1,2.38,1.86,2.71,2.71,0,0,1,.26,1.2,4.23,4.23,0,0,1-.53,1.68,4.31,4.31,0,0,0-.53,1.8v8.28a72,72,0,0,1,6.27-10.62q3.56-4.14,8-4.14h.53q2.84.18,4,4.8a45.33,45.33,0,0,1,1,10.32v10.8a5.31,5.31,0,0,0,.92,1.5,2,2,0,0,1,.4,1.2v.3a3,3,0,0,1-1.91,2.25,8.42,8.42,0,0,1-4,.93q-3.24,0-4.42-1.86.07-2.1.1-4t0-3.48q0-11.1-1.32-11.28h-.07q-1.65,0-8,16.56Z" transform="translate(-0.79 -4.92)"/><path class="a" d="M144.27,65.58h-.66A13,13,0,0,1,135.69,63a17.19,17.19,0,0,1-2.51-.84,2.83,2.83,0,0,1-1.45-2,1.65,1.65,0,0,1-.07-.54q0-2.28,5-2.28a9.53,9.53,0,0,1,1.35.09l1.29.21a4.14,4.14,0,0,1,2,1.38,3.46,3.46,0,0,0,2.11,1.32h.07q1.85,0,1.85-4.92,0-1.14-.1-2.88T145,48.3A31.2,31.2,0,0,1,141.57,53a7.1,7.1,0,0,1-5.08,2.1q-4.16,0-6.6-5.22a26.6,26.6,0,0,1-2.31-11.52A25.26,25.26,0,0,1,130,26.64q2.77-5.4,7.66-5.52h.4a5.64,5.64,0,0,1,3.5,1,14.9,14.9,0,0,1,1.25,1L144,24.18a4,4,0,0,1-.4-1.56,2.09,2.09,0,0,1,.79-1.68,3.15,3.15,0,0,1,2.18-.66,6.4,6.4,0,0,1,2.77.66,3.34,3.34,0,0,1,1.78,1.62q.13,5.22.59,17,.13,4.2.2,7.17t.07,4.77q0,8-1.39,10.86T145,65.52A4.16,4.16,0,0,1,144.27,65.58Zm-9.77-26.82a25.42,25.42,0,0,0,.59,5.7q.86,3.48,2.57,3.48,1.45,0,3.37-3.36a16.45,16.45,0,0,0,2.18-6.72,3.11,3.11,0,0,0,.07-.66v-.66a14.31,14.31,0,0,0-1-5.28q-1.25-3.48-3.43-3.48-1.78,0-3,3.48a19.19,19.19,0,0,0-1.32,6.6Z" transform="translate(-0.79 -4.92)"/><path class="a" d="M172.46,54.78a17.67,17.67,0,0,1-5.61,1.08h-.66q-4.88-.24-7.79-5.22a21.93,21.93,0,0,1-2.57-11,25.81,25.81,0,0,1,2.9-12.42q3.3-5.88,8.65-6.6l1-.09c.33,0,.67,0,1,0q7.85,0,8.65,8.76a2,2,0,0,0,0,.36,2,2,0,0,1,0,.36q0,3.6-3.56,8a22.15,22.15,0,0,1-10.82,7.32q.33,1.2.63,2a9.87,9.87,0,0,0,.5,1.14,2.73,2.73,0,0,0,2.51,1.5,7.64,7.64,0,0,0,5.21-2.82q.2-.06.53-1.32A2.44,2.44,0,0,1,174.5,44a2.21,2.21,0,0,1,.92-.18,4.47,4.47,0,0,1,3,1.44,3.56,3.56,0,0,1,1.25,2.4.92.92,0,0,1,0,.24.89.89,0,0,0,0,.24q-.53,2.28-3.56,4.86Q175.56,53.64,172.46,54.78ZM163.15,38v.72a3.64,3.64,0,0,0,.07.66,11.67,11.67,0,0,0,5.74-4.2q2.64-3.3,2.64-5.88A2.06,2.06,0,0,0,169.29,27q-2.64,0-4.29,3.42A17.19,17.19,0,0,0,163.15,38Z" transform="translate(-0.79 -4.92)"/><path class="a" d="M185.79,56A5.1,5.1,0,0,1,182,54.66a3.38,3.38,0,0,1-.92-2.34,14.35,14.35,0,0,1,.13-1.56,15,15,0,0,0,.13-1.74V26.58a2.52,2.52,0,0,0-.53-1.32,2.48,2.48,0,0,1-.53-1.26,1.57,1.57,0,0,1,.26-.84q.86-1.44,5.35-1.44,3.5,0,4,1.5a3.87,3.87,0,0,1,.2,1,1.16,1.16,0,0,1-.53,1q-.53.36-.53.72l.13,2.16,5.68-5.46q1-1,2.08-2a4.12,4.12,0,0,1,2.54-1.14h.66a8,8,0,0,1,3.63.9q2.11,1.08,2.11,2.82a2,2,0,0,1-.07.6q-.33,1.32-2.51,1.74a7.54,7.54,0,0,0-3.37,1.38L189.15,38.22v9.12a5.19,5.19,0,0,0,.79,2.7,4.3,4.3,0,0,1,.86,2,3.36,3.36,0,0,1-.46,1.62Q189.22,56,185.79,56Z" transform="translate(-0.79 -4.92)"/></svg>
+                        </em>
+                        <span class="desc">The good ol' breaktime classic<br />#BreakFromGravity</span>
+                    </li>
+                    <li>
+                        <em class="name clearfix" aria-label="Crunky">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176.08 60"><defs><style>.a{fill:#cb1a14;}</style></defs><title>p_name_03</title><path class="a" d="M29.57,38.4a4.19,4.19,0,0,1-1.85,3.36Q21.52,56,15.18,56.1H15q-7.39,0-10.89-7.2Q1.45,43.44,1.32,34.44v-.6a52.26,52.26,0,0,1,2.9-17.76q3.43-9.6,9.31-10.26a6.86,6.86,0,0,1,.86-.06h.79a9.57,9.57,0,0,1,8.45,4.44q2.18,3.36,3.7,10.68a19.28,19.28,0,0,1,1.12,3.6q0,2-2.71,3.06a3.39,3.39,0,0,1-1.39.24,9.36,9.36,0,0,1-4.22-1.14q-2.71-1.38-2.71-2.88a19.39,19.39,0,0,1,.92-2.34A16.06,16.06,0,0,0,18,18.87a16.43,16.43,0,0,0-.73-2.43q-.86-2.34-2.11-2.64H15q-1.78,0-3,6.66-.59,2.94-1,6.15t-.49,6.81c0,.36,0,.71,0,1s0,.67,0,1a42.18,42.18,0,0,0,.73,7.86q1,5.22,3,5.58h.13q1.12,0,2.71-2.7a23,23,0,0,0,1.45-2.88A31.25,31.25,0,0,0,19.6,40c0-.2-.08-.39-.1-.57a4.61,4.61,0,0,1,0-.57q0-3.54,4.75-3.54a13.36,13.36,0,0,1,2.11.18Q29.57,36.06,29.57,38.4Z" transform="translate(-1.32 -5.76)"/><path class="a" d="M36.83,56a5.1,5.1,0,0,1-3.76-1.38,3.38,3.38,0,0,1-.92-2.34,14.35,14.35,0,0,1,.13-1.56A15,15,0,0,0,32.4,49V26.58a2.52,2.52,0,0,0-.53-1.32A2.48,2.48,0,0,1,31.35,24a1.57,1.57,0,0,1,.26-.84q.86-1.44,5.35-1.44,3.5,0,4,1.5a3.87,3.87,0,0,1,.2,1,1.16,1.16,0,0,1-.53,1q-.53.36-.53.72l.13,2.16,5.68-5.46q1-1,2.08-2a4.12,4.12,0,0,1,2.54-1.14h.66a8,8,0,0,1,3.63.9q2.11,1.08,2.11,2.82a2,2,0,0,1-.07.6q-.33,1.32-2.51,1.74A7.54,7.54,0,0,0,51,26.94L40.19,38.22v9.12A5.19,5.19,0,0,0,41,50a4.3,4.3,0,0,1,.86,2,3.36,3.36,0,0,1-.46,1.62Q40.26,56,36.83,56Z" transform="translate(-1.32 -5.76)"/><path class="a" d="M79.2,46.44Q76.69,56.7,68.84,56.7q-11.55,0-11.55-19.2,0-2.58.2-5.31t.66-5.61a7.12,7.12,0,0,1-.46-2.46,3.79,3.79,0,0,1,1.25-2.94,4.44,4.44,0,0,1,3.1-1,7.71,7.71,0,0,1,3.1.63,2.79,2.79,0,0,1,1.72,1.47c0,.16.08.3.1.42a2.41,2.41,0,0,1,0,.42,8.22,8.22,0,0,1-.73,2.52,7.46,7.46,0,0,0-.59,2.46v.3A43.28,43.28,0,0,0,65,36.84q0,2.58.2,4.71t.53,3.87q.86,4,2.57,4,2.77,0,3.63-8.52.26-2.1.36-5.49t.1-8.07a11.05,11.05,0,0,0-.2-1.74,11,11,0,0,1-.2-1.68,2,2,0,0,1,1.19-2A5.21,5.21,0,0,1,75,21.6a10.23,10.23,0,0,1,4,.84,3.8,3.8,0,0,1,2.44,2.7v.3a3.54,3.54,0,0,1-.4,1.62,8.45,8.45,0,0,0-.79,2Q80.32,41.46,79.2,46.44Z" transform="translate(-1.32 -5.76)"/><path class="a" d="M94.44,53.34a3.78,3.78,0,0,1-1.29,3.12,4.32,4.32,0,0,1-2.61.9A7.84,7.84,0,0,1,85.47,55q-.73-.6-.86-9.18v.9s.07-6.76.07-20.28A11.19,11.19,0,0,0,84.54,25a10.68,10.68,0,0,1-.13-1.35,3,3,0,0,1,.66-2,2.9,2.9,0,0,1,2.51-1.08,7.86,7.86,0,0,1,3.7,1,5.3,5.3,0,0,1,2.38,1.86,2.71,2.71,0,0,1,.26,1.2,4.23,4.23,0,0,1-.53,1.68,4.31,4.31,0,0,0-.53,1.8v8.28A72,72,0,0,1,99.13,25.8q3.56-4.14,8-4.14h.53q2.84.18,4,4.8a45.33,45.33,0,0,1,1,10.32v10.8a5.31,5.31,0,0,0,.92,1.5,2,2,0,0,1,.4,1.2v.3a3,3,0,0,1-1.91,2.25,8.42,8.42,0,0,1-4,.93q-3.24,0-4.42-1.86.07-2.1.1-4t0-3.48q0-11.1-1.32-11.28h-.07q-1.65,0-8,16.56Z" transform="translate(-1.32 -5.76)"/><path class="a" d="M126.22,51.81a3.39,3.39,0,0,1,.36,1.23,2.19,2.19,0,0,1-.73,1.38A6.65,6.65,0,0,1,121.11,56q-3,0-3.83-1.86a3,3,0,0,1-.26-1.32v-.42q.13-.78.2-1.29a6.76,6.76,0,0,0,.07-.81V10.44q0-.54.07-1.23t.2-1.59q.59-1.32,3.63-1.32,4,0,5.08,1.32a2.4,2.4,0,0,1,.59,1.56,7.05,7.05,0,0,1-.53,2,6.46,6.46,0,0,0-.46,2.16q-.07.9-.07,2.58V25.8q0,3.18.07,7.2l9.5-8.46a16.41,16.41,0,0,0,2-2.58,3.29,3.29,0,0,1,2.18-1.44,4.27,4.27,0,0,1,.92-.12,6.8,6.8,0,0,1,3.89,1.32q2,1.32,2,2.82a1.79,1.79,0,0,1-.36,1,6.9,6.9,0,0,1-1,1.11q-.59.57-1.29,1.14l-1.35,1.11-11,10.32,11.75,7.68a12.84,12.84,0,0,0,2.64,1,2.63,2.63,0,0,1,1.72,1.92,4.21,4.21,0,0,1,.07.84q0,3.6-4.42,4.92a5.26,5.26,0,0,1-1.52.24,3,3,0,0,1-2.18-1A15.05,15.05,0,0,0,137.74,53l-11.88-7.56v5A3.45,3.45,0,0,0,126.22,51.81Z" transform="translate(-1.32 -5.76)"/><path class="a" d="M154.63,63.18a2.56,2.56,0,0,1-.26-1.14,2.42,2.42,0,0,1,.53-1.35,4.36,4.36,0,0,0,.66-1.23l1.58-7.56-9.5-24.84q-.13-.24-.36-.72t-.69-1.26a3.51,3.51,0,0,1-.66-1.86,2.41,2.41,0,0,1,0-.42c0-.12.06-.26.1-.42q.66-2.16,4.55-2.16a8.23,8.23,0,0,1,3.76.72,3.94,3.94,0,0,1,1.91,3.18q.13,1.86.26,2.88t.2,1.26l4.36,12.48,6.73-15.48q.07-.18.59-2.64a2.58,2.58,0,0,1,1.39-2,3.11,3.11,0,0,1,1.52-.36,6.51,6.51,0,0,1,3.83,1.32,4.72,4.72,0,0,1,2.18,3,.88.88,0,0,0,0,.24.91.91,0,0,1,0,.24,4,4,0,0,1-.73,2.1q-.73,1.14-1.12,1.74t-.46.72q-1.39,3.06-3.5,7.83L166.51,48.9A61.52,61.52,0,0,0,164.37,55a35.87,35.87,0,0,0-1.15,5.43,5.25,5.25,0,0,0-.13,1.14c0,.2,0,.42,0,.66s0,.46,0,.66a3.61,3.61,0,0,1-.13,1q-.73,1.92-3.5,1.92Q155.69,65.76,154.63,63.18Z" transform="translate(-1.32 -5.76)"/></svg>
+                        </em>
+                        <span class="desc">The break with a bit more bite<br />#BreakFromGravity</span>
+                    </li>
+                    <li>
+                        <em class="name" aria-label="Snap &amp; Share">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 346.63 63"><defs><style>.a{fill:#cb1a14;}</style></defs><title>p_name_04</title><path class="a" d="M5.54,47.76q-4.95-2.94-4.95-5,0-1,1.39-1.68a11.13,11.13,0,0,1,5-1.32q4.88,0,6.53,5.28.4.72.79,1.5A10.14,10.14,0,0,0,15.11,48a4.34,4.34,0,0,0,1,1,2.19,2.19,0,0,0,1.29.39q3.89,0,3.89-5,0-4.5-1.78-6.06a36.6,36.6,0,0,0-6.34-2.76,14.24,14.24,0,0,1-7.13-5.76A14.67,14.67,0,0,1,3.56,22v-.36A18.72,18.72,0,0,1,7.13,10.5Q11,5.1,16.63,5.1q6.53,0,9.64,4.8a15.27,15.27,0,0,1,2.24,7.44,14.22,14.22,0,0,1,.73,4.14,5.73,5.73,0,0,1-.33,2A3.84,3.84,0,0,1,25,25.68a6.15,6.15,0,0,1-4-1.44,6.89,6.89,0,0,1-2.44-4.38,1.43,1.43,0,0,1-.07-.48A2.46,2.46,0,0,1,19,17.94a5.29,5.29,0,0,0,.66-1.08.34.34,0,0,0-.13-.24,2,2,0,0,0,.07-.6q0-1.68-2.11-1.68h-.2q-2.18.06-3.5,2.7a10.7,10.7,0,0,0-1,4.62v.48q.2,5.1,7.39,8.16Q25.94,32.76,28,35q3.1,3.36,3.1,9.42a11.68,11.68,0,0,1-3.3,8.22,10.59,10.59,0,0,1-8.05,3.54Q10.1,56.22,5.54,47.76Z" transform="translate(-0.59 -4.56)"/><path class="a" d="M44,53.34a3.78,3.78,0,0,1-1.29,3.12,4.32,4.32,0,0,1-2.61.9A7.84,7.84,0,0,1,35,55q-.73-.6-.86-9.18v.9s.07-6.76.07-20.28A11.19,11.19,0,0,0,34.12,25,10.68,10.68,0,0,1,34,23.64a3,3,0,0,1,.66-2,2.9,2.9,0,0,1,2.51-1.08,7.86,7.86,0,0,1,3.7,1,5.3,5.3,0,0,1,2.38,1.86,2.71,2.71,0,0,1,.26,1.2A4.23,4.23,0,0,1,43,26.34a4.31,4.31,0,0,0-.53,1.8v8.28A72,72,0,0,1,48.71,25.8q3.56-4.14,8-4.14h.53q2.84.18,4,4.8a45.33,45.33,0,0,1,1,10.32v10.8a5.31,5.31,0,0,0,.92,1.5,2,2,0,0,1,.4,1.2v.3a3,3,0,0,1-1.91,2.25,8.42,8.42,0,0,1-4,.93q-3.24,0-4.42-1.86.07-2.1.1-4t0-3.48q0-11.1-1.32-11.28H52q-1.65,0-8,16.56Z" transform="translate(-0.59 -4.56)"/><path class="a" d="M88.77,52.38a31.11,31.11,0,0,1-1.06-4.68A15.7,15.7,0,0,1,82,53.94,15.43,15.43,0,0,1,73.32,57q-5.81,0-7.79-6.3A11.78,11.78,0,0,1,65,47.4q0-4.32,4.16-7.56a34.41,34.41,0,0,1,8.78-4.68q3.37-1.38,5.31-2.25a23.89,23.89,0,0,0,2.61-1.29,7,7,0,0,0,.26-2q0-1.86-1.19-2.16a7.51,7.51,0,0,0-2.31-.36q-3,0-7.46,2.7a12.16,12.16,0,0,0-2.24,2,3.43,3.43,0,0,1-2.38,1.32h-.4a3.91,3.91,0,0,1-2.87-1.23,3.85,3.85,0,0,1-1.22-2.79,3.22,3.22,0,0,1,.53-1.74q1.25-1.86,6.73-4a38.16,38.16,0,0,1,13.73-2.52,6.05,6.05,0,0,1,6.07,3.84q1.12,2.64,1.58,9.66.33,4.32.66,7.44a43,43,0,0,0,.79,5.1,3.9,3.9,0,0,0,1.12,2,3.57,3.57,0,0,1,1,2.16,2,2,0,0,1,0,.36c0,.12-.06.26-.1.42Q97.35,55,93.85,55a5.67,5.67,0,0,1-2.71-.6A5.14,5.14,0,0,1,88.77,52.38Zm-14.32-8.1A3.64,3.64,0,0,0,72.8,47,2.89,2.89,0,0,0,73.56,49a2.39,2.39,0,0,0,1.88.87q2.77,0,6.07-3.42a21.35,21.35,0,0,0,5.15-9.3q-2.44,1.08-5,2.22a23.64,23.64,0,0,0-2.57,1.35,13.26,13.26,0,0,0-2,1.47A32.27,32.27,0,0,0,74.45,44.28Z" transform="translate(-0.59 -4.56)"/><path class="a" d="M110.15,58.92a5.33,5.33,0,0,0,.86,2.46,5.26,5.26,0,0,1,.86,2.28,3,3,0,0,1-.33,1.2q-1.39,2.7-5.41,2.7-3.3,0-4.09-2.16a3.68,3.68,0,0,1-.26-1.38,5.24,5.24,0,0,1,.43-1.77,5.44,5.44,0,0,0,.43-1.89V26.16a3.38,3.38,0,0,0-.53-1.59,3.31,3.31,0,0,1-.53-1.53,2.08,2.08,0,0,1,.26-1q.79-1.68,4.88-1.68,2.57,0,3.43,1a1.43,1.43,0,0,1,.33.9,4.39,4.39,0,0,1-.33,1.32,7.2,7.2,0,0,0-.4,1.38q3-4,7.13-4,5.54,0,8,5.64a28.94,28.94,0,0,1,1.91,11.28,23,23,0,0,1-3,11.58q-3.3,5.7-8.12,5.7-2.71,0-5.54-4Zm7.39-14.28a24.61,24.61,0,0,0,.92-6.78q0-2.88-.07-4.68a22.51,22.51,0,0,0-.2-2.58q-.73-3.9-3.3-3.9-1.52,0-2.77,3.78a24.16,24.16,0,0,0-1.19,7.38,20.21,20.21,0,0,0,1.32,6.48q1.25,4,2.64,4Q116.49,48.3,117.54,44.64Z" transform="translate(-0.59 -4.56)"/><path class="a" d="M174.7,39.66Q164.47,56,156.48,56q-4.36,0-8.32-4.44a7.38,7.38,0,0,1-2-5.16,13.72,13.72,0,0,1,2.38-6.9q.66-1.08,1.88-2.73t2.94-3.93a3.83,3.83,0,0,1-.79.06,10,10,0,0,1-2.77-.42q-3.1-.84-3.56-3.12a1.65,1.65,0,0,1-.07-.54q0-2.1,2.84-6.84a57.71,57.71,0,0,1,7.39-9.84q4.55-4.86,7.26-4.86,3.56,0,6.73,4.68a11.08,11.08,0,0,1,2,6.18,3.16,3.16,0,0,1-.4,1.74A3.38,3.38,0,0,1,169,21a4.39,4.39,0,0,1-2.64-.72,5.84,5.84,0,0,1-1.72-2.94q-.59-1.8-1.39-1.8-1.32,0-5.08,5t-3.7,6.3q0,.6,1.32.6t4.75-1.8q3.23-1.8,4.29-1.8h.13a4.57,4.57,0,0,1,2.71.84,2.65,2.65,0,0,1,1.19,2.28,6.16,6.16,0,0,1-1.65,3.72,8.36,8.36,0,0,1-1.78.9,4,4,0,0,0-1.91,1.38,19,19,0,0,0-6.34,7q-2.9,4.92-2.9,7.8,0,2.16,1.85,2.16t4.82-2.58a14.05,14.05,0,0,0,3.89-5.16,1.74,1.74,0,0,1-.59.12h-.53a4,4,0,0,1-2.71-1,3.11,3.11,0,0,1-1.12-2.43,1.39,1.39,0,0,1,.2-.78q.73-1.26,9.9-3.9Q177.73,32,180.11,32a1.52,1.52,0,0,1,.53.06,3.78,3.78,0,0,1,3,3.54,2.49,2.49,0,0,1-.73,1.74,3.08,3.08,0,0,1-1.91.54l-1.52.12a4,4,0,0,0-.92.18A13.38,13.38,0,0,0,174.7,39.66Z" transform="translate(-0.59 -4.56)"/><path class="a" d="M203.48,47.76q-4.95-2.94-4.95-5,0-1,1.39-1.68a11.13,11.13,0,0,1,5-1.32q4.88,0,6.53,5.28.4.72.79,1.5A10.14,10.14,0,0,0,213,48a4.34,4.34,0,0,0,1,1,2.19,2.19,0,0,0,1.29.39q3.89,0,3.89-5,0-4.5-1.78-6.06a36.6,36.6,0,0,0-6.34-2.76A14.24,14.24,0,0,1,204,29.76,14.67,14.67,0,0,1,201.5,22v-.36a18.72,18.72,0,0,1,3.56-11.16q3.83-5.4,9.5-5.4,6.53,0,9.64,4.8a15.27,15.27,0,0,1,2.24,7.44,14.22,14.22,0,0,1,.73,4.14,5.73,5.73,0,0,1-.33,2,3.84,3.84,0,0,1-3.89,2.22,6.15,6.15,0,0,1-4-1.44,6.89,6.89,0,0,1-2.44-4.38,1.43,1.43,0,0,1-.07-.48,2.46,2.46,0,0,1,.46-1.44,5.29,5.29,0,0,0,.66-1.08.34.34,0,0,0-.13-.24,2,2,0,0,0,.07-.6q0-1.68-2.11-1.68h-.2q-2.18.06-3.5,2.7a10.7,10.7,0,0,0-1,4.62v.48q.2,5.1,7.39,8.16Q223.87,32.76,226,35q3.1,3.36,3.1,9.42a11.68,11.68,0,0,1-3.3,8.22,10.59,10.59,0,0,1-8.05,3.54Q208,56.22,203.48,47.76Z" transform="translate(-0.59 -4.56)"/><path class="a" d="M250.66,28.14q-1.12,0-3.7,3.42A37.49,37.49,0,0,0,242.35,40a24,24,0,0,0-1.91,8.64,3.82,3.82,0,0,0,0,.54,4.09,4.09,0,0,1,0,.54,1.48,1.48,0,0,0-.2.72,3.63,3.63,0,0,0,.53,1.53,3.67,3.67,0,0,1,.53,1.59,2,2,0,0,1-.46,1.2q-1.78,2.34-3.56,2.34t-3.56-2.7q-1-1.5-1-17.94,0-3.06.1-9.81t.23-17.49q0-.36-.07-1.11T233,6.9a2.32,2.32,0,0,1,.4-1.08q.66-1.26,3.1-1.26a7.36,7.36,0,0,1,3.83,1,2.25,2.25,0,0,1,1.45,1.92,1.44,1.44,0,0,1-.07.48,1.68,1.68,0,0,1-.63.84,1.32,1.32,0,0,0-.56,1V29.1q3.76-7.74,11.09-8.16h.33q3.7,0,6,5.4A32.59,32.59,0,0,1,260.1,39a35.7,35.7,0,0,1-1.39,10.38,11.94,11.94,0,0,1,.4,1.92,1.69,1.69,0,0,1-.46,1.17,4.37,4.37,0,0,1-1.19.9,6.58,6.58,0,0,1-1.62.6,7.85,7.85,0,0,1-1.81.21q-2.84,0-3.63-1.92a4.36,4.36,0,0,1-.33-1.32,1.8,1.8,0,0,1,.23-.81,7.18,7.18,0,0,1,.53-.87,7.16,7.16,0,0,0,.53-.87,1.81,1.81,0,0,0,.23-.81,38.83,38.83,0,0,0,.79-9q0-10.14-1.58-10.44Z" transform="translate(-0.59 -4.56)"/><path class="a" d="M285.51,52.38a31.11,31.11,0,0,1-1.06-4.68,15.7,15.7,0,0,1-5.74,6.24A15.43,15.43,0,0,1,270.07,57q-5.81,0-7.79-6.3a11.78,11.78,0,0,1-.53-3.3q0-4.32,4.16-7.56a34.41,34.41,0,0,1,8.78-4.68q3.37-1.38,5.31-2.25a23.89,23.89,0,0,0,2.61-1.29,7,7,0,0,0,.26-2q0-1.86-1.19-2.16a7.51,7.51,0,0,0-2.31-.36q-3,0-7.46,2.7a12.16,12.16,0,0,0-2.24,2,3.43,3.43,0,0,1-2.38,1.32h-.4A3.91,3.91,0,0,1,264,31.95a3.85,3.85,0,0,1-1.22-2.79,3.22,3.22,0,0,1,.53-1.74q1.25-1.86,6.73-4a38.16,38.16,0,0,1,13.73-2.52,6.05,6.05,0,0,1,6.07,3.84q1.12,2.64,1.58,9.66.33,4.32.66,7.44a43,43,0,0,0,.79,5.1A3.9,3.9,0,0,0,294,49a3.57,3.57,0,0,1,1,2.16,2,2,0,0,1,0,.36c0,.12-.06.26-.1.42Q294.09,55,290.59,55a5.67,5.67,0,0,1-2.71-.6A5.14,5.14,0,0,1,285.51,52.38Zm-14.32-8.1A3.64,3.64,0,0,0,269.54,47,2.89,2.89,0,0,0,270.3,49a2.39,2.39,0,0,0,1.88.87q2.77,0,6.07-3.42a21.35,21.35,0,0,0,5.15-9.3q-2.44,1.08-5,2.22a23.64,23.64,0,0,0-2.57,1.35,13.26,13.26,0,0,0-2,1.47A32.27,32.27,0,0,0,271.19,44.28Z" transform="translate(-0.59 -4.56)"/><path class="a" d="M303.27,56a5.1,5.1,0,0,1-3.76-1.38,3.38,3.38,0,0,1-.92-2.34,14.35,14.35,0,0,1,.13-1.56,15,15,0,0,0,.13-1.74V26.58a2.52,2.52,0,0,0-.53-1.32,2.48,2.48,0,0,1-.53-1.26,1.57,1.57,0,0,1,.26-.84q.86-1.44,5.35-1.44,3.5,0,4,1.5a3.87,3.87,0,0,1,.2,1,1.16,1.16,0,0,1-.53,1q-.53.36-.53.72l.13,2.16,5.68-5.46q1-1,2.08-2a4.12,4.12,0,0,1,2.54-1.14h.66a8,8,0,0,1,3.63.9q2.11,1.08,2.11,2.82a2,2,0,0,1-.07.6q-.33,1.32-2.51,1.74a7.54,7.54,0,0,0-3.37,1.38L306.63,38.22v9.12a5.19,5.19,0,0,0,.79,2.7,4.3,4.3,0,0,1,.86,2,3.36,3.36,0,0,1-.46,1.62Q306.7,56,303.27,56Z" transform="translate(-0.59 -4.56)"/><path class="a" d="M340,54.78a17.67,17.67,0,0,1-5.61,1.08h-.66q-4.88-.24-7.79-5.22a21.93,21.93,0,0,1-2.57-11,25.81,25.81,0,0,1,2.9-12.42q3.3-5.88,8.65-6.6l1-.09c.33,0,.67,0,1,0q7.85,0,8.65,8.76a2,2,0,0,0,0,.36,2,2,0,0,1,0,.36q0,3.6-3.56,8a22.15,22.15,0,0,1-10.82,7.32q.33,1.2.63,2a9.87,9.87,0,0,0,.5,1.14,2.73,2.73,0,0,0,2.51,1.5,7.64,7.64,0,0,0,5.21-2.82q.2-.06.53-1.32A2.44,2.44,0,0,1,342,44a2.21,2.21,0,0,1,.92-.18,4.47,4.47,0,0,1,3,1.44,3.56,3.56,0,0,1,1.25,2.4.92.92,0,0,1,0,.24.89.89,0,0,0,0,.24q-.53,2.28-3.56,4.86Q343.06,53.64,340,54.78ZM330.66,38v.72a3.64,3.64,0,0,0,.07.66,11.67,11.67,0,0,0,5.74-4.2q2.64-3.3,2.64-5.88A2.06,2.06,0,0,0,336.79,27q-2.64,0-4.29,3.42A17.19,17.19,0,0,0,330.66,38Z" transform="translate(-0.59 -4.56)"/></svg>
+                        </em>
+                        <span class="desc">A big bar of extra chocolaty KitKat<br />#BreakFromGravity</span>
+                    </li>
+                </ul>
+                <div class="hand-wrap">
+                    <img class="hand" src="images/hand.png" alt="hand" />
+                    <img class="finger" src="images/finger.png" alt="finger" />
+                </div>
+            </section>
+            <!-- better chocolate -->
+            <section id="better-chocolate" class="menu05">
+                <div class="wrapper">
+                    <h2 class="tit">Better Chocolate</h2>
+                    <p class="desc">We are here where we believe we will meet people like you, who sincerely love <br /> chocolate and whose values resonate well with ours.</p>
+                    <ul class="better">
+                        <li>
+                            <p class="icon"><img src="images/better01.png" alt="icon" /></p>
+                            <h2 class="better-tit">Better Plants</h2>
+                            <p class="txt">Min. 1.4 million higher-yielding <br />trees provided <br />to cocoa farmers in 2015.</p>
+                        </li>
+                        <li>
+                            <p class="icon"><img src="images/better02.png" alt="icon" /></p>
+                            <h2 class="better-tit">Better Cocoa</h2>
+                            <p class="txt">100,000 tons of cocoa  <br />will be sourced through  <br />the Nestle Cocoa Plan in 2015. </p>
+                        </li>
+                        <li>
+                            <p class="icon"><img src="images/better03.png" alt="icon" /></p>
+                            <h2 class="better-tit">Better Schools</h2>
+                            <p class="txt">40 schools on Cote  <br />d'Ivoire over 2012-2014.</p>
+                        </li>
+                        <li>
+                            <p class="icon"><img src="images/better04.png" alt="icon" /></p>
+                            <h2 class="better-tit">Better Farming</h2>
+                            <p class="txt">Min. 30,000 cocoa farmers  <br />will be trained <br />on good and sustainable <br /> cocoa farming practices in 2015.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- cocoa plan campaign -->
+            <section id="cocoa-plan" class="menu06">
+                <h2 class="tit">Nestle cocoa plan</h2>
+                <p class="desc">
+                    Improving the lives of cocoa farmers and the quality of their products <br />Supporting farmers for better chocolate
+                </p>
+                <img src="images/cacao.png" alt="chocolate image" />
+                <p class="btn-con">
+                    <a href="#" class="btn">visit website</a>
+                    <a href="#" class="btn">visit facebook</a>
+                </p>
+            </section>
+            <!-- background video -->
+            <section id="enjoy">
+                <video autoplay muted loop preload="auto" class="making-video">
+                    <source src="videos/kitkat.mp4" type="video/mp4">
+                    <source src="videos/kitkat.ogv" type="video/ogg">
+                    Your browser does not support HTML5 video.
+                </video>
+                <!--<div class="making-video">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/UT6yEF9RNM8?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;autohide=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>-->
+                <div class="content">
+                    <h2 class="tit"> We want to help shape a better<br/>and healthier world.</h2>
+                    <button class="play-btn" onclick="playVideo()">Pause</button>
+                </div>
+            </section>
+            <script>
+                var video = document.querySelector(".making-video");
+                var btn = document.querySelector(".play-btn");
 
-			function playVideo() {
-			  if (video.paused) {
-			    video.play();
-			    btn.innerHTML = "Pause";
-			  } else {
-			    video.pause();
-			    btn.innerHTML = "Play";
-			  }
-			}
-		</script>
-        <!-- top button -->
-		<a class="top-btn" href="#">TOP</a>
-	</main>
-	<!-- footer
-		<footer id="footer">
-			<a class="top-btn-ft" href="#"><img src="images/top-btn-ft.png" alt="top button" /></a>
-			<p class="desc">For early access and updates by email, please subscribe below</p>
-			<form>
-				<label for="user_mail"></label>
-				<input id="user_mail" class="email" type="email" placeholder="Email Adress" />
-				<input class="send" type="submit" value="SEND" />
-			</form>
-			<p class="small_desc">We respect your privacy and will only use your email for news and updates</p>
-			<ul class="sub_menu">
-				<li><a href="#">ABOUT</a></li>
-				<li><a href="#">GUIDELINES</a></li>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="#">TERMS</a></li>
-				<li><a href="#">PRIVACY</a></li>
-			</ul>
-			<p class="copyright">© 2018 Nestle Kitkat Inc. All rights reserved.</p>
-		</footer> -->
-    <!-- footer -->
-	<footer id="footer">
-		<a class="top-btn-ft" href="#"><img src="images/top-btn-ft.png" alt="top button" /></a>
-		<ul class="footer_lst">
-			<li>
-				<h3 class="title">Nestle KitKat</h3>
-				<p class="add">800 North Brand Blvd. <br />Glendale, CA, 91203 <br />United States</p>
-				<p class="tel">+1-818-549 60 00</p>
-			</li>
-			<li>
-				<h3 class="title">Contact Nestle</h3>
-				<p>hello@nestle.com</p>
-				<p>bussiness@nestle.com<br />jobs@nestle.com</p>
-				<p>Nestle/USA<br />nestle.com</p>
-			</li>
-			<li>
-				<h3 class="title">Follow Us</h3>
-				<ul class="sns">
-					<li>
-						<span>Pinterest</span>
-						<a href="#"><i class="fab fa-pinterest-p"></i></i></a>
-					</li>
-					<li>
-						<span>Youtube</span>
-						<a href="#"><i class="fab fa-youtube"></i></a>
-					</li>
-					<li>
-						<span>Dribble</span>
-						<a href="#"><i class="fab fa-dribbble"></i></a>
-					</li>
-					<li>
-						<span>Twitter</span>
-						<a href="#"><i class="fab fa-twitter"></i></i></a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</footer>
-	<script src="js/front_v180823.js"></script>
+                function playVideo() {
+                  if (video.paused) {
+                    video.play();
+                    btn.innerHTML = "Pause";
+                  } else {
+                    video.pause();
+                    btn.innerHTML = "Play";
+                  }
+                }
+            </script>
+            <!-- top button -->
+            <a class="top-btn" href="#">TOP</a>
+
+        <!-- footer -->
+        <footer id="footer">
+            <a class="top-btn-ft" href="#"><img src="images/top-btn-ft.png" alt="top button" /></a>
+            <ul class="footer-list">
+                <li>
+                    <h3 class="title">Nestle KitKat</h3>
+                    <address>
+                        <span class="addr">800 North Brand Blvd. <br />Glendale, CA, 91203 <br />United States</span>
+                        <span class="tel">+1-818-549 60 00</span>
+                    </address>
+                </li>
+                <li>
+                    <h3 class="title">Contact Nestle</h3>
+                    <span>hello@nestle.com</span>
+                    <span>bussiness@nestle.com</span>
+                    <span>jobs@nestle.com</span>
+                    <span>Nestle/USA</span>
+                    <span>nestle.com</span>
+                </li>
+                <li>
+                    <h3 class="title">Follow Us</h3>
+                    <ul class="sns">
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></i><span>Pinterest</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-youtube"></i><span>Youtube</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-dribbble"></i><span>Dribble</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></i><span>Twitter</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </footer>
+    </div>
+	<script src="js/front_v180824.js"></script>
 	<script>
 	'use strict';
-	$.fn.setCheckShow = function(options) {
-	    var settings = $.extend({
-	        classPrefix: 'scroll'
-	    }, options);
-	    
-	    this.each(function() {
-	        var $selector = $(this);
-	        var scrollTop = 0;
-	        var offsetTop = 0;
-	        var windowHeight = 0;
-	        var elementHeight = 0;
-	        var startShow = 0;
-	        var endShow = 0;
-	        var classPrefix = settings.classPrefix;
 
-	        checkShow();
-	        $(window).on('scroll resize', function() {
-	            checkShow();
-	        }); // end of scroll
-	        
-	        function checkShow() {
-	            scrollTop = $(document).scrollTop();
-	            offsetTop = $selector.offset().top;
-	            windowHeight = $(window).height();
-	            elementHeight = $selector.outerHeight();
-	            startShow = offsetTop - windowHeight + 200; // offset().top - 브라우저창의 height = 나타나는 순간의 스크롤 값
-	            endShow = offsetTop + elementHeight;
-
-	            if (scrollTop < startShow) { // down
-	                $selector.removeClass(classPrefix + '-up' + ' ' + classPrefix + '-show');
-	                $selector.addClass(classPrefix + '-down');
-	            } else if (scrollTop > endShow) { // up
-	                $selector.removeClass(classPrefix + '-down' + ' ' + classPrefix + '-show');
-	                $selector.addClass(classPrefix + '-up');
-	            } else { // show
-	                $selector.removeClass(classPrefix + '-up' + ' ' + classPrefix + '-down');
-	                $selector.addClass(classPrefix + '-show');
-	            }
-	       } // end of checkShow
-	       
-	    }); // end of each
-	}  // end of jquery function - setCheckShow
-	$('section h2.tit, section p.desc').setCheckShow();
     </script>
 </body>
 </html>
