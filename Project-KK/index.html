@@ -10,12 +10,12 @@
     <meta name="description" content="You know what to do, just click/tap and... Have a break, have a KITKAT.">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <!-- Webfont -->
-    <link href="fonts/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/font.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/reset.css" />	
-    <link href="css/style_v180824.css" rel="stylesheet" type="text/css" />
+    <link href="css/style_v180825.css" rel="stylesheet" type="text/css" />
     <!-- JavaScript & jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
@@ -25,22 +25,25 @@
         <div class="spinner">
             <img src="images/spin.png" aria-label="loading" alt="" />
         </div>
+
         <!-- skip navigation -->
-        <a href="#" id="skip-nav">Skip to main content</a>
+        <a href="#container" id="skip-nav">Skip to main content</a>
+
         <!-- header -->
         <header id="header">
             <img class="main-bg" src="images/bg.jpg" alt="" />
             <div class="layer-mask"></div>
-            <h1 class="logo"><a href="#"><img src="images/logo.png" alt="Nestle Kitkat" /></a></h1>
+            <h1 class="logo"><a href="index_v180825.html"><img src="images/logo.png" alt="Nestle Kitkat" /></a></h1>
             <div class="menu-open-wrap">
-                <a class="menu-open" href="#"><img src="images/open-icon.png" alt="menu open icon" /></a>
+                <a class="menu-open" href="#"><img src="images/open_icon.png" alt="menu open icon" /></a>
             </div>
             <div class="copy-area">
                 <h2 class="main-copy"><img src="images/kitkat.png" alt="kitkat" /></h2>
                 <p class="sub-copy"><span>Have</span><span>a break, have a KitKat.</span></p>
             </div>
-            <a class="scroll-down-btn" href="#"><img src="images/scroll-btn.png" alt="arrow down" /><i class="fas fa-arrow-down"></i></a>
+            <a class="scroll-down-btn" href="#"><img src="images/scroll_btn.png" alt="arrow down" /><i class="fas fa-arrow-down"></i></a>
         </header>
+
         <!-- menu -->
         <nav id="menu">
             <ul class="gnb" role="menu">
@@ -62,8 +65,9 @@
                     <li><a href="#" role="menuitem">linkedin</a></li>
                 </ul>
             </div>
-            <a class="menu-close" href="#">CLOSE</a>
+            <a class="menu-close close-btn" href="#">CLOSE</a>
         </nav>
+
         <!-- main container -->
         <main id="container">
             <!-- kitkat studio -->
@@ -80,6 +84,7 @@
                     </p>
                 </div>
             </section>
+
             <!-- breaks taken this year -->
             <section id="break-rate">
                 <div class="box">
@@ -88,6 +93,7 @@
                     <p class="icon"><img src="images/rabbit.png" alt="rabbit icon" /></p>
                 </div>
             </section>
+
             <!-- the break emoji -->
             <section id="emoji" class="menu02">
                 <div class="wrapper">
@@ -101,16 +107,17 @@
                         with #thebreakemoji and show the world how you break!
                     </p>
                     <p class="btn-con">
-                        <a href="#" class="btn">view video</a>
+                        <a href="#" class="btn view-btn">view video</a>
                         <span class="or">or</span>
                         <a href="#" class="btn"><strong>sign the petition</strong></a>
                     </p>
                 </div>
-                <div class="popup-vid">
-                    <iframe id="kitkat" src="https://player.vimeo.com/video/152392621?title=0&byline=0&portrait=0" width="800" height="450"></iframe>
-                    <a href="#" class="close">CLOSE</a>
-                </div>
+                <aside class="popup-vid">
+                    <iframe id="kitkat" src="https://player.vimeo.com/video/152392621?title=0&byline=0&portrait=0" width="800" height="450" title="kitkat promotion video"></iframe>
+                    <a href="#" class="popup-close close-btn">CLOSE</a>
+                </aside>
             </section>
+
             <!-- create your break -->
             <section id="create">
                 <div class="layer-mask"></div>
@@ -119,6 +126,7 @@
                     <h3 class="title">create your break</h3>
                 </div>
             </section>
+
             <!-- history of kitkat -->
             <section id="history" class="wrapper clearfix menu03">
                 <div class="box">
@@ -137,6 +145,7 @@
                     </p>
                 </div>
             </section>
+
             <!-- product list -->
             <section id="product" class="wrapper menu04">
                 <h2 class="hide">product list</h2>
@@ -183,6 +192,7 @@
                     <img class="finger" src="images/finger.png" alt="finger" />
                 </div>
             </section>
+
             <!-- better chocolate -->
             <section id="better-chocolate" class="menu05">
                 <div class="wrapper">
@@ -190,75 +200,61 @@
                     <p class="desc">We are here where we believe we will meet people like you, who sincerely love <br /> chocolate and whose values resonate well with ours.</p>
                     <ul class="better">
                         <li>
-                            <p class="icon"><img src="images/better01.png" alt="icon" /></p>
-                            <h2 class="better-tit">Better Plants</h2>
-                            <p class="txt">Min. 1.4 million higher-yielding <br />trees provided <br />to cocoa farmers in 2015.</p>
+                            <span class="icon"><img src="images/better_01.png" alt="icon" /></span>
+                            <em class="better-tit">Better Plants</em>
+                            <span class="txt">Min. 1.4 million higher-yielding <br />trees provided <br />to cocoa farmers in 2015.</span>
                         </li>
                         <li>
-                            <p class="icon"><img src="images/better02.png" alt="icon" /></p>
-                            <h2 class="better-tit">Better Cocoa</h2>
-                            <p class="txt">100,000 tons of cocoa  <br />will be sourced through  <br />the Nestle Cocoa Plan in 2015. </p>
+                            <span class="icon"><img src="images/better_02.png" alt="icon" /></span>
+                            <em class="better-tit">Better Cocoa</em>
+                            <span class="txt">100,000 tons of cocoa  <br />will be sourced through  <br />the Nestle Cocoa Plan in 2015. </span>
                         </li>
                         <li>
-                            <p class="icon"><img src="images/better03.png" alt="icon" /></p>
-                            <h2 class="better-tit">Better Schools</h2>
-                            <p class="txt">40 schools on Cote  <br />d'Ivoire over 2012-2014.</p>
+                            <span class="icon"><img src="images/better_03.png" alt="icon" /></span>
+                            <em class="better-tit">Better Schools</em>
+                            <span class="txt">40 schools on Cote  <br />d'Ivoire over 2012-2014.</span>
                         </li>
                         <li>
-                            <p class="icon"><img src="images/better04.png" alt="icon" /></p>
-                            <h2 class="better-tit">Better Farming</h2>
-                            <p class="txt">Min. 30,000 cocoa farmers  <br />will be trained <br />on good and sustainable <br /> cocoa farming practices in 2015.</p>
+                            <span class="icon"><img src="images/better_04.png" alt="icon" /></span>
+                            <em class="better-tit">Better Farming</em>
+                            <span class="txt">Min. 30,000 cocoa farmers  <br />will be trained <br />on good and sustainable <br /> cocoa farming practices in 2015.</span>
                         </li>
                     </ul>
                 </div>
             </section>
+
             <!-- cocoa plan campaign -->
             <section id="cocoa-plan" class="menu06">
                 <h2 class="tit">Nestle cocoa plan</h2>
                 <p class="desc">
                     Improving the lives of cocoa farmers and the quality of their products <br />Supporting farmers for better chocolate
                 </p>
-                <img src="images/cacao.png" alt="chocolate image" />
+                <img src="images/cacao.png" alt="" />
                 <p class="btn-con">
                     <a href="#" class="btn">visit website</a>
                     <a href="#" class="btn">visit facebook</a>
                 </p>
             </section>
-            <!-- background video -->
+
+            <!-- enjoy : background video -->
             <section id="enjoy">
                 <video autoplay muted loop preload="auto" class="making-video">
                     <source src="videos/kitkat.mp4" type="video/mp4">
                     <source src="videos/kitkat.ogv" type="video/ogg">
                     Your browser does not support HTML5 video.
                 </video>
-                <!--<div class="making-video">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/UT6yEF9RNM8?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;autohide=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>-->
                 <div class="content">
                     <h2 class="tit"> We want to help shape a better<br/>and healthier world.</h2>
-                    <button class="play-btn" onclick="playVideo()">Pause</button>
+                    <button class="play-btn">Pause</button>
                 </div>
             </section>
-            <script>
-                var video = document.querySelector(".making-video");
-                var btn = document.querySelector(".play-btn");
 
-                function playVideo() {
-                  if (video.paused) {
-                    video.play();
-                    btn.innerHTML = "Pause";
-                  } else {
-                    video.pause();
-                    btn.innerHTML = "Play";
-                  }
-                }
-            </script>
             <!-- top button -->
             <a class="top-btn" href="#">TOP</a>
-
+        </main>
         <!-- footer -->
         <footer id="footer">
-            <a class="top-btn-ft" href="#"><img src="images/top-btn-ft.png" alt="top button" /></a>
+            <a class="top-btn-ft" href="#"><img src="images/top_btn_ft.png" alt="top button" /></a>
             <ul class="footer-list">
                 <li>
                     <h3 class="title">Nestle KitKat</h3>
@@ -278,27 +274,15 @@
                 <li>
                     <h3 class="title">Follow Us</h3>
                     <ul class="sns">
-                        <li>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></i><span>Pinterest</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-youtube"></i><span>Youtube</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-dribbble"></i><span>Dribble</span></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-twitter"></i></i><span>Twitter</span></a>
-                        </li>
+                        <li><a href="#"><i class="fab fa-pinterest-p"></i><span>Pinterest</span></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i><span>Dribble</span></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
                     </ul>
                 </li>
             </ul>
         </footer>
     </div>
-	<script src="js/front_v180824.js"></script>
-	<script>
-	'use strict';
-
-    </script>
+	<script src="js/front_v180825.js"></script>
 </body>
 </html>

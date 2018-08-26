@@ -7,7 +7,7 @@ $(document).on('click', 'a[href="#"]', function(e) {
     
 $(document).ready(function() {
 
-	// Disappear spinner
+	// disappear spinner
     setTimeout(function() {$('body').removeClass();}, 1100);
     setTimeout(function() {
         $('.spinner').animate({'opacity': 0}, function() {
@@ -15,7 +15,7 @@ $(document).ready(function() {
         });
     }, 1200);
     
-    // Background image move effect
+    // background image move effect
 	setMoveReverse();
 	function setMoveReverse() {
         var startX = 0;
@@ -48,7 +48,7 @@ $(document).ready(function() {
         }); // end of mouseleave
     } // end of setMoveReverse
 
-    // Main title fade in effect // Alternative with css animation 2018.08.23
+    // main title fade in effect // alternative with css animation 2018.08.23
 	/*
     titFade();
 	function titFade() {
@@ -57,7 +57,7 @@ $(document).ready(function() {
 	}
     */
         
-    // Break rate count
+    // break rate count
     $.fn.startRateCount = function(options) {
         var settings = $.extend({
             countGap: 729,
@@ -91,7 +91,6 @@ $(document).ready(function() {
             }
             numberNow += countGap;
         } // end of updateBreakRate
-
     } // end of jquery function - startRateCount
 
     $('.counter').startRateCount();
@@ -126,7 +125,7 @@ $(document).ready(function() {
 		// based on easing equations from Robert Penner (http://www.robertpenner.com/easing)
 	})(); // end of easing function
     
-    // Menu
+    // menu
 	navMenu();
 	function navMenu() {
         var menu = $('#menu')
@@ -164,17 +163,16 @@ $(document).ready(function() {
             	openBtn.parent().stop().animate({'top': -20 + 'px'}, 200);
                 $('html, body').animate({scrollTop: pos});
             });
-        }); // end of click
-        
+        }); // end of click  
 	} // end of nav menu
 	
-    // Header scroll down button
+    // header scroll down button
 	$('a.scroll-down-btn').on('click', function() {
 		var pos = $('#studio').position().top;
 		$('html, body').animate({scrollTop: pos});
 	});
 
-    // Top button
+    // top button
     topBtn();
     function topBtn() {
         var btn = $('a.top-btn');
@@ -194,7 +192,43 @@ $(document).ready(function() {
         }); // end of click
     } // end of topBtn
 
-     // Image slide - product list
+    // menu & video layer popup focus
+    $('a.menu-open').on('click', function() {
+        openLayerPopup('#menu', $(this));
+    });
+    $('.view-btn').on('click', function() {
+        openLayerPopup('.popup-vid', $(this));
+    });
+    function openLayerPopup(selector, returnElement, width, height) {
+        if (width !== undefined) {
+            $(selector).css({'width': width + 'px', 'margin-left': -(width / 2) + 'px'});
+        }
+        if (height !== undefined) {
+            $(selector).css({'height': height + 'px', 'margin-top': -(height / 2) + 'px'});
+        }
+        $(selector).before('<div class="popup-layer-mask" tabIndex="0"></div>');
+        $(selector).find(':last').addClass('last').attr({'tabIndex': 0});
+        $(selector).append('<a href="#" class="return"></a>');
+        $(selector).css({'display': 'block'}).attr({'tabIndex': 0}).focus();
+        
+        // focus move
+        $(selector).find('a.return').on('focus', function() {
+            $(selector).focus();
+        });
+        $('.popup-layer-mask').on('focus', function() {
+            $(selector).find('.last').focus();
+        });
+        
+        // close
+        $(selector).find('a.close-btn').one('click', function() {
+            $(returnElement).focus();
+            $('.popup-layer-mask').remove();
+            $(selector).find('a.return').remove();
+            $(selector).css({'display': 'none'});
+        });
+    } // end of openLayerPopup
+
+    // image slide - product list
     $.fn.setImageSlide = function(options) {
         var settings = $.extend({
             slideFirst: 1,
@@ -309,9 +343,7 @@ $(document).ready(function() {
                     timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
                 } 
             }  // end of showSlideSwipe
-            
         });  // end of each
-        
     } // end of jquery function - setImageSlide
 
     $('.product-list').setImageSlide({
@@ -320,7 +352,7 @@ $(document).ready(function() {
         transitionType: 'swipe'
     });
 
-    // Title text fade effect scroll event
+    // title text fade effect scroll event
     $.fn.setCheckShow = function(options) {
         var settings = $.extend({
             classPrefix: 'scroll'
@@ -360,11 +392,34 @@ $(document).ready(function() {
                     $selector.addClass(classPrefix + '-show');
                 }
            } // end of checkShow
-           
         }); // end of each
-
     }  // end of jquery function - setCheckShow
 
     $('section h2.tit, section p.desc').setCheckShow();
+
+    // video play button
+    setPlayVideo();
+    function setPlayVideo() {
+        var video = $('.making-video');
+        var btn = $('.play-btn');
+        var isVideoPlay = true;
+
+        btn.on('click', function() {
+            playVideo();
+        });
+        
+        function playVideo() {
+            if (isVideoPlay === true) {
+                video.get(0).pause();
+                btn.html('Play');
+                isVideoPlay = false;
+            } else {
+                video.get(0).play();
+                btn.html('Pause');
+                isVideoPlay = true;
+            }
+        } // end of playVideo
+    } // end of setPlayVideo
+
     
 }) // end of ready
