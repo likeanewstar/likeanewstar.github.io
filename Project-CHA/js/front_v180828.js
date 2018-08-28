@@ -295,12 +295,12 @@ $(document).ready(function() {
 	$('#notice .ntc-tit > li').eq(0).trigger('click');
 
 	// 비디오 재생 버튼 클릭시 풀스크린으로 아이프레임 연결
-	$('.video .play a').click(function() {
-		$('.video .popup-vid').fadeIn()
+	$('#video .play a').click(function() {
+		$('#video .popup-vid').fadeIn()
 		$('.top').fadeOut()
 	});
-	$('.video .close a').click(function() {
-		$('.video .popup-vid').fadeOut()
+	$('#video .close a').click(function() {
+		$('#video .popup-vid').fadeOut()
 		$('.top').fadeIn()
 	});
 
