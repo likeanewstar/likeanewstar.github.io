@@ -79,25 +79,19 @@ $(document).ready(function() {
         $('#gnb > li > a').on('click', function(e) {
             if ($(window).width() <= 850) {
                 e.preventDefault();
-                var height = 0;
-                $(this).next().find('div > ul >li').each(function() {
-                    height += $(this).outerHeight(true);
-                });
-                $('#gnb > li > ul').css({'height': 0});
+                $('#gnb > li > .sub-menu > .inner > ul').css({'height': 0});
                 $(this).next().find('.inner > ul').css({'height': 'auto'});
-                //$(this).next().find('.inner > ul').css({'height': height + 'px'});
+                $('#gnb > li').removeClass('on');
+                $(this).parent('li').addClass('on');
             }
         });
         $('#gnb li .sub-menu .inner > ul > li > a').on('click', function(e) {
             if ($(window).width() <= 850) {
                 e.preventDefault();
-                var height = 0;
-                $(this).next().find('li').each(function() {
-                    height += $(this).outerHeight(true);
-                });
                 $('#gnb li .sub-menu .inner > ul > li > ul').css({'height': 0});
                 $(this).next().css({'height': 'auto'});
-                //$(this).next().css({'height': height + 'px'});
+                $('#gnb li .sub-menu .inner > ul > li').removeClass('on');
+                $(this).parent('li').addClass('on');
             } 
         });
     } // end of navMenuMobilde
