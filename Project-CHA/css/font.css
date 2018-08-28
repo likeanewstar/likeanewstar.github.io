@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+/* Noto sans */
+
+@font-face {
+    font-family:'Noto Sans Kr';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans Light'),
+         local('NotoSans-Light'),
+         url(../font/NotoSansKR-Light.woff2) format('woff2'),
+         url(../font/NotoSansKR-Light.woff) format('woff'),
+         url(../font/NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family:'Noto Sans Kr';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans Regular'),
+         local('Notans-RegularoS'),
+         url(../font/NotoSansKR-Regular.woff2) format('woff2'),
+         url(../font/NotoSansKR-Regular.woff) format('woff'),
+         url(../font/NotoSansKR-Regular.otf) format('opentype');
+}
+
+/**/
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/noto-sans-v7-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Noto Sans'), local('NotoSans'),
+       url('../fonts/noto-sans-v7-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/noto-sans-v7-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/noto-sans-v7-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/noto-sans-v7-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+/* Nanum Myeongjo */
+
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/nanum-myeongjo-v8-korean_latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('NanumMyeongjo'),
+       url('../fonts/nanum-myeongjo-v8-korean_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/nanum-myeongjo-v8-korean_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/nanum-myeongjo-v8-korean_latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/nanum-myeongjo-v8-korean_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/nanum-myeongjo-v8-latin_korean-700.eot'); /* IE9 Compat Modes */
+  src: local('NanumMyeongjo Bold'), local('NanumMyeongjoBold'),
+       url('../fonts/nanum-myeongjo-v8-latin_korean-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/nanum-myeongjo-v8-latin_korean-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/nanum-myeongjo-v8-latin_korean-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/nanum-myeongjo-v8-latin_korean-700.ttf') format('truetype'), /* Safari, Android, iOS */
+}
