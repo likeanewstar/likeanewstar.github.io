@@ -177,16 +177,23 @@ $(document).ready(function() {
     function topBtn() {
         var btn = $('a.top-btn');
         var scrollTop = 0;
+
+        checkScroll();
         $(window).on('scroll', function() {
+            checkScroll();
+        }); // end of scroll
+        
+        function checkScroll() {
             scrollTop = $(window).scrollTop();
             if (scrollTop >= $('#studio').offset().top && scrollTop <= $('#enjoy').offset().top - 500) {
-                btn.css({'display': 'block', 'opacity': 0}).stop().animate({'opacity': 1}, 100);
+                btn.css({'display': 'block', 'opacity': 0}).stop().animate({'opacity': 1}, 50);
             } else {
-                btn.stop().animate({'opacity': 0}, 100, function() {
+                btn.stop().animate({'opacity': 0}, 50, function() {
                     $(this).css({'display': 'none'});
                 });
             }
-        }); // end of scroll
+        } // end of checkScroll
+
         $('a.top-btn, a.top-btn-ft').on('click', function() {
             $('html, body').animate({scrollTop: 0});
         }); // end of click
