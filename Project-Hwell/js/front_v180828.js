@@ -1,12 +1,106 @@
 // JavaScript Document
+'use strict';
+
+$(document).on('click', 'a[href="#"]', function(e) {
+    e.preventDefault();
+});
 
 $(document).ready(function() {
-    'use strict';
 
-    // a 링크 이벤트 위임
-    $(document).on('click', 'a[href="#"]', function(e) {
-        e.preventDefault();
-    });
+    // 국민건강알람서비스 오늘 날짜 넣기
+    todayIs();
+    function todayIs() {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; // Jan is 0
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {dd = '0' + dd}
+        if (mm < 10) {mm = '0' + mm}
+        
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("date").innerHTML = today;
+    } // end of todayIs
+
+    // mobile 검색 영역
+    mSch();
+    function mSch() {
+        $('.m-sch-open').on('click', function() {
+    		$('.htop-sch').stop(true).css({'display': 'block', 'opacity': 0}).animate({'opacity': 1}, 300);
+    	});
+    	$('.m-sch-close').on('click', function() {
+    		$('.htop-sch').stop(true).animate({'opacity': 0}, 300, function() {
+                $(this).css({'display': 'none'})
+            });
+    	});
+    } // end of mSch
+    
+    // GNB
+    navMenu();
+    function navMenu() {
+	    var nav = $('#gnb > li > a');
+	    var navSub = $('#gnb > li > .sub-menu');
+	    var subM = $('.sub-menu ul > li > ul > li > a');
+	    var smH = 0;
+
+	    nav.on('mouseenter focus',function() {
+            if ($(window).width() <= 850) return false;
+	        navSub.stop().slideUp('fast');
+	        navSub.removeClass('on');
+	        $(this).next('.sub-menu').stop().addClass('on');
+	        smH = $(this).next('.sub-menu').height();
+	       $(this).next('.sub-menu').css('height', smH).stop().slideDown('fast');
+	    });
+        
+	    $('#gnb').on('mouseleave', function() {
+            if ($(window).width() <= 850) return false;
+	        navSub.stop().slideUp('fast');
+	    });
+        
+	    $('.sub-menu > .inner > ul > li:last-child a').on('focusout',function() {
+	        navSub.stop().slideUp('fast');
+	    });
+        
+	    subM.hover(function() {
+	       $(this).parent('li').parent('ul').prev('a').addClass('on');
+	    },
+	    function() {
+	        $(this).parent('li').parent('ul').prev('a').removeClass('on');
+	    });
+	} // end of navMenu
+    
+    // GNB Mobile
+    navMenuMobile();
+    function navMenuMobile() {
+        $('#header a.menu').on('click', function() {
+            $(this).toggleClass('open');
+            $('.gnb-wrap').toggleClass('open');
+        });
+        $('#gnb > li > a').on('click', function(e) {
+            if ($(window).width() <= 850) {
+                e.preventDefault();
+                var height = 0;
+                $(this).next().find('div > ul >li').each(function() {
+                    height += $(this).outerHeight(true);
+                });
+                $('#gnb > li > ul').css({'height': 0});
+                $(this).next().find('.inner > ul').css({'height': 'auto'});
+                //$(this).next().find('.inner > ul').css({'height': height + 'px'});
+            }
+        });
+        $('#gnb li .sub-menu .inner > ul > li > a').on('click', function(e) {
+            if ($(window).width() <= 850) {
+                e.preventDefault();
+                var height = 0;
+                $(this).next().find('li').each(function() {
+                    height += $(this).outerHeight(true);
+                });
+                $('#gnb li .sub-menu .inner > ul > li > ul').css({'height': 0});
+                $(this).next().css({'height': 'auto'});
+                //$(this).next().css({'height': height + 'px'});
+            } 
+        });
+    } // end of navMenuMobilde
 
     // image slide
     $.fn.setImageSlide = function(options) {
@@ -34,7 +128,7 @@ $(document).ready(function() {
 
             // 초기화
             $selector.find('ul.slide li').each(function(i) {
-                $selector.find('ul.indicator').append('<li><a href="#">' + (i + 1) + '번 이미지</a></li>\n');
+                $selector.find('ul.indicator').append('<li > <a href="#" > ' + (i + 1) + '번 이미지</a > </li > \n');
             });
             if (isTimerOn === true) {
                 $selector.find('p.control a.play').addClass('on');
@@ -154,11 +248,19 @@ $(document).ready(function() {
                     timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
                 } 
             }  // end of showSlideAnimation
-            
         });  // end of each
-        
     } // end of jquery function - setImageSlide
     
+    // 메인 비쥬얼 mobile용 image slide 실행
+    $('.visual-m').setImageSlide({
+        isTimerOn: false,
+        timerSpeed: 5000,
+        transitionType: 'basic'
+    });
+    // 하단 이벤트 알림 배너 image slide 실행
+    $('.ntc-banner').setImageSlide({
+        transitionType: 'swipe'
+    });
     
     // slide banner
     $.fn.setSlideBanner = function(options) {
@@ -178,23 +280,7 @@ $(document).ready(function() {
             var widthMove = $selector.find('ul.banner li:eq(0)').outerWidth(true) * settings.widthMoveUnit;
             if (options.widthMove !== undefined && options.widthMoveUnit === undefined) {
                 widthMove = settings.widthMove;
-            } // 어짜피 widthMove 길이만큼 움직이기 때문에 widthMoveUnit은 여기서 선언해주지 않아도 됨
-             /*
-            4가지 경우의 수
-                1. 둘 다 정의했을 때
-                2. move만 정의했을 때
-                3. moveUnit만 정의했을 때
-                4. 둘 다 정의하지 않았을 때
-
-            이것을 모두 고려하여 어떤 속성이 우위를 가질지 정해야 함. 이 라이브러리에서는 widthMoveUnit 값을 우선으로 가진다.
-            따라서 조건으로 뽑을 내용은
-            if (options.widthMove !== undefined && options.widthMoveUnit === undefined) // 사용자가 widthMove의 값만 입력하고 && widthMoveUnit 값을 비워뒀을 때
-                widthMove = settings.widthMove; // widthMove 값을 취하고
-            아닐 때는 unit 값을 취한다.
-            else 가 없는 이유는 아예 변수 선언시 widthMove 값을 unit 구하는 식으로 정의했기 때문이다.
-
-            - options 안에 사용자가 넣은 값만 뽑을 떄는 options.widthMove / 넣든 말든 관계 없이 최종적인 값을 뽑을 때는 settings.widthMove
-            */
+            }
             var timerId = '';
             var timerSpeed = settings.timerSpeed;
             var isTimerOn = settings.isTimerOn;
@@ -210,43 +296,30 @@ $(document).ready(function() {
                 $selector.find('p.control a.play').addClass('on');
             } else {
                 $selector.find('p.control a.play').removeClass('on');
-            } // 초기상태. 타이머가 처음에 딱 한번만 돌아가게 하는 설정
+            }
 
             // 이벤트
             $selector.find('p.control a.prev').on('click', function() {
-                //$(this).find('i').stop(true).animate({'left': '-5px'}, 50).animate({'left': 0}, 100);
                 moveSlide('prev', 'manual');
             });
             $selector.find('p.control a.next').on('click', function() {
-                //$(this).find('i').stop(true).animate({'rigth': '-5px'}, 50).animate({'left': 0}, 100);
                 moveSlide('next', 'manual');
-            });
-            $selector.find('p.control a.play').on('click', function() {
-                if (isTimerOn === true) {
-                    clearTimeout(timerId);
-                    isTimerOn = false;
-                    $(this).removeClass('on');
-                } else {
-                    timerId = setTimeout(function() {moveSlide('next', 'auto')}, timerSpeed);
-                    isTimerOn = true;
-                    $(this).addClass('on');
-                }
             });
 
             // 공통함수
-            function moveSlide(direction, type) { // 왼쪽, 오른쪽 버튼의 하는 일이 많이 다르기 때문에 변수를 이런 식으로 설정, // timer가 돌리는 next와 사람이 누르는 next를 구분하는 변수
-                clearTimeout(timerId); // 버튼 클릭과 타이머 겹치지 않게 하기
+            function moveSlide(direction, type) { // type: timer가 돌리는 next와 사람이 누르는 next를 구분하는 변수
+                clearTimeout(timerId);
                 if (direction === 'prev') {
                     if (offsetLeft === 0) {
                         $selector.find('ul.banner').stop(true).animate({'left': '10px'}, 50).animate({'left': 0}, 100);
                     } else {
                         offsetLeft += widthMove;
-                        if (offsetLeft > 0) offsetLeft = 0; // if 뒤에 문장 하나만 올 때는 중괄호 생략 가능
+                        if (offsetLeft > 0) offsetLeft = 0;
                         $selector.find('ul.banner').stop().animate({'left': offsetLeft + 'px'}, 300);
                     }
                 } else {
                     if (offsetLeft === minOffsetLeft) {
-                        if (type === 'auto') { // timer가 돌리는 next와 사람이 누르는 next를 구분하는 if문
+                        if (type === 'auto') {
                             offsetLeft = 0;
                             $selector.find('ul.banner').stop(true).animate({'left': offsetLeft + 'px'}, 300);
                         } else {
@@ -258,14 +331,16 @@ $(document).ready(function() {
                         $selector.find('ul.banner').stop().animate({'left': offsetLeft + 'px'}, 300);
                     }
                 } // end of if
-                if (isTimerOn === true) {
+                if (isTimerOn === true) { // 타이머를 지속적으로 돌려주는 설정
                     timerId = setTimeout(function() {moveSlide('next', 'auto');}, timerSpeed);
-                } // 타이머를 지속적으로 돌려주는 설정
-
+                }
             } // end of moveSlide
-
         }); // end of each
-
     } // end of jquery function - setSlideBanner
     
-}); //ready
+    $('.slide-banner').setSlideBanner({
+        widthMoveUnit: 1
+    });
+
+
+})// ready

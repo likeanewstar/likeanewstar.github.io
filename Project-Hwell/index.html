@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
     <head>
         <meta charset="utf-8" />
@@ -9,83 +9,71 @@
         <title>건강 iN</title>
         <meta name="description" content="국민건강보험공단에서 운영하는 건강정보 전문사이트입니다.">
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <!-- Webfont -->
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/main_v180817.css" />
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style_v180828.css" media="screen and (min-width : 851px)" />
+        <link rel="stylesheet" type="text/css" href="css/style_mobile_v180828.css" media="screen and (max-width : 850px)" />
+        <!-- JavaScript & jQuery -->
         <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/newstar.js"></script>
         <!-- [if It IE 9]
             <script src="js/html5shiv.js"></script>
-        	<script src="js/respond.js"></script>
+            <script src="js/respond.js"></script>
         <[endif]-->
-        <!--
-            모바일 메뉴
-            모바일 비주얼 배너 슬라이드 swipe 왜 안되는지?
-            건강알림서비스 탭 jQuery
-            서브?
-        -->
     </head>
     <body>
        <!-- 스킵 네비게이션 -->
         <div id="skip">
-            <strong class="hide">반복영역 건너뛰기</strong>
             <a href="#gnb">주메뉴 바로가기</a>
             <a href="#content">본문 바로가기</a>
             <a href="#footer">하단영역 바로가기</a>
         </div>
+        
         <!-- 헤더 영역 -->
-        <div class="m_gnb"></div>
         <header id="header">
             <!-- 헤더 상단 -->
-            <div class="header_top wrapper">
+            <div class="header-top wrapper">
                 <h1 class="logo">
-                    <a href="#" class="main_logo"><img src="images/common/logo.png" alt="h-well 국민건강보험" /></a>
-                    <a href="#" class="sub_logo"><img src="images/common/sub_logo.png" alt="건강IN" /></a>
+                    <a href="index.html" class="main-logo"><img src="images/common/logo.png" alt="h-well 국민건강보험" /></a>
+                    <a href="index.html" class="sub-logo"><img src="images/common/sub_logo.png" alt="건강IN" /></a>
                 </h1>
-                <button class="m_sch_open">통합검색 열기</button>
-                <div class="htop_sch">
+                <button class="m-sch-open">통합검색 열기</button>
+                <div class="htop-sch">
                     <form>
                         <fieldset>
                             <legend class="hide">통합 및 직원 검색</legend>
-                            <label for="sch_select" class="hide">검색조건 목록</label>
-                            <select id="sch_select" aria-label="검색조건을 선택하세요.">
+                            <label for="sch-select" class="hide">검색조건 목록</label>
+                            <select id="sch-select" aria-label="검색조건을 선택하세요.">
                                 <option value="통합검색">통합검색</option>
                                 <option value="직원검색">직원검색</option>
                             </select>
-                            <label for="total_sch_form" class="hide">검색어 입력란</label>
-                            <input type="text" id="total_sch_form" title="검색어를 입력합니다." placeholder="검색어를 입력하세요."/>
+                            <label for="total-sch-form" class="hide">검색어 입력란</label>
+                            <input type="text" id="total-sch-form" title="검색어를 입력합니다." placeholder="검색어를 입력하세요."/>
                             <input type="submit" value="검색" title="새창" />
                         </fieldset>
                     </form>        
-                    <button class="m_sch_close">통합검색 닫기</button>            
+                    <button class="m-sch-close">통합검색 닫기</button>            
                 </div>
-                <div class="lnb_wrap">
+                <div class="lnb-wrap pc">
                     <ul class="lnb" role="menu">
                         <li><a href="#" role="menuitem">로그인</a></li>
                         <li><a href="#" role="menuitem">사이트맵</a></li>
                         <li><a href="#" role="menuitem">온라인도우미</a></li>
                     </ul>
-                    <!--
-                    <div class="legibility">
-                        글자크기
-                        <span>
-                            <a href="#" class="up" onclick="textZoom('big')">글자크기 키우기</a>
-                            <a href="#" class="down" onclick="textZoom('small')">글자크기 줄이기</a>
-                        </span>
-                    </div>
-                    -->
                 </div>
+                <a href="#" class="menu mobile"><span>메뉴 열기/닫기</span></a>
             </div>
+            
             <!-- GNB -->
-            <div class="header_bottom">
-                <nav class="gnb_wrap">
+            <div class="header-bottom">
+                <nav class="gnb-wrap">
                     <div class="inner">
                         <ul id="gnb" class="gnb clearfix" role="menu">
                             <li>
                                 <a href="#" role="menuitem">건강검진</a>
                                 <!-- 하위메뉴 -->
-                                <div class="sub_menu">
+                                <div class="sub-menu">
                                     <div class="inner">
                                         <!-- 2 depth -->
                                         <ul>
@@ -141,7 +129,7 @@
                                                 <!-- // 3 depth -->
                                             </li>
                                             <li>
-                                                <a href="#" role="menuitem">건강검진 자료실</a>
+                                                <a href="#" role="menuitem" class="empty">건강검진 자료실</a>
                                                 <!-- 3 depth -->
                                                 <!-- // 3 depth -->
                                             </li>
@@ -153,7 +141,7 @@
                             <li>
                                 <a href="#" role="menuitem">나의 건강정보</a>
                                 <!-- 하위메뉴 -->
-                                <div class="sub_menu">
+                                <div class="sub-menu">
                                     <div class="inner">
                                     <!-- 2 depth -->
                                     <ul>
@@ -167,7 +155,7 @@
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">맞춤형 건강관리 안내</a>
+                                            <a href="#" role="menuitem" class="empty">맞춤형 건강관리 안내</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
@@ -223,12 +211,12 @@
                             <li>
                                 <a href="#" role="menuitem">건강프로그램</a>
                                 <!-- 하위메뉴 -->
-                                <div class="sub_menu">
+                                <div class="sub-menu">
                                     <div class="inner">
                                     <!-- 2 depth -->
                                     <ul>
                                         <li>
-                                            <a href="#" role="menuitem">대사증후군 관리</a>
+                                            <a href="#" role="menuitem" class="empty">대사증후군 관리</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
@@ -281,7 +269,7 @@
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">지역별 건강지원프로그램</a>
+                                            <a href="#" role="menuitem" class="empty">지역별 건강지원프로그램</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
@@ -322,7 +310,7 @@
                             <li>
                                 <a href="#" role="menuitem">건강정보</a>
                                 <!-- 하위메뉴 -->
-                                <div class="sub_menu">
+                                <div class="sub-menu">
                                     <div class="inner">
                                     <!-- 2 depth -->
                                     <ul>
@@ -385,7 +373,7 @@
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">노인건강</a>
+                                            <a href="#" role="menuitem" class="empty">노인건강</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
@@ -408,7 +396,7 @@
                             <li>
                                 <a href="#" role="menuitem">건강자료실</a>
                                 <!-- 하위메뉴 -->
-                                <div class="sub_menu">
+                                <div class="sub-menu">
                                     <div class="inner">
                                     <!-- 2 depth -->
                                     <ul>
@@ -445,17 +433,17 @@
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">건강전자도서</a>
+                                            <a href="#" role="menuitem" class="empty">건강전자도서</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">건강보험 5분통계</a>
+                                            <a href="#" role="menuitem" class="empty">건강보험 5분통계</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">건강FAQ</a>
+                                            <a href="#" role="menuitem" class="empty">건강FAQ</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
@@ -467,7 +455,7 @@
                             <li>
                                 <a href="#" role="menuitem">건강생활</a>
                                 <!-- 하위메뉴 -->
-                                <div class="sub_menu">
+                                <div class="sub-menu">
                                     <div class="inner">
                                     <!-- 2 depth -->
                                     <ul>
@@ -529,7 +517,7 @@
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">국민건강알람서비스</a>
+                                            <a href="#" role="menuitem" class="empty">국민건강알람서비스</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
@@ -541,12 +529,12 @@
                             <li>
                                 <a href="#" role="menuitem">건강iN 소개</a>
                                 <!-- 하위메뉴 -->
-                                <div class="sub_menu">
+                                <div class="sub-menu">
                                     <div class="inner">
                                     <!-- 2 depth -->
                                     <ul>
                                         <li>
-                                            <a href="#" role="menuitem">이사장 인사말</a>
+                                            <a href="#" role="menuitem" class="empty">이사장 인사말</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
@@ -561,37 +549,37 @@
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">모바일 서비스 안내</a>
+                                            <a href="#" role="menuitem" class="empty">모바일 서비스 안내</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">공지사항</a>
+                                            <a href="#" role="menuitem" class="empty">공지사항</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">장애해결 안내</a>
+                                            <a href="#" role="menuitem" class="empty">장애해결 안내</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">저작권정책</a>
+                                            <a href="#" role="menuitem" class="empty">저작권정책</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">이용약관</a>
+                                            <a href="#" role="menuitem" class="empty">이용약관</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">건강iN배너달기</a>
+                                            <a href="#" role="menuitem" class="empty">건강iN배너달기</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
                                         <li>
-                                            <a href="#" role="menuitem">사이트맵</a>
+                                            <a href="#" role="menuitem" class="empty">사이트맵</a>
                                             <!-- 3 depth -->
                                             <!-- // 3 depth -->
                                         </li>
@@ -605,10 +593,11 @@
                 </nav>
             </div>
         </header>
+        
         <!-- 컨텐츠 영역 -->
         <main id="content">
             <!-- 메인 비쥬얼 영역 -->
-            <section class="visual wrapper">
+            <section class="visual wrapper pc">
                 <div class="box">
                     <ul class="slide">
                         <li class="stage stage01">
@@ -646,8 +635,9 @@
                     </ul>
                 </div>
             </section>
+            
             <!-- 모바일 메인 비쥬얼 영역 -->
-            <section class="visual visual_m">
+            <section class="visual visual-m mobile">
                 <div class="box">
                     <ul class="slide">
                         <li class="stage stage01">
@@ -693,72 +683,74 @@
                 </p>
                 -->
             </section>
+            
             <!-- 주요서비스 영역-->
             <section class="svc wrapper">
                 <h2 class="hide">주요 서비스</h2>
-                <ul class="svc_lst">
+                <ul class="svc-lst">
                     <li>
                         <a href="#" title="새창">
-                            <img src="images/main/svc_icon01.gif" alt="건강검진 결과조회" width="38" height="38" />
+                            <img src="images/main/svc_icon01.gif" alt="" width="38" height="38" />
                             <span aria-hidden="true">건강검진<br />결과조회</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="새창">
-                            <img src="images/main/svc_icon02.gif" alt="진료 및 투약정보 조회" width="38" height="38" />
+                            <img src="images/main/svc_icon02.gif" alt="" width="38" height="38" />
                             <span aria-hidden="true">진료 및<br />투약정보 조회</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="새창">
-                            <img src="images/main/svc_icon03.gif" alt="영유아 건강검진 안내" width="38" height="38" />
+                            <img src="images/main/svc_icon03.gif" alt="" width="38" height="38" />
                             <span aria-hidden="true">영유아<br />건강검진 안내</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="새창">
-                            <img src="images/main/svc_icon04.gif" alt="영유아 문진표 발달선별 작성" width="38" height="38" />
+                            <img src="images/main/svc_icon04.gif" alt="" width="38" height="38" />
                             <span aria-hidden="true">영유아 문진표/<br />발달선별 작성</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="새창">
-                            <img src="images/main/svc_icon05.gif" alt="금연치료 의료기관 찾기" width="38" height="38" />
+                            <img src="images/main/svc_icon05.gif" alt="" width="38" height="38" />
                             <span aria-hidden="true">금연치료<br />의료기관 찾기</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="새창">
-                            <img src="images/main/svc_icon06.gif" alt="간호간병통합 서비스병원 찾기" width="38" height="38" />
+                            <img src="images/main/svc_icon06.gif" alt="" width="38" height="38" />
                             <span aria-hidden="true">간호·간병통합<br />서비스병원 찾기</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="새창">
-                            <img src="images/main/svc_icon07.gif" alt="당뇨병예측" width="38" height="38" />
+                            <img src="images/main/svc_icon07.gif" alt="" width="38" height="38" />
                             <span aria-hidden="true">당뇨병예측<br />(인공지능)</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="새창">
-                            <img src="images/main/svc_icon08.gif" alt="지역사회 일차의료 수가시범사업회" width="38" height="38" />
+                            <img src="images/main/svc_icon08.gif" alt="" width="38" height="38" />
                             <span aria-hidden="true">지역사회 일차의료<br />수가시범사업회</span>
                         </a>
                     </li>
                 </ul>
             </section>
+            
             <!-- 하단 컨텐츠 영역-->
             <section class="container wrapper">
-                <div class="left_con">
+                <div class="left-con">
                     <div class="con con01 ">
                         <h2 class="tit">검진기관 찾기</h2>
                         <!-- 검색 폼 -->
                         <form>
                             <fieldset>
                                 <legend>검진기관 검색</legend>
-                                <label for="organ_sch_form" class="hide">검색어 입력란</label>
-                                <input type="text" id="organ_sch_form" title="검색어를 입력합니다." placeholder="검진기관명을 입력하세요.">
-                                <div role="radiogroup" class="radio_group">
+                                <label for="organ-sch-form" class="hide">검색어 입력란</label>
+                                <input type="text" id="organ-sch-form" title="검색어를 입력합니다." placeholder="검진기관명을 입력하세요.">
+                                <div role="radiogroup" class="radio-group">
                                     <input type="radio" name="region" id="key01" value="1" checked="" aria-checked="true">
                                     <label for="key01">기관명</label>
                                     <input type="radio" name="region" id="key02" value="2" aria-checked="false">
@@ -801,50 +793,38 @@
                     <div class="con con05 ">
                         <h2 class="tit">국민건강알람서비스</h2>
                         <span title="오늘 날짜"></span> <!-- 스크린리더 사용자를 위한 설명 -->
-                        <div class="date_area">
+                        <div class="date-area">
                         	<span id="date"></span>
                         	<span class="standard">전국기준</span>
                         </div>
-                        <div class="graph_wrap">
+                        <div class="graph-wrap">
                         	<ul class="clearfix">
-                        		<li>
+                        		<li class="on">
                         			<a href="#">감기</a>
-                        			<div class="graph">
-		                                <strong>관심</strong>
-		                            </div>
+                        			<div class="graph"><strong>관심</strong></div>
                         		</li>
                         		<li>
                         			<a href="#">눈병</a>
-                        			<div class="graph">
-		                                <strong>경고</strong>
-		                            </div>
+                        			<div class="graph"><strong>경고</strong></div>
                         		</li>
                         		<li>
                         			<a href="#">식중독</a>
-                        			<div class="graph">
-		                                <strong>위험</strong>
-		                                <!-- 식중독일 때만 활성화
-		                                <span>91</span>-->
-		                            </div>
+                        			<div class="graph"><strong>위험</strong></div>
                         		</li>
                         		<li>
                         			<a href="#">천식</a>
-                        			<div class="graph">
-		                                <strong>관심</strong>
-		                            </div>
+                        			<div class="graph"><strong>관심</strong></div>
                         		</li>
                         		<li>
                         			<a href="#">피부염</a>
-                        			<div class="graph">
-		                                <strong>위험</strong>
-		                            </div>
+                        			<div class="graph"><strong>위험</strong></div>
                         		</li>
                         	</ul>
                         </div>
                         <a href="#" class="more" title="국민건강알람서비스 더보기"><img src="images/main/icon_more_plus.png" alt="더보기" width="11" height="11" /></a>
                     </div>
                     <div class="con con06 ">
-                        <div class="ntc_banner">
+                        <div class="ntc-banner">
                             <div class="box">
                                 <ul class="slide">
                                     <li><a href="#"><img src="images/main/banner01.jpg" alt="경증치매 어르신 인지 지원 서비스" /></a></li>
@@ -862,22 +842,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="right_con con">
+                <div class="right-con con">
                 	<h2 class="tit">매거진</h2>
-                    <a href="#" class="cover" title="클릭하여 매거진 읽기"><img src="images/main/mag_cover_jul.png" alt="매거진 커버 이미지" /></a>
+                    <a href="#" class="cover pc" title="클릭하여 매거진 읽기"><img src="images/main/mag_cover_jul.png" alt="매거진 커버 이미지" /></a>
                     <form>
-                        <label for="user_mail" class="hide">이메일 입력란</label>
-                        <input type="text" id="user_mail" placeholder="이메일 주소를 입력하세요" />
+                        <label for="user-mail" class="hide">이메일 입력란</label>
+                        <input type="text" id="user-mail" placeholder="이메일 주소를 입력하세요" />
                         <input type="submit" value="구독 신청"/>
                     </form>
                     <a href="#" class="more" title="매거진 목록 더보기"><img src="images/main/icon_more_plus.png" alt="더보기" width="11" height="11" /></a>
                 </div>
             </section>
         </main>
-        <!-- 링크 메뉴 -->
-        <div class="link_menu">
+        
+        <!-- 슬라이드 배너 및 패밀리사이트 -->
+        <div class="link-menu">
             <div class="wrapper clearfix">
-                <div class="slide_banner">
+                <div class="slide-banner">
                     <div class="box">
                         <ul class="banner">
                             <li><a href="#"><img src="images/common/bn01.jpg" alt="2018년부터 이렇게 달라집니다" /></a></li>
@@ -900,9 +881,9 @@
                         <a href="#" class="next" title="다음 배너">다음 배너</a>
                     </p>
                 </div>
-                <div class="fam_site" aria-label="이동할 관련 사이트를 선택하고 이동 버튼을 클릭하거나 엔터를 누르세요.">
-                    <label for="fam_select" class="hide">관련 사이트 목록</label>
-                    <select id="fam_select" aria-label="관련 사이트를 선택하세요.">
+                <div class="fam-site" aria-label="이동할 관련 사이트를 선택하고 이동 버튼을 클릭하거나 엔터를 누르세요.">
+                    <label for="fam-select" class="hide">관련 사이트 목록</label>
+                    <select id="fam-select" aria-label="관련 사이트를 선택하세요.">
                         <option value="" selected="selected">관련 사이트</option>
                         <option value="http://xn--2i4bo5fgwadewe.kr">서울요양원</option>
                         <option value="http://www.nhimc.or.kr/">일산병원</option>
@@ -921,9 +902,10 @@
                 </div>
             </div>
         </div>
+        
         <!-- 푸터 영역 -->
         <footer id="footer" class="wrapper">
-            <ul class="site_guide">
+            <ul class="site-guide">
                 <li><a href="#">건강iN 이용안내</a></li>
                 <li><a href="#" class="privacy">개인정보처리방침</a></li>
                 <li><a href="#">저작권정책</a></li>
@@ -932,19 +914,29 @@
                 <li><a href="#">장애해결안내</a></li>
                 <li><a href="#">사이트맵</a></li>
             </ul>
-            <div class="addr_wrap">
+            <div class="addr-wrap">
                 <address>
                     <span class="addr">26264 강원도 원주시 건강로 32(반곡동) 국민건강보험공단</span><a href="tel:1577-1000" class="tel">국민건강보험 고객센터 1577-1000</a>
                 </address>
                 <p class="copyright">Copyright © 2017 National Health Insurance Service. All rights reserved.</p>
             </div>
-            <div class="footer_mark">
+            <div class="footer-mark">
                 <a href="#" target="_blank" title="새창"><img src="images/common/footer_icon01.gif" alt="웹접근성 인증마크" /></a>
                 <a href="#" target="_blank" title="새창"><img src="images/common/footer_icon02.gif" alt="i-Safe 인증마크" /></a>
                 <a href="#" target="_blank" title="새창"><img src="images/common/footer_icon03.gif" alt="개인정보보호 인증마크" /></a>
             </div>
         </footer>
-        <script src="js/main_v180817.js"></script>
+        <!-- Script -->
+        <script src="js/front_v180828.js"></script>
+        <script>
+            // 국민건강알림서비스 탭
+            $('.graph-wrap ul li a').on('click', function() {
+                $('.graph-wrap ul li').removeClass('on');
+                $(this).parent().addClass('on');
+                $('.graph-wrap ul li .graph').css({'display': 'none'});
+                $(this).next('.graph').css({'display': 'block'});
+            });
+        </script>
     </body>
 </html>
 
