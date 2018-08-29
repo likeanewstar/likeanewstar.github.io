@@ -1,28 +1,5 @@
 @charset "utf-8";
 
-/* Noto sans */
-@font-face {
-    font-family:'Noto Sans Kr';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Noto Sans Light'),
-         local('NotoSans-Light'),
-         url(../fonts/NotoSansKR-Light.woff2) format('woff2'),
-         url(../fonts/NotoSansKR-Light.woff) format('woff'),
-         url(../fonts/NotoSansKR-Light.otf) format('opentype');
-}
-
-@font-face {
-    font-family:'Noto Sans Kr';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Noto Sans Regular'),
-         local('Notans-RegularoS'),
-         url(../fonts/NotoSansKR-Regular.woff2) format('woff2'),
-         url(../fonts/NotoSansKR-Regular.woff) format('woff'),
-         url(../fonts/NotoSansKR-Regular.otf) format('opentype');
-}
-
 /* nanum-myeongjo-regular - korean */
 @font-face {
   font-family: 'Nanum Myeongjo';
