@@ -307,7 +307,7 @@ $(document).ready(function() {
 	// top button
 	$(window).scroll(function() {
 		var nowScroll = $(window).scrollTop()
-		console.log(nowScroll)
+		//console.log(nowScroll)
 			//if(nowScroll < 6500 && nowScroll > 900){
 			if(nowScroll  >= $('#search').position().top){
 				$('.top').fadeIn()
