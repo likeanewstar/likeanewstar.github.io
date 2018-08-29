@@ -40,27 +40,22 @@ $(document).ready(function() {
     function navMenu() {
 	    var nav = $('#gnb > li > a');
 	    var navSub = $('#gnb > li > .sub-menu');
-	    var subM = $('.sub-menu ul > li > ul > li > a');
+	    var subM = $('#gnb > li > .sub-menu > .inner > ul > li > ul > li > a');
 	    var smH = 0;
 
 	    nav.on('mouseenter focus',function() {
             if ($(window).width() <= 850) return false;
 	        navSub.stop().slideUp('fast');
-	        navSub.removeClass('on');
-	        $(this).next('.sub-menu').stop().addClass('on');
 	        smH = $(this).next('.sub-menu').height();
-	       $(this).next('.sub-menu').css('height', smH).stop().slideDown('fast');
+	        $(this).next('.sub-menu').css('height', smH).stop().slideDown('fast');
 	    });
-        
 	    $('#gnb').on('mouseleave', function() {
             if ($(window).width() <= 850) return false;
 	        navSub.stop().slideUp('fast');
 	    });
-        
 	    $('.sub-menu > .inner > ul > li:last-child a').on('focusout',function() {
 	        navSub.stop().slideUp('fast');
 	    });
-        
 	    subM.hover(function() {
 	       $(this).parent('li').parent('ul').prev('a').addClass('on');
 	    },
@@ -73,8 +68,11 @@ $(document).ready(function() {
     navMenuMobile();
     function navMenuMobile() {
         $('#header a.menu').on('click', function() {
-            $(this).toggleClass('open');
+            $(this).find('.hamburger-menu').toggleClass('open')
             $('.gnb-wrap').toggleClass('open');
+            $('#gnb > li > .sub-menu > .inner > ul').css({'height': 0});
+            $('#gnb > li').removeClass('on');
+            //$('#gnb > ul > li.on > a').trigger('click'); // 서브 페이지에서 메뉴 표시
         });
         $('#gnb > li > a').on('click', function(e) {
             if ($(window).width() <= 850) {
@@ -85,7 +83,7 @@ $(document).ready(function() {
                 $(this).parent('li').addClass('on');
             }
         });
-        $('#gnb li .sub-menu .inner > ul > li > a').on('click', function(e) {
+        $('#gnb > li > .sub-menu > .inner > ul > li > a').on('click', function(e) {
             if ($(window).width() <= 850) {
                 e.preventDefault();
                 $('#gnb li .sub-menu .inner > ul > li > ul').css({'height': 0});
@@ -94,8 +92,8 @@ $(document).ready(function() {
                 $(this).parent('li').addClass('on');
             } 
         });
-    } // end of navMenuMobilde
-
+    } // end of navMenuMobile
+    
     // image slide
     $.fn.setImageSlide = function(options) {
         var settings = $.extend({
@@ -119,6 +117,13 @@ $(document).ready(function() {
             var isTimerOn = settings.isTimerOn;
             var onPlaying = false;
             var showSlide = '';
+            var startX = 0;
+            var startY = 0;
+            var delX = 0;
+            var delY = 0;
+            var offsetX = 0;
+            var isDrag = false;
+            
 
             // 초기화
             $selector.find('ul.slide li').each(function(i) {
@@ -137,7 +142,8 @@ $(document).ready(function() {
                 default: showSlide = showSlideBasic;
             }
             showSlide(slideFirst);
-
+            
+            // 이벤트
             $selector.find('ul.indicator li a').on('click', function() {
                 var index = $selector.find('ul.indicator li').index($(this).parent());
                 showSlide(index + 1);
@@ -161,6 +167,42 @@ $(document).ready(function() {
                     $(this).addClass('on');
                 }
             });
+            
+            // 이벤트 mobile swipe
+            $selector.find('ul.indicator li a').on('click', function() {
+                var index = $selector.find('ul.indicator li').index($(this).parent());
+                showSlide(index + 1);
+            }); // end of click
+
+            // mobile swipe
+            $selector.find('ul.slide').on('touchstart', function(e) {
+                isDrag = true;
+                $selector.find('ul.slide').css({'transition': 'none'});
+                clearTimeout(timerId); // 손 댔을 때도 타이머 끄기
+                $selector.find('ul.indicator li span.bar span').stop(true).css({'width': '0'});
+                startX = e.originalEvent.touches[0].clientX; //터치했을 때 두 번째 닿는게 두 번째 손가락.
+                startY = e.originalEvent.touches[0].clientY;
+                offsetX = $selector.find('ul.slide').position().left;
+            }); // end of touchstart
+            $(document).on('touchmove', function(e) {
+                if (isDrag === false) return false;
+                delX = e.originalEvent.touches[0].clientX - startX;
+                delY = e.originalEvent.touches[0].clientY - startY;
+                if ((delX < 0 && slideNow === numSlide) || (delX > 0 && slideNow === 1)) {
+                    delX = delX / 5
+                } // 왼쪽으로 밀면서 마지막 페이지일 때. || 오른쪽으로 밀면서 처음 페이지일 때. 움직임을 적게 주기 위해 넣는 부분.
+                $selector.find('ul.slide').css({'left': (offsetX + delX) + 'px'})
+            }); // end of move
+            $(document).on('touchend', function(e) {
+                if (delX < -50 && slideNow !== numSlide) {
+                    showSlide(slideNext);
+                } else if (delX > 50 && slideNow !== 1) {
+                    showSlide(slidePrev);
+                } else {
+                    showSlide(slideNow);
+                }
+                isDrag = false;
+            }); // end of touchend
 
             // 공통함수
             function showSlideBasic(n) {
@@ -249,7 +291,7 @@ $(document).ready(function() {
     $('.visual-m').setImageSlide({
         isTimerOn: false,
         timerSpeed: 5000,
-        transitionType: 'basic'
+        transitionType: 'swipe'
     });
     // 하단 이벤트 알림 배너 image slide 실행
     $('.ntc-banner').setImageSlide({

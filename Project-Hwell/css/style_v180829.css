@@ -86,14 +86,13 @@ select::-ms-expand {display: none;}/* 화살표 없애기 for IE10, 11 */
 .gnb li .sub-menu .inner > ul > li > a.on {color: #fff; background: #74ab44;}
 .gnb li .sub-menu .inner > ul li ul li a {box-sizing: border-box; display: block; padding: 7px 12px; border: 1px solid #fff; color: #666;}
 .gnb li .sub-menu .inner > ul li ul li a:hover {border: 1px solid #111;}
-/* **** gnb_m position fixed 주기 **** */
 
 /* 컨텐츠영역 */
 #content {display: block; /* main 태그 브라우저 호환을 위해 사용 */padding: 25px 0 60px; background: #f7f7f7;}
 
 /* 메인 비쥬얼 영역 */
 .visual {overflow: hidden;}
-.visual .stage {position: relative; float: left; width: 25%; height: 400px; background-repeat: no-repeat; background-position: right bottom;}
+.visual .stage {position: relative; float: left; width: 25%; height: 400px; background-repeat: no-repeat; background-position: right bottom; transition: all .3s;}
 .visual .stage01 {background-image: url(../images/main/main_visual_01.png); background-color: #f6b04c;}
 .visual .stage02 {background-image: url(../images/main/main_visual_02.png); background-color: #b16de6;}
 .visual .stage03 {background-image: url(../images/main/main_visual_03.png); background-color: #92c665;}
@@ -191,7 +190,7 @@ select::-ms-expand {display: none;}/* 화살표 없애기 for IE10, 11 */
 .slide-banner .banner {position: relative; overflow: hidden;} /* position 속성을 줘야 버튼으로 제어 가능 */
 .slide-banner .banner li {float: left;}
 .slide-banner .banner li a {display: block; margin: 6.5px 5px;}
-.slide-banner .control {position: absolute; top: 0; right: 0; padding: 7px 10px; box-sizing: border-box; overflow: hidden; text-indent: -9999px;}
+.slide-banner .control {position: absolute; top: 0; right: 0; width: 80px; padding: 7px 10px; box-sizing: border-box; overflow: hidden; text-indent: -9999px;}
 .slide-banner .control a {display: block; float: left; width: 20px; height: 31px;}
 .slide-banner .control .prev {background: url(../images/common/btn_banner_prev.png) center center no-repeat;}
 .slide-banner .control .next {background: url(../images/common/btn_banner_next.png) center center no-repeat;}
