@@ -67,30 +67,61 @@ $(document).ready(function() {
     // GNB Mobile
     navMenuMobile();
     function navMenuMobile() {
+        $(window).on('resize', function() {
+            if ($(window).width() > 850) {
+                $('#gnb, #gnb ul').css({'height': 'auto'});
+            } else {
+                $('#gnb, #gnb ul').css({'height': 0});
+            }
+        });
         $('#header a.menu').on('click', function() {
-            $(this).find('.hamburger-menu').toggleClass('open')
+            $(this).find('.hamburger-menu').toggleClass('open');
             $('.gnb-wrap').toggleClass('open');
-            $('#gnb > li > .sub-menu > .inner > ul').css({'height': 0});
-            $('#gnb > li').removeClass('on');
-            //$('#gnb > ul > li.on > a').trigger('click'); // 서브 페이지에서 메뉴 표시
+            $('#gnb ul').css({'height': 0});
+            $('#gnb li').removeClass('open'); 
+            $('#gnb > li.on > a').trigger('click');
+            $('#gnb > li.on > .sub-menu > .inner > ul > li.on > a').trigger('click');
+        });
+        $('#gnb > li').each(function() {
+            if ($(this).find('li').length > 0) {
+                $(this).find('> a').append('<i class="fas fa-chevron-down mobile"></i>');
+            }
+        });
+        $('#gnb > li > .sub-menu > .inner >  ul > li').each(function() {
+            if ($(this).find('li').length > 0) {
+                $(this).find('> a').append('<i class="fas fa-plus mobile plus"></i><i class="fas fa-minus mobile minus"></i>');
+            }
         });
         $('#gnb > li > a').on('click', function(e) {
-            if ($(window).width() <= 850) {
+            if ($(this).parent().find('li').length > 0 && $(window).width() <= 850) {
                 e.preventDefault();
+                var height = 0;
+                $(this).parent().find('> .sub-menu > .inner > ul > li').each(function() {
+                    height += $(this).outerHeight();
+                });
+                var originalHeight = $('#gnb > li.open > .sub-menu > .inner > ul').outerHeight();
+                $('#gnb > li.open').find('> .sub-menu > .inner > ul').css({'height': originalHeight + 'px'});
                 $('#gnb > li > .sub-menu > .inner > ul').css({'height': 0});
-                $(this).next().find('.inner > ul').css({'height': 'auto'});
-                $('#gnb > li').removeClass('on');
-                $(this).parent('li').addClass('on');
+                $('#gnb > li > .sub-menu > .inner > ul > li > ul').css({'height': 0});
+                $(this).next().find('> .inner > ul').css({'height': height + 'px'});
+                $('#gnb > li').removeClass('open'); 
+                $('#gnb > li > .sub-menu > .inner > ul > li').removeClass('open');
+                $(this).parent().addClass('open');
             }
         });
         $('#gnb > li > .sub-menu > .inner > ul > li > a').on('click', function(e) {
-            if ($(window).width() <= 850) {
+            if ($(this).parent().find('li').length > 0 && $(window).width() <= 850) {
                 e.preventDefault();
-                $('#gnb li .sub-menu .inner > ul > li > ul').css({'height': 0});
-                $(this).next().css({'height': 'auto'});
-                $('#gnb li .sub-menu .inner > ul > li').removeClass('on');
-                $(this).parent('li').addClass('on');
-            } 
+                var height = 0;
+                $(this).parent().find('> ul > li').each(function() {
+                    height += $(this).outerHeight();
+                });
+                $(this).parent().parent().css({'height': 'auto'}); // 서브 메뉴 누를 때 대 메뉴 높이 안 잡히는 현상 해결
+                $('#gnb > li > .sub-menu > .inner > ul > li > ul').css({'height': 0});
+                $(this).next().css({'height': height + 'px'});
+                $('#gnb > li > .sub-menu > .inner > ul > li').removeClass('open');
+                $(this).parent().addClass('open');
+            }
         });
     } // end of navMenuMobile
     

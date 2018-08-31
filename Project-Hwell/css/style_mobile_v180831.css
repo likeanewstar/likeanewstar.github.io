@@ -68,21 +68,28 @@ select::-ms-expand {display: none;}/* 화살표 없애기 for IE10, 11 */
 .hamburger-menu.open:after {top: 0; transform: rotate(45deg); transition: top .3s cubic-bezier(0.23, 1, 0.32, 1), transform .3s .3s cubic-bezier(0.23, 1, 0.32, 1);}
 .hamburger-menu.open:before {bottom: 0; transform: rotate(-45deg); transition: bottom .3s cubic-bezier(0.23, 1, 0.32, 1), transform .3s .3s cubic-bezier(0.23, 1, 0.32, 1);}
 .header-bottom {position: relative; z-index: 500;}
-.gnb-wrap {position: fixed; right: -100%; top: 60px; width: 100%; height: calc(100% - 61px); background: rgba(0, 0, 0, 0.5); box-sizing: border-box; overflow: auto; transition: all .3s ease 0s;}
+.gnb-wrap {position: fixed; right: -100%; top: 61px; width: 100%; height: calc(100% - 61px); padding: 30px; background: #fff; box-sizing: border-box; overflow: auto; transition: all .3s ease 0s;}
 .gnb-wrap.open {right: 0;}
-.gnb-wrap #gnb {width: 100%; font-size: 16px;}
-.gnb > li {border-bottom: 1px solid #881212;}
-.gnb > li > a {display: block; line-height: 46px; padding-left: 20px; color: #fff; background: #942626 url(../images/common/m_gnb_more.png) 95% center no-repeat;}
-.gnb > li.on > a {background-image: url(../images/common/m_gnb_close.png);}
-.gnb li .sub-menu .inner > ul {font-size: 14px; overflow: hidden; height: 0; transition: height .3s; background: #bd5959;}
-.gnb li .sub-menu .inner > ul > li {border-top: 1px solid #b54949;}
-.gnb li .sub-menu .inner > ul > li > a {display: block; line-height: 40px; padding-left: 25px; color: #fff; background: url(../images/common/m_gnb_more.png) 95% center no-repeat;}
-.gnb li .sub-menu .inner > ul > li > a.empty {background: none;}
-.gnb li .sub-menu .inner > ul > li.on > a  {background-image: url(../images/common/m_gnb_close.png);}
-.gnb li .sub-menu .inner > ul > li > ul {font-size: 13px; overflow: hidden; height: 0; transition: height .3s;}
-.gnb li .sub-menu .inner > ul > li > ul > li {border-top: 1px solid #e0e0e0;}
-.gnb li .sub-menu .inner > ul > li > ul > li > a {display: block; line-height: 36px; padding-left: 30px; color: #666; background: #f9f9f9;}
-.gnb li .sub-menu .inner > ul > li > ul > li.on > a {background: #f9f9f9; color: #f37321;}
+#gnb {width: 100%; font-size: 16px; border-top: 1px solid #e0e0e0;}
+#gnb > li {border-bottom: 1px solid #e0e0e0;}
+#gnb > li > a {display: block; position: relative; line-height: 46px; padding-left: 20px;}
+#gnb > li > a i {position: absolute; right: 20px; top: 50%; transform: translate(0, -50%); color: #bbbbbb; transition: transform 0.3s;}
+#gnb > li.on > a {background: #74ab44; color: #ffffff;}
+#gnb > li.on > a i {color: #ffffff;}
+#gnb > li.open > a i {transform: translate(0, -50%) rotate(180deg);}
+#gnb > li .sub-menu .inner > ul {font-size: 15px; overflow: hidden; height: 0; transition: height .3s;}
+#gnb > li .sub-menu .inner > ul > li {border-top: 1px solid #e0e0e0;}
+#gnb > li .sub-menu .inner > ul > li > a {display: block; position: relative; line-height: 36px; padding-left: 40px;}
+#gnb > li .sub-menu .inner > ul > li > a:before {content: ''; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 10px; height: 2px; background: #e0e0e0;}
+#gnb > li .sub-menu .inner > ul > li > a i {position: absolute; right: 21px; top: 50%; transform: translate(0, -50%); color: #bbbbbb; font-size: 12px;}
+#gnb > li .sub-menu .inner > ul > li > a i.minus {display: none;}
+#gnb > li .sub-menu .inner > ul > li.open > a i.plus {display: none;}
+#gnb > li .sub-menu .inner > ul > li.open > a i.minus {display: inline;}
+#gnb > li .sub-menu .inner > ul > li.on > a {background: #f9f9f9; color: #74ab44;}
+#gnb > li .sub-menu .inner > ul > li > ul {height: 0; font-size: 13px; overflow: hidden; background: #f9f9f9; transition: height .3s;}
+#gnb > li .sub-menu .inner > ul > li > ul > li {border-top: 1px solid #e0e0e0;}
+#gnb > li .sub-menu .inner > ul > li > ul > li > a {display: block; line-height: 34px; padding-left: 40px; font-size: 13px; color: #666; background: #f9f9f9;}
+#gnb > li .sub-menu .inner > ul > li > ul > li.on > a {color: #74ab44;}
 
 /* 컨텐츠영역 */
 #content {display: block; /* main 태그 브라우저 호환을 위해 사용 */padding: 61px 0 2%; background: #f7f7f7;}
