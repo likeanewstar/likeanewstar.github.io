@@ -95,6 +95,7 @@ $(document).ready(function() {
         $('#gnb > li > a').on('click', function(e) {
             if ($(this).parent().find('li').length > 0 && $(window).width() <= 850) {
                 e.preventDefault();
+                if ($(this).parent().hasClass('open')) return false;
                 var height = 0;
                 $(this).parent().find('> .sub-menu > .inner > ul > li').each(function() {
                     height += $(this).outerHeight();
