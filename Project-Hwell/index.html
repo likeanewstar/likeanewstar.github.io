@@ -590,7 +590,7 @@
                                 </div>
                             </li>
                         </ul>
-
+                    </div>
                 </nav>
             </div>
         </header>
@@ -850,8 +850,9 @@
         </main>
         
         <!-- 슬라이드 배너 및 패밀리사이트 -->
-        <div class="link-menu">
+        <section class="link-menu">
             <div class="wrapper clearfix">
+            	<h2 class="hide">관련사이트 배너 및 링크</h2>
                 <div class="slide-banner">
                     <div class="box">
                         <ul class="banner">
@@ -895,7 +896,7 @@
                     <a href="#" class="go" role="button" aria-label="클릭시 관련 사이트로 이동">이동</a>
                 </div>
             </div>
-        </div>
+        </section>
         
         <!-- 푸터 영역 -->
         <footer id="footer" class="wrapper">
@@ -921,16 +922,7 @@
             </div>
         </footer>
         <!-- Script -->
-        <script src="js/front_v180831.js"></script>
-        <script>
-            // 국민건강알림서비스 탭
-            $('.graph-wrap ul li a').on('click', function() {
-                $('.graph-wrap ul li').removeClass('on');
-                $(this).parent().addClass('on');
-                $('.graph-wrap ul li .graph').css({'display': 'none'});
-                $(this).next('.graph').css({'display': 'block'});
-            });
-        </script>
+        <script src="js/front_v180903.js"></script>
     </body>
 </html>
 

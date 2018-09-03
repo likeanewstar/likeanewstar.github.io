@@ -7,21 +7,6 @@ $(document).on('click', 'a[href="#"]', function(e) {
 
 $(document).ready(function() {
 
-    // 국민건강알람서비스 오늘 날짜 넣기
-    todayIs();
-    function todayIs() {
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1; // Jan is 0
-        var yyyy = today.getFullYear();
-
-        if (dd < 10) {dd = '0' + dd}
-        if (mm < 10) {mm = '0' + mm}
-        
-        today = yyyy + '-' + mm + '-' + dd;
-        document.getElementById("date").innerHTML = today;
-    } // end of todayIs
-
     // mobile 검색 영역
     mSch();
     function mSch() {
@@ -96,6 +81,7 @@ $(document).ready(function() {
             if ($(this).parent().find('li').length > 0 && $(window).width() <= 850) {
                 e.preventDefault();
                 if ($(this).parent().hasClass('open')) return false;
+                //if ($(this).parent().attr('class').indexOf('open') >= 0) return false;
                 var height = 0;
                 $(this).parent().find('> .sub-menu > .inner > ul > li').each(function() {
                     height += $(this).outerHeight();
@@ -206,7 +192,6 @@ $(document).ready(function() {
                 showSlide(index + 1);
             }); // end of click
 
-            // mobile swipe
             $selector.find('ul.slide').on('touchstart', function(e) {
                 isDrag = true;
                 $selector.find('ul.slide').css({'transition': 'none'});
@@ -216,16 +201,29 @@ $(document).ready(function() {
                 startY = e.originalEvent.touches[0].clientY;
                 offsetX = $selector.find('ul.slide').position().left;
             }); // end of touchstart
-            $(document).on('touchmove', function(e) {
+            document.addEventListener('touchmove', function(e) {
                 if (isDrag === false) return false;
-                delX = e.originalEvent.touches[0].clientX - startX;
-                delY = e.originalEvent.touches[0].clientY - startY;
-                if ((delX < 0 && slideNow === numSlide) || (delX > 0 && slideNow === 1)) {
-                    delX = delX / 5
-                } // 왼쪽으로 밀면서 마지막 페이지일 때. || 오른쪽으로 밀면서 처음 페이지일 때. 움직임을 적게 주기 위해 넣는 부분.
-                $selector.find('ul.slide').css({'left': (offsetX + delX) + 'px'})
-            }); // end of move
+                delX = e.touches[0].clientX - startX;
+                delY = e.touches[0].clientY - startY;
+                if (direction === '') {
+                    if (Math.abs(delX) > 5 && Math.abs(delY) < 5) {
+                        direction = 'horizon';
+                    } else if (Math.abs(delX) < 5 && Math.abs(delY) > 5) {
+                        direction = 'vertical';
+                    }
+                } else if (direction === 'vertical') {
+                    delX = 0;
+                    delY = 0;
+                } else if (direction === 'horizon') {
+                    e.preventDefault();
+                    if ((delX < 0 && slideNow === numSlide) || (delX > 0 && slideNow === 1)) {
+                        delX = delX / 5;
+                    }
+                    $(selector).find('ul.slide').css({'left': (offsetX + delX) + 'px'});
+                }
+            }, {passive: false}); // end of touchmove
             $(document).on('touchend', function(e) {
+                if (isDrag === false) return false;
                 if (delX < -50 && slideNow !== numSlide) {
                     showSlide(slideNext);
                 } else if (delX > 50 && slideNow !== 1) {
@@ -330,6 +328,29 @@ $(document).ready(function() {
         transitionType: 'swipe'
     });
     
+    // 국민건강알람서비스 오늘 날짜 넣기
+    todayIs();
+    function todayIs() {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; // Jan is 0
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {dd = '0' + dd}
+        if (mm < 10) {mm = '0' + mm}
+        
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("date").innerHTML = today;
+    } // end of todayIs
+
+    // 국민건강알림서비스 탭
+    $('.graph-wrap ul li a').on('click', function() {
+        $('.graph-wrap ul li').removeClass('on');
+        $(this).parent().addClass('on');
+        $('.graph-wrap ul li .graph').css({'display': 'none'});
+        $(this).next('.graph').css({'display': 'block'});
+    });
+    
     // slide banner
     $.fn.setSlideBanner = function(options) {
         var settings = $.extend ({
@@ -372,6 +393,17 @@ $(document).ready(function() {
             });
             $selector.find('p.control a.next').on('click', function() {
                 moveSlide('next', 'manual');
+            });
+            $selector.find('p.control a.play').on('click', function() {
+                if (isTimerOn === true) {
+                    clearTimeout(timerId);
+                    $selector.find('p.control a.play').removeClass('on');
+                    isTimerOn = false;
+                } else {
+                    timerId = setTimeout(function() {moveSlide('next', 'auto');}, timerSpeed);
+                    $selector.find('p.control a.play').addClass('on');
+                    isTimerOn = true;
+                }
             });
 
             // 공통함수
