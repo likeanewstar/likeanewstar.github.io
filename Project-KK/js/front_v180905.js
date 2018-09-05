@@ -235,14 +235,11 @@ $(document).ready(function() {
         });
     } // end of openLayerPopup
 
-    // image slide - product list
-    $.fn.setImageSlide = function(options) {
+    // infinite image slide - product list
+    $.fn.setImageSlideInfinite = function(options) {
         var settings = $.extend({
             slideFirst: 1,
-            isTimerOn: true,
-            timerSpeed: 3000,
-            fadeSpeed: 500,
-            transitionType: 'basic'
+            timerSpeed: 3000
         }, options);
 
         this.each(function() {
@@ -252,111 +249,78 @@ $(document).ready(function() {
             var slideNext = 0;
             var slidePrev = 0;
             var slideFirst = settings.slideFirst;
-            var timerId = '';
             var timerSpeed = settings.timerSpeed;
-            var fadeSpeed = settings.fadeSpeed;
-            var isTimerOn = settings.isTimerOn;
             var onPlaying = false;
-            var showSlide = '';
 
             // 초기화
-            if (isTimerOn === true) {
-                $selector.find('p.control a.play').addClass('on');
-            } else {
-                $selector.find('p.control a.play').removeClass('on');
-            }
-            switch (settings.transitionType) {
-                case 'basic': showSlide = showSlideBasic; break;
-                case 'fade': showSlide = showSlideFade; break;
-                case 'swipe': showSlide = showSlideSwipe; break;
-                default: showSlide = showSlideBasic;
-            }
+            $selector.find('ul.slide li').each(function(i) {
+                $selector.find('ul.indicator').append('<li><a href="#">product number ' + (i + 1) + '</a></li>\n');
+            });
+
             showSlide(slideFirst);
 
+            $selector.find('ul.indicator li a').on('click', function() {
+                var index = $selector.find('ul.indicator li').index($(this).parent());
+                showSlide(index + 1, 'direct');
+            });
             $selector.find('p.control a.prev').on('click', function() {
                 $(this).stop(true).animate({'left': '-70px'}, 50).animate({'left': '-60px'}, 100);
-                showSlide(slidePrev);
+                showSlide(slidePrev, 'prev');
             });
             $selector.find('p.control a.next').on('click', function() {
                 $(this).stop(true).animate({'right': '-70px'}, 50).animate({'right': '-60px'}, 100);
-                showSlide(slideNext);
-            });
-            $selector.find('p.control a.play').on('click', function() {
-                if (isTimerOn === true) {
-                    clearTimeout(timerId);
-                    isTimerOn = false;
-                    $(this).removeClass('on');
-                } else {
-                    timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
-                    isTimerOn = true;
-                    $(this).addClass('on');
-                }
+                showSlide(slideNext, 'next');
             });
 
             // 공통함수
-            function showSlideBasic(n) {
-                clearTimeout(timerId);
-                $selector.find('ul.slide li').css({'display': 'none'});
-                $selector.find('ul.slide li:eq(' + (n - 1) + ')').css({'display': 'block'});
-                $selector.siblings('ul.text').find('li').removeClass('on');
-                $selector.siblings('ul.text').find('li:eq(' + (n - 1) + ')').addClass('on');
-                slideNow = n;
-                slideNext = (n + 1) > numSlide ? 1 : n + 1;
-                slidePrev = (n - 1) < 1 ? numSlide : n - 1;
-                if (isTimerOn === true) {
-                    timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
-                }
-            }  // end of showSlideBasic
-
-            function showSlideFade(n) {
-                if (slideNow === n || onPlaying === true) return false; // 현재 위치 네비 누르면 재실행 막기 || 애니메이션 중 클릭해서 애니메이션 쌓이는 것 막기
-                clearTimeout(timerId);
+            function showSlide(n, type) {
+                if (slideNow === n || onPlaying === true) return false;
+                onPlaying = true;
                 if (slideNow === 0) {
                     $selector.find('ul.slide li').css({'display': 'none'});
                     $selector.find('ul.slide li:eq(' + (n - 1) + ')').css({'display': 'block'});
+                    reArrange(n);
                 } else {
                     onPlaying = true;
-                    $selector.find('ul.slide li:eq(' + (slideNow - 1) + ')').stop(true).animate({'opacity': 0}, fadeSpeed, function() {
-                        onPlaying = false;
-                    });
-                    $selector.find('ul.slide li:eq(' + (n - 1) + ')').css({'display': 'block', 'opacity': 0}).stop(true).animate({'opacity': 1}, fadeSpeed);
+                    if (type === 'next') {
+                        $selector.find('ul.slide').stop(true).animate({'top': -100 + 36 + '%'}, timerSpeed, 'easeOutElastic', function() {
+                            reArrange(n);
+                        });
+                    } else if (type === 'prev') {
+                        $selector.find('ul.slide').stop(true).animate({'top': 100 + 36 + '%'}, timerSpeed, 'easeOutElastic', function() {
+                            reArrange(n);
+                        });
+                    } else { // direct - indicator 눌렀을 때.
+                        $selector.find('ul.slide li').each(function(i) { // direct 배열을 막대기 형태로 한 번 더 바꾸고 움직인다.
+                            $(this).css({'top': -((slideNow - 1 - i) * 100) + '%'});
+                        });
+                        $selector.find('ul.slide').stop(true).animate({'top': ((slideNow - n) * 100) + 36 + '%'}, timerSpeed, 'easeOutElastic', function() {
+                            reArrange(n);
+                        });
+                    }
                 }
-                $selector.siblings('ul.text').find('li').removeClass('on');
-                $selector.siblings('ul.text').find('li:eq(' + (n - 1) + ')').addClass('on');
-                slideNow = n;
-                slideNext = (n + 1) > numSlide ? 1 : n + 1;
-                slidePrev = (n - 1) < 1 ? numSlide : n - 1;
-                if (isTimerOn === true) {
-                    timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
-                } 
-            }  // end of showSlideFade
 
-            function showSlideSwipe(n) {
-                clearTimeout(timerId);
-                if (slideNow === 0) { // 시작할 때
-                    $selector.find('ul.slide li').each(function(i) {
-                        $(this).css({'top': (i * 100) + '%', 'display': 'block'}); // 옆으로 밀 때 흰 화면 안 보이게 하기 위한 display: block;
-                    });
-                    $selector.find('ul.slide').css({'transition': 'none', 'top': (-(n - 1) * 100) + 36 + '%'});
-                } else {
-                    $selector.find('ul.slide').stop().animate({'transition': 'all .5s', 'top': (-(n - 1) * 100) + 36 + '%'}, timerSpeed, 'easeOutElastic');
-                }
-                $selector.siblings('ul.text').find('li').removeClass('on');
-                $selector.siblings('ul.text').find('li:eq(' + (n - 1) + ')').addClass('on');
-                slideNow = n;
-                slideNext = (n + 1) > numSlide ? 1 : n + 1;
-                slidePrev = (n - 1) < 1 ? numSlide : n - 1;
-                if (isTimerOn === true) {
-                    timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
-                } 
-            }  // end of showSlideSwipe
+                function reArrange(n) {
+                    $selector.find('ul.indicator li').removeClass('on');
+                    $selector.find('ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
+                    $selector.siblings('ul.text').find('li').removeClass('on');
+                    $selector.siblings('ul.text').find('li:eq(' + (n - 1) + ')').addClass('on');
+                    slideNow = n;
+                    slideNext = (n + 1) > numSlide ? 1 : n + 1;
+                    slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+                    $selector.find('ul.slide').css({'top': '36%'}); // 핵심!
+                    $selector.find('ul.slide li').css({'top': '-200%', 'display': 'block'});
+                    $selector.find('ul.slide li:eq(' + (slidePrev - 1) + ')').css({'top': '-100%'});
+                    $selector.find('ul.slide li:eq(' + (slideNow - 1) + ')').css({'top': 0});
+                    $selector.find('ul.slide li:eq(' + (slideNext - 1) + ')').css({'top': '100%'});
+                    onPlaying = false;
+                } // end of reArrange
+            } // end of showSlide
         });  // end of each
-    } // end of jquery function - setImageSlide
+    } // end of jquery function - setImageSlideInfinite
 
-    $('.product-list').setImageSlide({
-        isTimerOn: false,
-        timerSpeed: 1000,
-        transitionType: 'swipe'
+    $('.product-list').setImageSlideInfinite({
+        timerSpeed: 700
     });
 
     // title text fade effect scroll event
