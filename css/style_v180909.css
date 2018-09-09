@@ -47,10 +47,16 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
 /* main */
 #header {position: relative; height: 100vh; background-image: url('../images/visual_bg.jpg'); background-position: center; background-size: cover;}
 #header .logo {position: absolute; top: 50px; left: 8%;}
-#header .copy {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; /* 초기값 */top: 60%; opacity: 0;}
-#header .copy .main_copy {padding-bottom: 40px; font-size: 60px; font-weight: 300; letter-spacing: -3px; color: #000;}
-#header .copy .sub_copy {color: #222; font-size: 15px; line-height: 1.6em; letter-spacing: -1px;}
-#header .scroll {width: 100%; text-align: center; position: absolute; bottom: 50px;/* 초기값 */display: none;}
+#header .copy {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center;}
+#header .copy .main-copy {padding-bottom: 40px; font-size: 60px; font-weight: 300; letter-spacing: -3px; color: #000;}
+#header .copy .main-copy span {position: relative; left: 80px; opacity: 0; -webkit-animation: main-tit-ani 1s ease-in-out 0s forwards; animation: main-tit-ani 1s ease-in-out .3s forwards;}
+#header .copy .sub-copy {font-size: 15px; line-height: 1.6em; letter-spacing: -1px; color: #222; opacity: 0; -webkit-animation: sub-tit-ani 1s ease-in-out 3s forwards; animation: sub-tit-ani 1s ease-in-out 3s forwards;}
+#header .scroll {width: 100%; text-align: center; position: absolute; bottom: 50px;/* 초기값 display: none;*/}
+#header .smoke {position: relative; height: 100vh; width: 100%;}
+#header .smoke-con {position: absolute; width: 100%; height: 100%; overflow: hidden;}
+#header .smoke-img{position: absolute; width: 300vw; height: 100vh; opacity: 0.8;}
+#header .smoke-img-01 {background: url('../images/smoke_01.png') center center repeat-x; background-size: contain; -webkit-animation: smoke-effect /*60s*/30s linear infinite; animation: smoke-effect /*60s*/30s linear infinite;}
+#header .smoke-img-02 {background: url('../images/smoke_02.png') center center repeat-x; background-size: contain; -webkit-animation: smoke-effect /*40s*/15s linear infinite; animation: smoke-effect /*40s*/15s linear infinite;}
 
 /* section 01 */
 #section01 .right .tit span {font-weight:400;}
@@ -74,11 +80,37 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
 #footer .info li span {width: 60%;}
 #footer .info li strong, #footer .info li span {display: inline-block; margin-bottom: 19px;}
 
+/* animation */
+-webkit-@keyframes main-tit-ani {
+    from {left: 80px; opacity: 0;}
+    to {left: 0; opacity: 1;}
+}
+@keyframes main-tit-ani {
+    from {left: 80px; opacity: 0;}
+    to {left: 0; opacity: 1;}
+}
+-webkit-@keyframes sub-tit-ani {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes sub-tit-ani {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+-webkit-@keyframes smoke-effect {
+    from {transform: translate3d(0, 0, 0);}
+    to {transform: translate3d(-200vw, 0, 0);}
+}
+@keyframes smoke-effect {
+    from {transform: translate3d(0, 0, 0);}
+    to {transform: translate3d(-200vw, 0, 0);}
+}
+
 /* responsive */
 @media screen and (max-width: 900px) {
     section {padding: 80px 0;}
     section .left,
-    section .right {float: none; width: 90%; padding: 0 5%}
+    section .right {float: none; width: 90%; padding: 0 5%;}
     section .left {margin-bottom: 50px;}
     #footer {width: 90%; padding: 100px 5% 80px;}
     #footer .info li {width: 100%;}

@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style_v180831.css" />
+    <link rel="stylesheet" type="text/css" href="css/style_v180909.css" />
     <!-- JavaScript & jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
@@ -26,10 +26,21 @@
 	<div id="wrap">
 		<!-- header -->
 		<header id="header">
+			<div class="smoke-con">
+				<div class="smoke-img smoke-img-01"></div>
+				<div class="smoke-img smoke-img-01"></div>
+			</div>
 			<h1 class="logo"><a href="#"><img src="images/logo.png" alt="새 별처럼" /></a></h1>
 			<div class="copy">
-				<h2 class="main_copy">새별처럼. Like a new star.</h2>
-				<p class="sub_copy">안녕하세요. 깊이 생각하는 퍼블리셔 <b>강새별</b>의 <br class="only-m" />개인 포트폴리오 사이트입니다.</p>
+				<h2 class="main-copy">
+					<span>새</span>
+					<span>별</span><span>처</span><span>럼</span><span>.</span>
+					<span>L</span><span>i</span><span>k</span><span>e</span>
+					<span>a</span>
+					<span>n</span><span>e</span><span>w</span>
+					<span>s</span><span>t</span><span>a</span><span>r</span><span>.</span>
+				</h2>
+				<p class="sub-copy">안녕하세요. 깊이 생각하는 퍼블리셔 <b>강새별</b>의 <br class="only-m" />개인 포트폴리오 사이트입니다.</p>
 			</div>
 			<p class="scroll"><img src="images/arrow_b.png" alt="화살표" /></p>
 		</header>
@@ -134,13 +145,13 @@
 <script>
 	'use strict';
 
-	$('div.copy').animate({'top':'50%','opacity':'1'},800,function(){
-		$('p.scroll').fadeIn(1000);
-		setInterval(function(){
-			$('p.scroll').animate({'bottom':'50px'});
-			$('p.scroll').animate({'bottom':'40px'});
-		},500)
-	});
+	mainTitAni();
+	function mainTitAni() {
+		$('.main-copy span').each(function(i) {
+			$(this).css({'animation-delay' : (i * 0.1) + 0.3 + 's'});
+		});
+	} // end of mainTitAni
+
 </script>
 </body>
 </html>
