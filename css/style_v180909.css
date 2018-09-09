@@ -19,13 +19,12 @@ br.only-m {content: '';}
 br.only-m:after {content: '\00a0';}
 div.hidden {position: absolute; left: -9999px;}
 form, fieldset {border: none;}
-input, select {vertical-align:middle; border-radius:inherit; /* for Mac */}
-input, select, textarea, button {font-family:inherit;}
+input, select {vertical-align: middle; border-radius: inherit; /* for Mac */}
+input, select, textarea, button {font-family: inherit;}
 input[type=submit] {-webkit-appearance: none; appearance: none; /* for ios */}
 
 /* common */
 body {font-family: 'Open Sans', 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', Dotum, '돋움', sans-serif; font-size: 14px; color: #555; font-weight: 400;}
-.loading {height: 100%; overflow: hidden;}
 .wrapper {position: relative; margin: 0 auto; width: 90%; max-width: 1200px;}
 .clearfix:after {content: ''; display: block; clear: both;}
 #skip a {position: fixed; top: -40px; left: 0; width: 100%; line-height: 40px; color: #fff; text-align: center; background-color: rgba(0, 0, 0, 0.7); transition: all 0.3s; z-index: 9999}
