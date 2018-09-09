@@ -180,14 +180,38 @@ a.close-btn:hover {width: 80px;}
 #footer .footer-list li .sns li a span {display: inline-block; position: relative; top: -1px; margin-left: 20px; line-height: 2.6em;}
 
 /* animation */
-@-webkit-keyframes load-spin {from {transform: rotate(0deg)} to {transform: rotate(360deg)}}
-@keyframes load-spin {from {transform: rotate(0deg)} to {transform: rotate(360deg)}}
-@-webkit-keyframes fade-tit {from {transform: translateY(25px); opacity: 0;} to {transform: translateY(0); opacity: 1;}}
-@keyframes fade-tit {from {transform: translateY(25px); opacity: 0;} to {transform: translateY(0); opacity: 1;}}
-@-webkit-keyframes arrow-move {0% {top: 10px;} 50% {top: 20px;} 100% {top: 10px;}}
-@keyframes arrow-move {0% {top: 10px;} 50% {top: 20px;} 100% {top: 10px;}}
-@-webkit-keyframes say-hi { 0% {transform: scale(1);} 25% {transform: scale(1.1);} 100% {transform: scale(1);}}
-@keyframes say-hi { 0% {transform: scale(1);} 25% {transform: scale(1.1);} 100% {transform: scale(1);}}
+@-webkit-keyframes load-spin {
+	from {-webkit-transform: rotate(0deg);} 
+	to {-webkit-transform: rotate(360deg);}
+}
+@keyframes load-spin {
+	from {transform: rotate(0deg);} 
+	to {transform: rotate(360deg);}
+}
+@-webkit-keyframes fade-tit {
+	from {-webkit-transform: translateY(25px); opacity: 0;} 
+	to {-webkit-transform: translateY(0); opacity: 1;}
+}
+@keyframes fade-tit {
+	from {transform: translateY(25px); opacity: 0;} 
+	to {transform: translateY(0); opacity: 1;}
+}
+@-webkit-keyframes arrow-move {
+	0%, 100% {top: 10px;}
+	50% {top: 20px;}
+}
+@keyframes arrow-move {
+	0%, 100% {top: 10px;} 
+	50% {top: 20px;}
+}
+@-webkit-keyframes say-hi {
+	0%, 100% {-webkit-transform: scale(1);}
+	25% {-webkit-transform: scale(1.1);}
+}
+@keyframes say-hi {
+	0%, 100% {transform: scale(1);}
+	25% {transform: scale(1.1);}
+}
 
 /*
 color guide

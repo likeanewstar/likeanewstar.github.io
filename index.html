@@ -17,10 +17,16 @@
     <!-- JavaScript & jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
-<body>
+<body class="loading">
 	<!-- skip navigation -->
     <div id="skip">
         <a href="#section01">본문 바로가기</a>
+    </div>
+    <!-- loading spinner -->
+    <div id="spinner">
+		<div class="spin1"></div>
+		<div class="spin2"></div>
+		<div class="spin3"></div>
     </div>
     <!-- main -->
 	<div id="wrap">
@@ -145,10 +151,20 @@
 <script>
 	'use strict';
 
+	loadSpin();
+	function loadSpin() {
+		$(window).on('load', function() {
+			$('#spinner').animate({'opacity': 0}, 500, function() {
+				$(this).css({'display': 'none'});
+				$('body').removeClass('loading');
+			});
+		}); // end of load
+	} // end of loadSpin
+
 	mainTitAni();
 	function mainTitAni() {
 		$('.main-copy span').each(function(i) {
-			$(this).css({'animation-delay' : (i * 0.1) + 0.3 + 's'});
+			$(this).css({'animation-delay' : (i * 0.1) + 0.8 + 's'});
 		});
 	} // end of mainTitAni
 

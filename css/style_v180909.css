@@ -25,10 +25,16 @@ input[type=submit] {-webkit-appearance: none; appearance: none; /* for ios */}
 
 /* common */
 body {font-family: 'Open Sans', 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', Dotum, '돋움', sans-serif; font-size: 14px; color: #555; font-weight: 400;}
+.loading {height: 100%; overflow: hidden;}
 .wrapper {position: relative; margin: 0 auto; width: 90%; max-width: 1200px;}
 .clearfix:after {content: ''; display: block; clear: both;}
 #skip a {position: fixed; top: -40px; left: 0; width: 100%; line-height: 40px; color: #fff; text-align: center; background-color: rgba(0, 0, 0, 0.7); transition: all 0.3s; z-index: 9999}
 #skip a:focus {top: 0;}
+#spinner {margin: 0 auto; width: 82px; height: 100vh; text-align: center;}
+#spinner div {display: inline-block; position: relative; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; background-color: #333; border-radius: 100%; -webkit-animation: load-spin 1.4s infinite ease-in-out both; animation: load-spin 1.4s infinite ease-in-out both;}
+#spinner div + div {margin-left: 6px;}
+#spinner .spin1 {-webkit-animation-delay: -0.32s; animation-delay: -0.32s;}
+#spinner .spin2 {-webkit-animation-delay: -0.16s; animation-delay: -0.16s;}
 section {position: relative; overflow: hidden; padding: 160px 0;}
 section .left {float: left; width: 50%; margin-right: 10%;}
 section .right {float: right; width: 40%;}
@@ -81,7 +87,15 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
 #footer .info li strong, #footer .info li span {display: inline-block; margin-bottom: 19px;}
 
 /* animation */
--webkit-@keyframes main-tit-ani {
+@-webkit-keyframes load-spin {
+  0%, 80%, 100% {-webkit-transform: scale(0);}
+  40% {-webkit-transform: scale(1.0);}
+}
+@keyframes load-spin {
+  0%, 80%, 100% {transform: scale(0);}
+  40% {transform: scale(1.0);}
+}
+@-webkit-keyframes main-tit-ani {
     from {left: 80px; opacity: 0;}
     to {left: 0; opacity: 1;}
 }
@@ -89,7 +103,7 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
     from {left: 80px; opacity: 0;}
     to {left: 0; opacity: 1;}
 }
--webkit-@keyframes sub-tit-ani {
+@-webkit-keyframes sub-tit-ani {
     from {opacity: 0;}
     to {opacity: 1;}
 }
@@ -97,7 +111,7 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
     from {opacity: 0;}
     to {opacity: 1;}
 }
--webkit-@keyframes smoke-effect {
+@-webkit-keyframes smoke-effect {
     from {transform: translate3d(0, 0, 0);}
     to {transform: translate3d(-200vw, 0, 0);}
 }
