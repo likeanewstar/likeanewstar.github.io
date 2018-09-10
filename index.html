@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style_v180909.css" />
+    <link rel="stylesheet" type="text/css" href="css/style_v180910.css" />
     <!-- JavaScript & jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
@@ -22,16 +22,11 @@
     <div id="skip">
         <a href="#section01">본문 바로가기</a>
     </div>
-    <!-- loading spinner
-    <div id="spinner">
-		<div class="spin1"></div>
-		<div class="spin2"></div>
-		<div class="spin3"></div>
-    </div> -->
     <!-- main -->
 	<div id="wrap">
 		<!-- header -->
 		<header id="header">
+            <img class="bg" src="images/visual_bg.jpg" alt="배경 이미지" />
 			<div class="smoke-con">
 				<div class="smoke-img smoke-img-01"></div>
 				<div class="smoke-img smoke-img-01"></div>
@@ -72,7 +67,7 @@
 					<span class="color2"></span>
 				</p>
 				<div class="btn-con">
-                    <a href="Project-Hwell/index.html" target="_blank">Go to Website</a>
+                    <a href="https://likeanewstar.github.io/Project-Hwell/index.html" target="_blank">Go to Website</a>
                     <a href="https://github.com/likeanewstar/likeanewstar.github.io/tree/master/Project-Hwell" target="_blank">View Code</a>
                 </div>
 			</div>
@@ -99,7 +94,7 @@
 					<span class="color2"></span>
 				</p>
 				<div class="btn-con">
-                    <a href="Project-KK/index.html" target="_blank">Go to Website</a>
+                    <a href="https://likeanewstar.github.io/Project-KK/index.html" target="_blank">Go to Website</a>
                     <a href="https://github.com/likeanewstar/likeanewstar.github.io/tree/master/Project-KK" target="_blank">View Code</a>
                 </div>
 			</div>
@@ -118,16 +113,16 @@
 					<p><strong>IE Surpport</strong><span>IE10+</span></p>
 					<p><strong>구성</strong><span>Main Page, Sub Page 2</span></p>
 				</div>
-				<p class="desc">본 사이트는 데스크탑용 사이트로 <em>IE10이상 지원</em>하도록 제작하였으며 <em>웹 접근성 관리</em>가 되어있습니다. 
-                사이트를 방문하는 이용자들의 목적을 파악하고 사용자의 편의를 생각하여 사용성이 높은 메뉴를 상단부터 차례로 재배치하였습니다. <br/><br/>
-                메인과 서브 두 가지 페이지가 있으며 GNB 메뉴 중 어느 것이나 눌러도 다음 페이지로 이동되도록 하였습니다.</p>
+				<p class="desc">본 사이트는 데스크탑용 사이트로 <em>IE10이상 지원</em>하도록 제작하였으며 소스를 효율적으로 관리하기 위해 <em>PHP include</em>를 이용하였습니다. <br /><br />
+                <em>웹 접근성 관리</em>를 위해 메인 메뉴는 Tab key로도 이용이 가능하며 Shift + Tab key를 이용해 거꾸로 접근했을 때에도 동작되도록 설계되어 있습니다. 
+                </p>
 				<p class="color">
 					<span class="color1"></span>
 					<span class="color2"></span>
 					<span class="color3"></span>
 				</p>
 				<div class="btn-con">
-                    <a href="Project-CHA/index.html" target="_blank">Go to Website</a>
+                    <a href="https://likeanewstar.github.io/Project-CHA/index.html" target="_blank">Go to Website</a>
                     <a href="https://github.com/likeanewstar/likeanewstar.github.io/tree/master/Project-CHA" target="_blank">View Code</a>
                 </div>
 			</div>
@@ -151,12 +146,15 @@
 <script>
 	'use strict';
 
-	//loadSpin();
-	function loadSpin() {
-		$(window).on('load', function() {
-			$('#spinner').fadeOut(800);
-		}); // end of load
-	} // end of loadSpin
+	imgLoad();
+	function imgLoad() {
+        $('#header img.bg').on('load', function() {
+            $(this).addClass('loaded');
+        });
+        setTimeout(function() {
+            $('#header img.bg').addClass('loaded');
+        }, 100);
+	} // end of imgLoad
 
 	mainTitAni();
 	function mainTitAni() {
