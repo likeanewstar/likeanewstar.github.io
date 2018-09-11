@@ -27,9 +27,11 @@ input[type=submit] {-webkit-appearance: none; appearance: none; /* for ios */}
 body {font-family: 'Open Sans', 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', Dotum, '돋움', sans-serif; font-size: 14px; color: #555; font-weight: 400;}
 .wrapper {position: relative; margin: 0 auto; width: 90%; max-width: 1200px;}
 .clearfix:after {content: ''; display: block; clear: both;}
+::-webkit-selection {background: #af00ff; color: #fff; text-shadow: none;}
+::selection {background: #af00ff; color: #fff; text-shadow: none;}
 #skip a {position: fixed; top: -40px; left: 0; width: 100%; line-height: 40px; color: #fff; text-align: center; background-color: rgba(0, 0, 0, 0.7); transition: all 0.3s; z-index: 9999}
 #skip a:focus {top: 0;}
-section {position: relative; overflow: hidden; padding: 160px 0;}
+section {position: relative; overflow: hidden; padding: 120px 0;}
 section .left {float: left; width: 50%; margin-right: 10%;}
 section .right {float: right; width: 40%;}
 section .preview img {width: 100%;}
@@ -60,27 +62,52 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
 #header .smoke-img-01 {background: url('../images/smoke_01.png') center center repeat-x; background-size: cover; -webkit-animation: smoke-effect /*60s*/30s linear infinite; animation: smoke-effect /*60s*/30s linear infinite;}
 #header .smoke-img-02 {background: url('../images/smoke_02.png') center center repeat-x; background-size: cover; -webkit-animation: smoke-effect /*40s*/15s linear infinite; animation: smoke-effect /*40s*/15s linear infinite;}
 
-/* section 01 */
-#section01 .right .tit span {font-weight:400;}
-#section01 .right .color .color1 {background-color: #d44242;}
-#section01 .right .color .color2 {background-color: #74ab44;}
+/* introduce */
+#introduce {text-align: center; letter-spacing: -1px;}
+#introduce h2 {position: relative; margin-bottom: 26px; font-size: 32px; font-weight: 300; color: #000; line-height: 1.5em;}
+#introduce p {font-size: 18px; line-height: 1.5em;}
 
-/* section 02 */
-#section02 .right .color .color1 {background-color: #d4061f;}
-#section02 .right .color .color2 {background-color: #fff; border: solid 1px #aaa;}
+/* education & skills */
+#education {width: 100%; padding: 70px 0; text-align: center;}
+#education:before {content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 300px; background: #fafafa;}
+#education:after {content: ''; display: block; position: absolute; top: 15%; left: 50%; width: 1px; height: 70%; background: #f0f0f0;}
+#education .wrapper {padding: 70px 0; background: #fff; border-radius: 10px; box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;}
+#education .edu,
+#education .skill {position: relative; float: left; width: 50%; padding: 0 10%; box-sizing: border-box;}
+#education h2 {margin-bottom: 50px; font-size: 20px; font-weight: 300; color: #000;}
+#education h2 img {width: 100px;}
+#education .skill h2 img {position: relative; top: -10px;}
+#education h2 em {display: block; margin-top: 12px;}
+#education dl {text-align: left;}
+#education dt,
+#education dd {line-height: 2em;}
+#education dt {margin-top: 14px; font-size: 16px; color: #8c43ff;}
+#education dd {padding: 0 8px;}
 
-/* section 03 */
-#section03 .right .color .color1 {background-color: #34556c;}
-#section03 .right .color .color2 {background-color: #417375;}
-#section03 .right .color .color3 {background-color: #6d291b;}
+/* project - hwell */
+#p-hwell .right .tit span {font-weight:400;}
+#p-hwell .right .color .color1 {background-color: #d44242;}
+#p-hwell .right .color .color2 {background-color: #74ab44;}
+
+/* project - kitkat */
+#p-kitkat .right .color .color1 {background-color: #d4061f;}
+#p-kitkat .right .color .color2 {background-color: #fff; border: solid 1px #aaa;}
+
+/* project - cha */
+#p-cha .right .feature a {font-weight: 600; text-decoration: underline;}
+#p-cha .right .color .color1 {background-color: #34556c;}
+#p-cha .right .color .color2 {background-color: #417375;}
+#p-cha .right .color .color3 {background-color: #6d291b;}
 
 /* section 04 */
-#footer {padding: 350px 0;}
+#footer {padding: 100px 0;}
 #footer .greeting {color: #222; font-size: 70px; letter-spacing: -3.5px; font-weight: 100; padding-bottom: 100px; border-bottom: solid 1px #d2d2d2; margin-bottom: 37px;}
-#footer .info li {float: left; width: 50%; font-size: 14px;}
-#footer .info li strong {width: 40%; font-weight: 400; color: #222;}
-#footer .info li span {width: 60%;}
-#footer .info li strong, #footer .info li span {display: inline-block; margin-bottom: 19px;}
+#footer .sns,
+#footer .sns li {float: left;}
+#footer .sns {overflow: hidden;}
+#footer .sns li + li {margin-left: 26px;}
+#footer .sns li a {display: block; color: #222; font-size: 15px; font-weight: 600; padding: 10px 0;}
+#footer .copyright {float: right; line-height: 2.7em;}
 
 /* animation */
 @-webkit-keyframes load-spin {
@@ -130,15 +157,30 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
     section .left,
     section .right {float: none; width: 90%; padding: 0 5%;}
     section .left {margin-bottom: 50px;}
-    #footer {width: 90%; padding: 100px 5% 80px;}
-    #footer .info li {width: 100%;}
+    #introduce {padding: 100px 5%;}
+    #introduce p {font-size: 16px;}
+    #education:after {display: none;}
+    #education .edu,
+    #education .skill {width: 100%;}
+    #education .skill h2 {padding-top: 60px;}
 }
 @media screen and (max-width: 768px) {
-    #header .copy .main-copy, #footer .greeting {font-size: 45px;}
+    #header .copy .main-copy,
+    #footer .greeting {font-size: 45px;}
     #header .copy .sub-copy {font-size: 14px;}
+    #footer .sns,
+    #footer .copyright {float: none; display: block; width: 100%;}
 }
 @media screen and (max-width: 520px) {
 	#header .copy {padding: 0 15px; box-sizing: border-box;}
     section .right .btn-con a {width: 100%;}
     section .right .btn-con a + a {margin-left: 0; margin-top: 12px;}
 }
+
+/*
+
+color guide
+
+#8c43ff 보라색
+
+*/
