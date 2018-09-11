@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style_v180910.css" />
+    <link rel="stylesheet" type="text/css" href="css/style_v180911.css" />
     <!-- JavaScript & jQuery -->
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
@@ -147,11 +147,11 @@
 	'use strict';
 
 	imgLoad();
-	function imgLoad() {
+	function imgLoad() { // 메인 이미지 load 완료 후 fade-in되어 나타나게 하기
         $('#header img.bg').on('load', function() {
             $(this).addClass('loaded');
         });
-        setTimeout(function() {
+        setTimeout(function() { // cache로 인한 이미지 로드 오류 방지
             $('#header img.bg').addClass('loaded');
         }, 100);
 	} // end of imgLoad
@@ -159,7 +159,7 @@
 	mainTitAni();
 	function mainTitAni() {
 		$('.main-copy span').each(function(i) {
-			$(this).css({'animation-delay' : (i * 0.1) + 0.3 + 's'});
+			$(this).css({'animation-delay' : (i * 0.05) + 0.3 + 's'});
 		});
 	} // end of mainTitAni
 	
