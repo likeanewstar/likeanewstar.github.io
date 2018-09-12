@@ -94,7 +94,9 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
 #p-kitkat .right .color .color2 {background-color: #fff; border: solid 1px #aaa;}
 
 /* project - cha */
-#p-cha .right .feature a {font-weight: 600; text-decoration: underline;}
+#p-cha .right .feature li strong span {font-weight: 300;}
+#p-cha .right .feature li a {font-weight: 600; border-bottom: 1px solid #e0e0e0;}
+#p-cha .right .feature li a i {font-size: 10px; margin-left: 3px;}
 #p-cha .right .color .color1 {background-color: #34556c;}
 #p-cha .right .color .color2 {background-color: #417375;}
 #p-cha .right .color .color3 {background-color: #6d291b;}
