@@ -93,13 +93,17 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
 
 /* footer */
 #footer {padding: 100px 0;}
-#footer .greeting {color: #222; font-size: 60px; letter-spacing: -3.5px; font-weight: 100; padding-bottom: 100px; border-bottom: solid 1px #d2d2d2; margin-bottom: 37px;}
+#footer .greeting {border-bottom: solid 1px #d2d2d2; margin-bottom: 37px; padding-bottom: 100px; color: #222; font-size: 60px; letter-spacing: -3.5px; font-weight: 100;}
+#footer .contact-box {display: flex; justify-content: space-between; align-items: center; gap: 10px;}
 #footer .sns,
 #footer .sns li {float: left;}
 #footer .sns {overflow: hidden;}
 #footer .sns li + li {margin-left: 26px;}
 #footer .sns li a {display: block; color: #222; font-size: 15px; font-weight: 600; padding: 10px 0;}
 #footer .copyright {float: right; line-height: 2.7em;}
+#footer .email {font-size: 15px; line-height: 22px; color: #222;}
+#footer .email span {display: inline-flex; align-items: center; gap: 5px; font-weight: 600;}
+#footer .email span:after {content: ''; display: inline-block; position: relative; margin: 0 10px; width: 1px; height: 14px; background: #666;}
 
 /* animation */
 @-webkit-keyframes load-spin {
@@ -160,6 +164,7 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
     #header .copy .main-copy,
     #footer .greeting {font-size: 45px;}
     #header .copy .sub-copy {font-size: 14px;}
+    #footer .contact-box {flex-direction: column; align-items: start;}
     #footer .sns,
     #footer .copyright {float: none; display: block; width: 100%;}
 }
@@ -167,6 +172,7 @@ section .right .btn-con a:hover {color: #fff; background: #8c43ff;}
 	#header .copy {padding: 0 15px; box-sizing: border-box;}
     section .right .btn-con a {width: 100%;}
     section .right .btn-con a + a {margin-left: 0; margin-top: 12px;}
+    #footer .email span {display: none;}
 }
 
 /*
